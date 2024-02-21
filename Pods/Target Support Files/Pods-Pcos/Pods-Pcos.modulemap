@@ -1,0 +1,6 @@
+framework module Pods_Pcos {
+  umbrella header "Pods-Pcos-umbrella.h"
+
+  export *
+  module * { export * }
+}
