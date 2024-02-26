@@ -20,15 +20,19 @@ class ExerciseVideoVC: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var watchButton: UIButton!
 
+    @IBOutlet weak var exerciseimage: UIImageView!
+    
     var playerViewController: AVPlayerViewController?
     var player: AVPlayer?
-
+     
     var exerciseNameStr : String?
-
+    var exerciseImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadExerciseDetails()
-        watchButton.addTarget(self, action: #selector(watchButtonTapped), for: .touchUpInside)
+            watchButton.addTarget(self, action: #selector(watchButtonTapped), for: .touchUpInside)
+//            exerciseImg.image = exerciseImage
     }
 
     func loadExerciseDetails() {

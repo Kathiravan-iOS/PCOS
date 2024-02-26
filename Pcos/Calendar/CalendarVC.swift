@@ -43,7 +43,7 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
         calendarDelegate = CalendarDelegate()
         calendarView.delegate = self
         self.fetchSelectedDates()
-        customizeNavigationBar(title: "Choose Calendar")
+        customizeNavigationBar(title: "Menstrual Calendar")
     }
     
     func fetchSelectedDates() {

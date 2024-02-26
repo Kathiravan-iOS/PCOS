@@ -45,7 +45,7 @@ class PaitentTrackMomentVC: UIViewController {
     }
     
     func getStepsGraph(_ completionHandler : @escaping (Bool)-> Void) {
-        let name = ["name": "\("shobana")"]
+        let name = ["name": name2]
         APIHandler().postAPIValues(type: StepsDataModel.self, apiUrl: ServiceAPI.stepsGraph, method: "POST", formData: name) { result in
             switch result{
             case.success(let data):

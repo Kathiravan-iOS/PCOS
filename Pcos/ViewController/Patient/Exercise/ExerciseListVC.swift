@@ -43,13 +43,13 @@ extension ExerciseListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         exerciseList.deselectRow(at: indexPath, animated: true)
-          if let cell = tableView.cellForRow(at: indexPath) {
-              cell.contentView.backgroundColor = .white // Set your desired background color
-          }
+        
         let exerciseVideoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ExerciseVideoVC") as! ExerciseVideoVC
         exerciseVideoVC.exerciseNameStr = yogaName[indexPath.row].lowercased()
+        exerciseVideoVC.exerciseImage = UIImage(named: imgName[indexPath.row])
         self.navigationController?.pushViewController(exerciseVideoVC, animated: true)
     }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }

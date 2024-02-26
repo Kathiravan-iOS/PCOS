@@ -16,6 +16,7 @@ class MedicalrepothomeViewController: UIViewController {
     }
     @IBAction func upload(_ sender: Any) {
         let upload = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "uploadreports") as! uploadreports
+        upload.name1 = name
         self.navigationController?.pushViewController(upload, animated: true)
     }
 

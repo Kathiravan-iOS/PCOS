@@ -1,7 +1,7 @@
 import UIKit
 
 class recorddailyprogreeVC: UIViewController {
-
+    var recordname : String = ""
     @IBOutlet weak var day: UITextField!
     @IBOutlet weak var exerciseduration: UITextField!
     @IBOutlet weak var feedback: UITextField!
@@ -11,6 +11,7 @@ class recorddailyprogreeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        name.text = recordname
     }
 
     @IBAction func submitprogree(_ sender: Any) {
@@ -38,33 +39,36 @@ class recorddailyprogreeVC: UIViewController {
         ]
 
         APIHandler().postAPIValues(type: progressModel.self, apiUrl: ServiceAPI.todaysprogress, method: "POST", formData: progress) { result in
-            switch result {
-            case .success(let data):
-                if data.success {
-                    DispatchQueue.main.async {
-                        self.progressVC()
+                switch result {
+                case .success(let data):
+                    if data.success {
+                        DispatchQueue.main.async {
+                            // Show success message and navigate on "OK"
+                            let alertController = UIAlertController(title: "Success", message: "Progress recorded successfully.", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                                // Navigate to PatientPlanVC
+                                self.navigateToPatientPlanVC()
+                            }
+                            alertController.addAction(okAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            // Handle failure scenario
+                            self.showAlert(message: data.message)
+                        }
                     }
-                } else {
-                    DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Alert", message: data.message, preferredStyle: .alert)
-                        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                        alertController.addAction(cancelAction)
-                        self.present(alertController, animated: true, completion: nil)
-                    }
+                case .failure(let error):
+                    print("Decoding error: \(error)")
                 }
-            case .failure(let error):
-                print("Decoding error: \(error)")
             }
         }
-    }
 
-    func progressVC() {
-        DispatchQueue.main.async {
+        func navigateToPatientPlanVC() {
             if let targetVC = self.navigationController?.viewControllers.first(where: { $0 is PatientPlanVC }) {
                 self.navigationController?.popToViewController(targetVC, animated: true)
             }
         }
-    }
 
 
     func showAlert(message: String) {

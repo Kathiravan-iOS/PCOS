@@ -1,15 +1,10 @@
-//
-//  PatientActivityVC.swift
-//  Pcos
-//
-//  Created by Karthik Babu on 06/10/23.
-//
-
 import UIKit
-//import Charts
 
 class PatientActivityVC: UIViewController {
+    
     var name1 :String = ""
+    var stepsData : StepsDataModel?
+    
     @IBOutlet weak var activityTable: UITableView!{
         didSet{
             activityTable.delegate = self
@@ -32,11 +27,31 @@ class PatientActivityVC: UIViewController {
         activityTable.register(calories, forCellReuseIdentifier: "CaloriesCell")
         activityTable.register(stepsnib, forCellReuseIdentifier: "StepsCell")
         
-
-
+        self.getStepsGraph { [weak self] success in
+            guard let `self` = self else {return}
+            if success {
+                DispatchQueue.main.async {
+                    self.activityTable.reloadData()
+                }
+            }
+        }
     }
-
-
+    
+    func getStepsGraph(_ completionHandler : @escaping (Bool)-> Void) {
+        let name = ["name": name1]
+        APIHandler().postAPIValues(type: StepsDataModel.self, apiUrl: ServiceAPI.stepsGraph, method: "POST", formData: name) { result in
+            switch result{
+            case.success(let data):
+                self.stepsData = data
+                print(data)
+                completionHandler(true)
+            case.failure(let error):
+                completionHandler(false)
+                print(error)
+            }
+        }
+    }
+    
 }
 
 
@@ -92,12 +107,20 @@ extension PatientActivityVC: UITableViewDelegate, UITableViewDataSource {
         }
         else if (indexPath.section == 4) {
             let stepsCell = activityTable.dequeueReusableCell(withIdentifier: "StepsCell") as! StepsCell
+            
+            
+            if let stepsDataDays = stepsData?.days, let stepsCounts = self.stepsData?.stepsCounts {
+                let doubleArray = stepsDataDays.map { Int($0) ?? 0 }
+                let chartData = Dictionary(uniqueKeysWithValues: zip(doubleArray, stepsCounts))
+                stepsCell.configure(with: chartData)
+            }
             return stepsCell
         }
-               
+        
         return UITableViewCell(frame: .zero)
-
+        
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         activityTable.deselectRow(at: indexPath, animated: true)

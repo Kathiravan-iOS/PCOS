@@ -11,7 +11,7 @@ import UIKit
 class SideMenuViewController: UIViewController {
     
     var username6 : String = ""
-    let admingMenuTitle = ["Home", "Edit Profile", "Article", "Reports", "Logout"]
+    let admingMenuTitle = ["Home", "Edit Profile", "About PCOS", "Reports", "Logout"]
 
 
     override func viewDidLoad() {
@@ -102,10 +102,10 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
             profileVC.selectedPatientName = username6
             self.navigationController?.pushViewController(profileVC, animated: true)
             print("Profile")
-        case "Article":
+        case "About PCOS":
             let Animation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Animation") as! Animation
             self.navigationController?.pushViewController(Animation, animated: true)
-            print("Article")
+            print("About PCOS")
         case "Reports":
             let reports = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MedicalrepothomeViewController") as! MedicalrepothomeViewController
             reports.name = username6

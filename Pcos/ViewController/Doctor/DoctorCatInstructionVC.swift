@@ -15,9 +15,28 @@ class DoctorCatInstructionVC: UIViewController {
     var instructionList = ["Patient Profile", "Patient Activity", "Patient’s Menstural Calender", "View Assesment Result", "View Patient’s Today Progress", "View Patient’s Medical Records"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupBackButton()
         instructionTableView.delegate = self
         instructionTableView.dataSource = self
         
+    }
+    func setupBackButton() {
+        let backImage = UIImage(named: "back")?.withRenderingMode(.alwaysOriginal)
+            let backButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backAction))
+            backButton.imageInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0) 
+            
+            self.navigationItem.leftBarButtonItem = backButton
+    }
+
+    @objc func backAction() {
+        if let navigationController = self.navigationController {
+            for controller in navigationController.viewControllers {
+                if controller is DoctorHomeVC {
+                    navigationController.popToViewController(controller, animated: true)
+                    break
+                }
+            }
+        }
     }
     func navigateToViewController(for item: String) {
             var destinationViewController = UIViewController()
@@ -43,7 +62,6 @@ class DoctorCatInstructionVC: UIViewController {
                     }
                     
                 } else {
-                    // Fallback on earlier versions
                     destinationViewController = UIViewController()
                 }
                
@@ -59,7 +77,7 @@ class DoctorCatInstructionVC: UIViewController {
                 medicalrecord.reportName = selectedPatientName ?? ""
                         destinationViewController = medicalrecord
             default:
-                return // Do nothing or handle the case for unknown selections
+                return 
             }
         self.navigationController?.pushViewController(destinationViewController, animated: true)
         }
