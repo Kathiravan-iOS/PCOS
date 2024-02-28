@@ -11,10 +11,11 @@ import Foundation
 struct LoginModel: Codable {
     let success: Bool?
     let message: String?
+    let role: String?
     let existingUser : Bool?
     
     enum CodingKeys: String, CodingKey {
-        case success, message
+        case success, message,role
         case existingUser = "existing_user"
     }
   
