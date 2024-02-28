@@ -21,6 +21,8 @@ class PaitentTrackMomentVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customizeNavigationBar(title: "Track Your Moment")
+
         let nib = UINib(nibName: "ProgressBar", bundle: nil)
         let trackNib = UINib(nibName: "TrackViewTabCell", bundle: nil)
         let leader = UINib(nibName: "LeaderBoardCell", bundle: nil)

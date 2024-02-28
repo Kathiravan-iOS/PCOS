@@ -13,6 +13,7 @@ class LeaderShipBoardVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        customizeNavigationBar(title: "Leadership Board")
         let rankNib = UINib(nibName: "RankedUserList", bundle: nil)
         rankTable.register(rankNib, forCellReuseIdentifier: "RankedUserList")
         

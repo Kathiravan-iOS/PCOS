@@ -67,9 +67,18 @@ class ForgotPasswordVC: UIViewController {
         }
     }
         func LoginVC() {
-            let forgotvc = UIStoryboard(name: "Main", bundle: nil)
-            let vc = forgotvc.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            self.navigationController?.pushViewController(vc, animated: true)
+            
+            if let navigationController = self.navigationController {
+                for controller in navigationController.viewControllers {
+                    if controller is LoginVC {
+                        navigationController.popToViewController(controller, animated: true)
+                        break
+                    }
+                }
+            }
+//            let forgotvc = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = forgotvc.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

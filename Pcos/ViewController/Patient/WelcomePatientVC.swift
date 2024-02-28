@@ -18,4 +18,10 @@ class WelcomePatientVC: UIViewController {
             self.navigationController?.pushViewController(sampleVC, animated: true)
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
 }

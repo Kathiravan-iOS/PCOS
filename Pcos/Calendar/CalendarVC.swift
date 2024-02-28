@@ -45,22 +45,7 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
         self.fetchSelectedDates()
         customizeNavigationBar(title: "Menstrual Calendar")
     }
-//    
-//    func fetchSelectedDates() {
-//        if !self.selectedPatientName.isEmpty {
-//            let param = ["name":self.selectedPatientName]
-//            APIHandler.shared.postAPIValues(type: PatientDateModel.self, apiUrl: "\(ServiceAPI.baseURL)calenderD.php", method: "POST", formData: param) { response in
-//                switch response {
-//                case .success(let result):
-//                    print("-result",result)
-//                    self.patientSelectedDates = result
-//                    self.showSelectedDates()
-//                case .failure(let err):
-//                    print("------err",err)
-//                }
-//            }
-//        }
-//    }
+
     func fetchSelectedDates() {
         if !self.selectedPatientName.isEmpty {
             let param = ["name": self.selectedPatientName]
@@ -69,33 +54,14 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
                 case .success(let result):
                     print("-result",result)
                     self.patientSelectedDates = result
-                    // Show selected dates in the calendar view
                     self.showSelectedDates()
-                    
-                    // Disable user interaction for selected dates
-//                    self.disableInteractionWithSelectedDates()
                 case .failure(let err):
                     print("------err",err)
                 }
             }
         }
     }
-//    func disableInteractionWithSelectedDates() {
-//        // Iterate over the selected dates and create overlays to intercept touch events
-//        for dateComponents in self.dateComponentsArray {
-//            if let cell = self.calendarView.cell(forDateComponents: dateComponents) {
-//                let overlayView = UIView(frame: cell.frame)
-//                overlayView.backgroundColor = .clear
-//                overlayView.isUserInteractionEnabled = true // Enable user interaction with the overlay view
-//                self.calendar_View.addSubview(overlayView)
-//            }
-//        }
-//    }
 
-
-
-
-    
     func showSelectedDates() {
         
         if  let selectedDates = patientSelectedDates?.dates {
@@ -190,9 +156,6 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
 
     override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
-        self.fetchSelectedDates()
-
-            // Call a function to send data to the server when the view is about to disappear
             sendDataToServer()
         }
 
@@ -240,7 +203,11 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
 
                             if let message = jsonResponse["message"] as? String {
                                 // Check if the "message" key exists in the response
+                                if message ==  "Data inserted successfully." {
+                                    self.fetchSelectedDates()
+                                }
                                 print("Server Response: \(message)")
+                                
                             } else if let error = jsonResponse["error"] as? String {
                                 // Check if there's an error message in the response
                                 print("Server Error: \(error)")

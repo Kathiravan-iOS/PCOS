@@ -3,20 +3,26 @@ PODS:
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
   - Charts
+  - NVActivityIndicatorView
 
 SPEC REPOS:
   trunk:
     - Charts
+    - NVActivityIndicatorView
     - SwiftAlgorithms
 
 SPEC CHECKSUMS:
   Charts: ce0768268078eee0336f122c3c4ca248e4e204c5
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: c02bca10d67940864bc6431d1adad84b13314e74
+PODFILE CHECKSUM: 125b4e93aeece0d7b36a05f3b396df155b83d1b9
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.14.3

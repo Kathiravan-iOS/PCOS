@@ -14,6 +14,8 @@ class PatientActivityVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        customizeNavigationBar(title: "Patient Activity")
         let nib = UINib(nibName: "ProgressBar", bundle: nil)
         let trackNib = UINib(nibName: "TrackViewTabCell", bundle: nil)
         let leader = UINib(nibName: "LeaderBoardCell", bundle: nil)

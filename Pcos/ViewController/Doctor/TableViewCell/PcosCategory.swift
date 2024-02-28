@@ -9,7 +9,7 @@ import UIKit
 
 class PcosCategory: UIViewController {
     @IBOutlet weak var startButton: UIButton!
-
+    
     var  username4 : String = ""
     var shouldHideStartButton: Bool = false
     var patientScoreData : PaitentScoreModel?
@@ -17,29 +17,32 @@ class PcosCategory: UIViewController {
         super.viewDidLoad()
         self.patientScoreAPI()
         if shouldHideStartButton {
-                    // Assuming the "start" button is an IBOutlet named startButton
-                    startButton.isHidden = true
-                }
-      
-
+            startButton.isHidden = true
+            self.navigationController?.navigationBar.isHidden = true
+        }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     func progressBar() {
-            // Assuming the PaitentScoreModel and its 'data' property have 'mild', 'moderate', and 'severe' fields.
+        // Assuming the PaitentScoreModel and its 'data' property have 'mild', 'moderate', and 'severe' fields.
         let ringPieChartSize: CGFloat = 200
-            let ringPieChartX = (view.bounds.width - ringPieChartSize) / 2
-            let ringPieChartY = (view.bounds.height - ringPieChartSize) / 2
-            
-            let ringPieChartView = UIView(frame: CGRect(x: ringPieChartX, y: ringPieChartY, width: ringPieChartSize, height: ringPieChartSize))
-            view.addSubview(ringPieChartView)
+        let ringPieChartX = (view.bounds.width - ringPieChartSize) / 2
+        let ringPieChartY = (view.bounds.height - ringPieChartSize) / 2
+        
+        let ringPieChartView = UIView(frame: CGRect(x: ringPieChartX, y: ringPieChartY, width: ringPieChartSize, height: ringPieChartSize))
+        view.addSubview(ringPieChartView)
         let mildScore = Double(patientScoreData?.data?.mild ?? 0)
         let moderateScore = Double(patientScoreData?.data?.moderate ?? 0)
         let severeScore = Double(patientScoreData?.data?.severe ?? 0)
-            let dataPoints: [Double] = [mildScore, moderateScore, severeScore]
-            let colors: [UIColor] = [
-                UIColor(red: 102/255.0, green: 16/255.0, blue: 242/255.0, alpha: 1.0), // Purple
-                UIColor(red: 255/255.0, green: 134/255.0, blue: 91/255.0, alpha: 1.0), // Orange
-                UIColor(red: 52/255.0, green: 216/255.0, blue: 154/255.0, alpha: 1.0)  // Green
-            ]
+        let dataPoints: [Double] = [mildScore, moderateScore, severeScore]
+        let colors: [UIColor] = [
+            UIColor(red: 102/255.0, green: 16/255.0, blue: 242/255.0, alpha: 1.0), // Purple
+            UIColor(red: 255/255.0, green: 134/255.0, blue: 91/255.0, alpha: 1.0), // Orange
+            UIColor(red: 52/255.0, green: 216/255.0, blue: 154/255.0, alpha: 1.0)  // Green
+        ]
         
         // Calculate the total value of dataPoints
         let total = dataPoints.reduce(0, +)
@@ -93,58 +96,58 @@ class PcosCategory: UIViewController {
     }
     
     @IBAction func start(_ sender: Any) {
-            if let patientVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PatientPlanVC") as? PatientPlanVC {
-                patientVC.username5 = username4
-                self.navigationController?.pushViewController(patientVC, animated: true)
-            } else {
-                print("Error: Unable to instantiate PatientPlanVC")
-            }
+        if let patientVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PatientPlanVC") as? PatientPlanVC {
+            patientVC.username5 = username4
+            self.navigationController?.pushViewController(patientVC, animated: true)
+        } else {
+            print("Error: Unable to instantiate PatientPlanVC")
         }
-
-        func patientScoreAPI() {
-            let urlString = "\(ServiceAPI.baseURL)category.php"
-            postPatientScores(urlString: urlString, username: ["name": username4]) { [weak self] result in
-                switch result {
-                case .success(let data):
-                    DispatchQueue.main.async {
-                        self?.patientScoreData = data
-                        self?.progressBar()
-                    }
-                case .failure(let error):
-                    print(error)
+    }
+    
+    func patientScoreAPI() {
+        let urlString = "\(ServiceAPI.baseURL)category.php"
+        postPatientScores(urlString: urlString, username: ["name": username4]) { [weak self] result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self?.patientScoreData = data
+                    self?.progressBar()
                 }
+            case .failure(let error):
+                print(error)
             }
         }
     }
+}
 
-    extension PcosCategory {
-        func postPatientScores(urlString: String, username: [String: String], completion: @escaping (Result<PaitentScoreModel, Error>) -> Void) {
-            guard let url = URL(string: urlString) else {
-                print("Invalid URL")
+extension PcosCategory {
+    func postPatientScores(urlString: String, username: [String: String], completion: @escaping (Result<PaitentScoreModel, Error>) -> Void) {
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        let parameters = username.map { "\($0.key)=\($0.value)" }.joined(separator: "&")
+        request.httpBody = parameters.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(.failure(error ?? NSError(domain: "DataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Unknown data error"])))
                 return
             }
-
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
-            let parameters = username.map { "\($0.key)=\($0.value)" }.joined(separator: "&")
-            request.httpBody = parameters.data(using: .utf8)
-
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let data = data, error == nil else {
-                    completion(.failure(error ?? NSError(domain: "DataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Unknown data error"])))
-                    return
-                }
-
-                do {
-                    let decodedData = try JSONDecoder().decode(PaitentScoreModel.self, from: data)
-                    completion(.success(decodedData))
-                } catch {
-                    completion(.failure(error))
-                }
+            
+            do {
+                let decodedData = try JSONDecoder().decode(PaitentScoreModel.self, from: data)
+                completion(.success(decodedData))
+            } catch {
+                completion(.failure(error))
             }
-
-            task.resume()
         }
+        
+        task.resume()
     }
+}

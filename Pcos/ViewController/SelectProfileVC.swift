@@ -10,16 +10,17 @@ import UIKit
 class SelectProfileVC: UIViewController {
 
     var userProfile = String()
+    var isLogin : Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-
+            self.navigationController?.navigationBar.isHidden = true
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-
     }
     @IBAction func doctorLogin(_ sender: Any) {
         UserDefaultsManager.shared.saveUserName("Doctor")

@@ -114,6 +114,7 @@
 		B7C841772B7C89D4005C5CFD /* MedicalrepothomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C841762B7C89D4005C5CFD /* MedicalrepothomeViewController.swift */; };
 		B7DB96132B2AF5DF006230F9 /* weightgoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB96122B2AF5DF006230F9 /* weightgoalModel.swift */; };
 		B7DB96172B2B15EF006230F9 /* recorddailyprogreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB96162B2B15EF006230F9 /* recorddailyprogreeVC.swift */; };
+		B7FFDED42B8DEEBB0055DD62 /* LoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFDED32B8DEEBB0055DD62 /* LoaderAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5D2EC0F12AC90A3100284374;
 			remoteInfo = Pcos;
+		};
+		B7A0D2982B8F435000910258 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7C11FE42B88565000425C9C /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A1B9F27862201CD82B398E0B35B14128;
+			remoteInfo = NVActivityIndicatorView;
 		};
 		B7C11FEC2B88565000425C9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -286,6 +294,7 @@
 		B7C841762B7C89D4005C5CFD /* MedicalrepothomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalrepothomeViewController.swift; sourceTree = "<group>"; };
 		B7DB96122B2AF5DF006230F9 /* weightgoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weightgoalModel.swift; sourceTree = "<group>"; };
 		B7DB96162B2B15EF006230F9 /* recorddailyprogreeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recorddailyprogreeVC.swift; sourceTree = "<group>"; };
+		B7FFDED32B8DEEBB0055DD62 /* LoaderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +374,7 @@
 				5D2EC0F52AC90A3100284374 /* AppDelegate.swift */,
 				6E35F76D2B7E1ADF0016F845 /* PatientDateModel.swift */,
 				5D2EC0F72AC90A3100284374 /* SceneDelegate.swift */,
+				B7FFDED32B8DEEBB0055DD62 /* LoaderAnimation.swift */,
 				5DDB74A92B07527400819E74 /* APIHandler.swift */,
 				5DDB74AD2B07540300819E74 /* ServiceAPI.swift */,
 				5D2EC0FB2AC90A3100284374 /* Main.storyboard */,
@@ -609,6 +619,7 @@
 			isa = PBXGroup;
 			children = (
 				B7C11FED2B88565000425C9C /* Charts */,
+				B7A0D2992B8F435000910258 /* NVActivityIndicatorView */,
 				B7C11FEF2B88565000425C9C /* Pods-Pcos */,
 				B7C11FF12B88565000425C9C /* Pods-Pcos-PcosUITests */,
 				B7C11FF32B88565000425C9C /* Pods-PcosTests */,
@@ -738,6 +749,14 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		B7A0D2992B8F435000910258 /* NVActivityIndicatorView */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = NVActivityIndicatorView;
+			path = NVActivityIndicatorView.framework;
+			remoteRef = B7A0D2982B8F435000910258 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B7C11FED2B88565000425C9C /* Charts */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -959,6 +978,7 @@
 				5DDB74AE2B07540300819E74 /* ServiceAPI.swift in Sources */,
 				5DD342332AF60284006E0375 /* MealPlanCell.swift in Sources */,
 				6EB5C55D2B844A6200828B41 /* StepsCell.swift in Sources */,
+				B7FFDED42B8DEEBB0055DD62 /* LoaderAnimation.swift in Sources */,
 				5DDA9C722ACBBAB000BBB473 /* SampleVC.swift in Sources */,
 				5DD5CE182AD0136200524ACA /* WelcomePatientVC.swift in Sources */,
 				5DD5CE242AD3027D00524ACA /* PatientMedicalRecordVC.swift in Sources */,

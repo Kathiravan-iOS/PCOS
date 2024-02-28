@@ -14,6 +14,12 @@ class DoctorHomeVC: UIViewController {
         searchBar.delegate = self
         GetUserNameAPI()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
     @IBAction func addpatinet(_ sender: Any) {
         let addpatinet = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
         self.navigationController?.pushViewController(addpatinet, animated: true)

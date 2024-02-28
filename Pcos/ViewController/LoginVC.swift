@@ -1,5 +1,5 @@
 import UIKit
-
+//import LiquidLoader
 class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userNameView: UIView!
@@ -8,13 +8,23 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var forgotBtn: UIButton!
 
     var loginModel: LoginModel?
+//    let red: CGFloat = 255 / 255.0 // Example red value (0 to 1)
+//    let green: CGFloat = 172 / 255.0 // Example green value (0 to 1)
+//    let blue: CGFloat = 211 / 255.0 // Example blue value (0 to 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        
+//        let loaderColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+//        
+//        let loader = LiquidLoader(frame: CGRect(x: 0, y: 0, width: 100, height: 100), effect: .GrowCircle(loaderColor))
+//  
+//        loader.center = view.center
+//        view.addSubview(loader)
+        
         
         userNameTF.text = "shobana"
-        passwordTF.text = "12345678"
+        passwordTF.text = "123456789"
         userNameTF.delegate = self
         passwordTF.delegate = self
         passwordTF.isSecureTextEntry = true
@@ -35,8 +45,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             "username": userNameTF.text ?? "",
             "password": passwordTF.text ?? ""
         ]
-
+        self.view.startLoader()
         APIHandler.shared.postAPIValues(type: LoginModel.self, apiUrl: ServiceAPI.loginURL, method: "POST", formData: userInfo) { result in
+            DispatchQueue.main.async {
+                self.view.stopLoader()
+            }
             switch result {
             case .success(let data):
                 if !data.success! {
