@@ -156,7 +156,8 @@ extension PatientPlanVC : UITableViewDelegate, UITableViewDataSource {
           }
         if (indexPath.section == 0) {
             if indexPath.row == 0 {
-                let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WeightGoalListVC") as! WeightGoalListVC
+                let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MealsShceduleVC") as! MealsShceduleVC
+                nextVC.namef = username5
                 self.navigationController?.pushViewController(nextVC, animated: true)
                 
             }
