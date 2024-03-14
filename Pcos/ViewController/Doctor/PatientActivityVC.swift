@@ -66,7 +66,7 @@ extension PatientActivityVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.section == 0) {
             let cell = activityTable.dequeueReusableCell(withIdentifier: "ProgressBar") as! ProgressBar
-            
+            cell.name24 = name1
             return cell
         }
         else if(indexPath.section == 1) {

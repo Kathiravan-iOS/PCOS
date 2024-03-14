@@ -162,7 +162,7 @@ extension PatientPlanVC : UITableViewDelegate, UITableViewDataSource {
                 
             }
             else if indexPath.row == 1 {
-                let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ExerciseListVC") as! ExerciseListVC
+                let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "workoutplan") as! workoutplan
                 self.navigationController?.pushViewController(nextVC, animated: true)
             }
             

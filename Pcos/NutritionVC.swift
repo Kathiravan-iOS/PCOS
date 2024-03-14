@@ -6,11 +6,7 @@
 //
 struct NutritionInfo {
     var name: String
-    var emoji: String
     var calories: Double
-    var carbohydrates: Double
-    var protein: Double
-    var fat: Double
 }
 
 import UIKit
@@ -21,6 +17,7 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var selectedRows = Set<IndexPath>()
     var nutritionData: [NutritionInfo] = []
     var namef1 : String = ""
+    //var calorieLimit: Double = 500
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,8 +29,6 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         parseCSV()
     }
     
-    
-    // UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nutritionData.count
     }
@@ -42,14 +37,11 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "NutritionCell", for: indexPath)
         let nutritionInfo = nutritionData[indexPath.row]
         
-        // Updated to include protein and fat in the displayed text
-        cell.textLabel?.text = "\(nutritionInfo.name) \(nutritionInfo.emoji) - Calories: \(nutritionInfo.calories), Carbs: \(nutritionInfo.carbohydrates)g, Protein: \(nutritionInfo.protein)g, Fat: \(nutritionInfo.fat)g"
+        cell.textLabel?.text = "\(nutritionInfo.name) - Calories: \(nutritionInfo.calories)"
         
         return cell
     }
     
-    
-    // UITableViewDelegate Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRows.insert(indexPath)
     }
@@ -70,17 +62,13 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             let rows = data.components(separatedBy: "\n")
             
             for (index, row) in rows.enumerated() {
-                if index == 0 || row.isEmpty { continue } // Skipping header row and any empty row
+                if index == 0 || row.isEmpty { continue }
                 
                 let columns = row.components(separatedBy: ",")
-                if columns.count >= 6 { // Adjusted to check for at least 6 columns
+                if columns.count >= 2 {
                     let nutritionInfo = NutritionInfo(
                         name: columns[0],
-                        emoji: columns[1],
-                        calories: Double(columns[2]) ?? 0.0,
-                        carbohydrates: Double(columns[3]) ?? 0.0,
-                        protein: Double(columns[4]) ?? 0.0,
-                        fat: Double(columns[5]) ?? 0.0
+                        calories: Double(columns[1].trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0.0
                     )
                     nutritionData.append(nutritionInfo)
                 }
@@ -93,6 +81,7 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             print("Error reading CSV file: \(error)")
         }
     }
+
     
     func calculateTotalCalories()  -> Int {
         var totalCalories: Double = 0
@@ -102,36 +91,48 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         return Int(totalCalories)
     }
     @IBAction func backmeal(_ sender: Any) {
-        
+        let totalCalories = Double(calculateTotalCalories())
+
+                if totalCalories <= 500 {
+                    proceedWithSelectedItems()
+                } else {
+                    showAlertWith(message: "Your calorie value exceeds the limit.")
+                }
+            }
+    func showAlertWith(message: String) {
+        let alert = UIAlertController(title: "Selection Required", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func proceedWithSelectedItems() {
         let selectedNutritionInfos = selectedRows.map { nutritionData[$0.row] }
 
-            var postData = [String: Any]()
-            postData["nameLabel"] = namef1
+        var postData = [String: Any]()
+        postData["nameLabel"] = namef1
 
-            var foodsData = [[String: Any]]()
-            for nutritionInfo in selectedNutritionInfos {
-                var foodData = [String: Any]()
-                foodData["calories"] = nutritionInfo.calories
-                foodData["protein"] = nutritionInfo.protein
-                foodData["carbohydrates"] = nutritionInfo.carbohydrates
-                foodData["fat"] = nutritionInfo.fat
-                foodsData.append(foodData)
-            }
-            postData["foods"] = foodsData
+        var foodsData = [[String: Any]]()
+        for nutritionInfo in selectedNutritionInfos {
+            var foodData = [String: Any]()
+            foodData["name"] = nutritionInfo.name
+            foodData["calories"] = nutritionInfo.calories
+            foodsData.append(foodData)
+        }
+        postData["foods"] = foodsData
 
-            guard let jsonData = try? JSONSerialization.data(withJSONObject: postData) else {
-                print("Error converting data to JSON")
-                return
-            }
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: postData) else {
+            print("Error converting data to JSON")
+            return
+        }
 
-            guard let url = URL(string: "\(ServiceAPI.baseURL)/insertFood.php") else {
-                print("Invalid URL")
-                return
-            }
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = jsonData
+        guard let url = URL(string: "\(ServiceAPI.baseURL)/insertFood.php") else {
+            print("Invalid URL")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
         
         // Send the request
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
@@ -149,11 +150,8 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             
             if let data = data, let responseString = String(data: data, encoding: .utf8) {
                 print("Response from server: \(responseString)")
-                
-                // Assuming the responseString that indicates a successful insertion contains "successfully"
                 if responseString.lowercased().contains("successfully") {
                     DispatchQueue.main.async {
-                        // Navigate to the next view controller
                         self.navigateToMealDetailsVC()
                     }
                 }
@@ -161,11 +159,13 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         }
         task.resume()
     }
+
     func navigateToMealDetailsVC() {
         let selectedNutritionInfos = selectedRows.map { nutritionData[$0.row] }
            let totalCalories = calculateTotalCalories()
 
            if let mealPlanVC = storyboard?.instantiateViewController(withIdentifier: "MealsDetailsVC") as? MealsDetailsVC {
+               mealPlanVC.namelabel = namef1
                mealPlanVC.nutritionInfos = selectedNutritionInfos
                mealPlanVC.totalCalories = Double((totalCalories))
                mealPlanVC.nameLabelText = namelabel

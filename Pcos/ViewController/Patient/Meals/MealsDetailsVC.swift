@@ -25,18 +25,18 @@ class MealsDetailsVC: UIViewController {
     func updateUI() {
         var detailsText = ""
         for nutritionInfo in nutritionInfos {
-            detailsText += "\(nutritionInfo.name) - Calories: \(nutritionInfo.calories), Carbs: \(nutritionInfo.carbohydrates)g, Protein: \(nutritionInfo.protein)g, Fat: \(nutritionInfo.fat)g\n"
+            detailsText += "\(nutritionInfo.name) - Calories: \(nutritionInfo.calories) "
         }
         // Here, we round the totalCalories and convert it to Int just for display purposes
         let displayTotalCalories = Int(totalCalories)
-        detailsText += "\nTotal Calories: \(displayTotalCalories*100)"
+        detailsText += "\nTotal Calories: \(displayTotalCalories)"
         detailsTextView.text = detailsText
         
         nameLabel.text = nameLabelText // Assuming this is where you want to display the name
     }
     @IBAction func backhome(_ sender: Any) {
         let mealDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PatientPlanVC") as! PatientPlanVC
-        mealDetailsVC.username5 = nameLabelText ?? ""
+        mealDetailsVC.username5 = namelabel ?? ""
         self.navigationController?.pushViewController(mealDetailsVC, animated: true)
     }
     

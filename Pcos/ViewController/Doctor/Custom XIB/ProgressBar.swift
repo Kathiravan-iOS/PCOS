@@ -6,10 +6,9 @@ class ProgressBar: UITableViewCell {
     @IBOutlet weak var carbView: UIView!
     @IBOutlet weak var proView: UIView!
     @IBOutlet weak var fatView: UIView!
-    @IBOutlet weak var calories: UIView!
 
     private let shapeLayer = CAShapeLayer()
-
+    var name24 : String = ""
     override func awakeFromNib() {
         super.awakeFromNib()
         

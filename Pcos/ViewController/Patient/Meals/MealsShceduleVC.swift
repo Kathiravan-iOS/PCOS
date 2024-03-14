@@ -20,20 +20,20 @@ class MealsShceduleVC: UIViewController {
         super.viewDidLoad()
         breakfast.addAction(for: .tap) { [self] in
             let mealDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutritionVC") as! NutritionVC
-            mealDetailsVC.namelabel = "200 Calories"
+            mealDetailsVC.namelabel = "300 Calories"
             mealDetailsVC.namef1 = namef
             self.navigationController?.pushViewController(mealDetailsVC, animated: true)
         }
-        lunch.addAction(for: .tap) {
-            let mealDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutritionVC") as! NutritionVC
-            mealDetailsVC.namelabel = "500-700 Calories"
-            mealDetailsVC.namef1 = self.namef
-            self.navigationController?.pushViewController(mealDetailsVC, animated: true)
-        }
-        dinner.addAction(for: .tap) {
+        lunch.addAction(for: .tap) { [self] in
             let mealDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutritionVC") as! NutritionVC
             mealDetailsVC.namelabel = "500 Calories"
-            mealDetailsVC.namef1 = self.namef
+            mealDetailsVC.namef1 = namef
+            self.navigationController?.pushViewController(mealDetailsVC, animated: true)
+        }
+        dinner.addAction(for: .tap) { [self] in
+            let mealDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutritionVC") as! NutritionVC
+            mealDetailsVC.namelabel = "300 Calories"
+            mealDetailsVC.namef1 = namef
             self.navigationController?.pushViewController(mealDetailsVC, animated: true)
         }
 
