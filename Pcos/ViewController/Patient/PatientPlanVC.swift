@@ -96,7 +96,6 @@ extension PatientPlanVC : UITableViewDelegate, UITableViewDataSource {
             label.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 50)
             label.textAlignment = .center
             label.text = currentHeaderTitle
-            //label.textColor = UIColor(red: 212/255.0, green: 89/255.0, blue: 143/255.0, alpha: 1.0)
             label.font = UIFont(name: "TimesNewRoman", size: 21.0)
             return label
         }
@@ -105,14 +104,13 @@ extension PatientPlanVC : UITableViewDelegate, UITableViewDataSource {
             label.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 50)
             label.textAlignment = .center
             label.text = "Strengthen your positive thoughts with gratitude"
-            //label.textColor = UIColor(red: 212/255.0, green: 89/255.0, blue: 143/255.0, alpha: 1.0)
             label.font = UIFont(name: "TimesNewRoman", size: 21.0)
             return label
         }
         else if section == 2 {
             // Create a container view to hold the label and the image
             let containerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 50))
-            containerView.backgroundColor = UIColor(red: 255/255.0, green: 162/255.0, blue: 207/255.0, alpha: 1)
+            containerView.backgroundColor = UIColor(hex: "#FFA2CF") 
 
             // Create the label
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: containerView.bounds.width - 50, height: 50))

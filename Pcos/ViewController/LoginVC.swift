@@ -14,15 +14,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        
-//        let loaderColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-//        
-//        let loader = LiquidLoader(frame: CGRect(x: 0, y: 0, width: 100, height: 100), effect: .GrowCircle(loaderColor))
-//  
-//        loader.center = view.center
-//        view.addSubview(loader)
-        
-        
         userNameTF.text = "shobana"
         passwordTF.text = "123456789"
         userNameTF.delegate = self

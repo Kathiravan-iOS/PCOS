@@ -38,10 +38,9 @@ class PcosCategory: UIViewController {
         let moderateScore = Double(patientScoreData?.data?.moderate ?? 0)
         let severeScore = Double(patientScoreData?.data?.severe ?? 0)
         let dataPoints: [Double] = [mildScore, moderateScore, severeScore]
-        let colors: [UIColor] = [
-            UIColor(red: 102/255.0, green: 16/255.0, blue: 242/255.0, alpha: 1.0), // Purple
-            UIColor(red: 255/255.0, green: 134/255.0, blue: 91/255.0, alpha: 1.0), // Orange
-            UIColor(red: 52/255.0, green: 216/255.0, blue: 154/255.0, alpha: 1.0)  // Green
+        let colors: [UIColor] = [ UIColor(hex: "#6610F2"),
+                                  UIColor(hex: "#FF865B"),
+                                  UIColor(hex: "#34D89A") 
         ]
         
         // Calculate the total value of dataPoints
@@ -88,7 +87,7 @@ class PcosCategory: UIViewController {
         
         // Create a circle in the center
         let centerCircle = UIView(frame: CGRect(x: ringPieChartView.bounds.midX - ringPieChartView.bounds.width / 2, y: ringPieChartView.bounds.midY - ringPieChartView.bounds.width / 2, width: 200, height: 200))
-        let pink =  UIColor(red: 255/255.0, green: 192/255.0, blue: 222/255.0, alpha: 1.0)
+        let pink = UIColor(hex: "#FFC0DE")
         
         centerCircle.backgroundColor = pink
         centerCircle.layer.cornerRadius = 100

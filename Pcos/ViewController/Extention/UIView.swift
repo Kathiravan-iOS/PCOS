@@ -158,7 +158,7 @@ extension UIView {
         let loaderView = UIView(frame: self.bounds)
         loaderView.backgroundColor = UIColor(white: 0, alpha: 0.5)
         self.addSubview(loaderView)
-        let loader = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: .ballClipRotateMultiple, color: UIColor(red: 255, green: 172, blue: 211))
+        let loader = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: .ballClipRotateMultiple, color: UIColor(hex: "#FFACD3"))
         loader.center = loaderView.center
         loaderView.addSubview(loader)
         loader.startAnimating()
