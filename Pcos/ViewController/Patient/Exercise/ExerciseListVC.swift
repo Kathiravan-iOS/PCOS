@@ -16,8 +16,8 @@ class ExerciseListVC: UIViewController {
         }
     }
     
-    var imgName = ["yoga 1","yoga 2","yoga 3","yoga 4","yoga 1","yoga 3"]
-    var yogaName = ["HIGH STEPPING","SIDE HOP","FRONT LIFT","BUT BRIDGE","SQUATS","WALL PUSH-UPS"]
+    var imgName = ["yoga 1","yoga 2","yoga 3","yoga 4","yoga 1","yoga 3","yoga 2","yoga 4"]
+    var yogaName = ["HIGH STEPPING","SIDE HOP","FRONT LIFT","BUT BRIDGE","SQUATS","WALL PUSH-UPS","JUMPING JACKS","FROG PRESS"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class ExerciseListVC: UIViewController {
 
 extension ExerciseListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

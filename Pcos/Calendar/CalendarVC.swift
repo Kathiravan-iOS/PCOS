@@ -65,17 +65,13 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
     func showSelectedDates() {
         
         if  let selectedDates = patientSelectedDates?.dates {
-            // Iterate over each Date object and convert to DateComponents
             for date in selectedDates {
                 print("---date",date.calendarDate)
                 let dateFormatter = DateFormatter()
 
-                // Set the date format to match your input string
                 dateFormatter.dateFormat = "yyyy-MM-dd"
-
-                // Parse the string into a Date object
                 guard let selectedDate = dateFormatter.date(from: date.calendarDate) else {return}
-                    print(date) // Output: 2024-01-27 00:00:00 +0000
+                    print(date)
                 let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: selectedDate)
                 dateComponentsArray.append(components)
             }
@@ -139,7 +135,6 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
         formatter.dateFormat = "dd-MM-yyyy"
         let formattedDate = formatter.string(from: selectedDate)
         
-        // Append the formatted date to the array
         selectedDatesArray.append(formattedDate)
         print("Selected Dates Array: \(selectedDatesArray)")
         print(formattedDate, "formattedDate")
@@ -174,10 +169,9 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
         ]
 
         do {
-            // Convert the dictionary to JSON data
             let jsonData = try JSONSerialization.data(withJSONObject: postData, options: [])
 
-            // Prepare the request
+      
             guard let url = URL(string: "\(ServiceAPI.baseURL)calender.php") else {
                 print("Invalid URL")
                 return
@@ -189,16 +183,14 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
             request.httpBody = jsonData
             // Make the API request
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                // Handle the response
+
                 if let error = error {
                     print("Error: \(error)")
                 } else if let data = data {
                     do {
-                        // Parse the JSON response
                         let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
 
                         if let jsonResponse = jsonResponse {
-                            // Print the entire JSON response
                             print("JSON Response: \(jsonResponse)")
 
                             if let message = jsonResponse["message"] as? String {
@@ -209,7 +201,6 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
                                 print("Server Response: \(message)")
                                 
                             } else if let error = jsonResponse["error"] as? String {
-                                // Check if there's an error message in the response
                                 print("Server Error: \(error)")
                             } else {
                                 print("Invalid JSON response format")
@@ -246,15 +237,12 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
     func generateRandomDates(count: Int) -> [Date] {
         var dates: [Date] = []
         
-        // Set up date range for randomness
         let startDate = Date()
         let endDate = Calendar.current.date(byAdding: .year, value: 1, to: startDate)!
         
         for _ in 0..<count {
-            // Generate a random time interval between start and end date
             let randomTimeInterval = TimeInterval(arc4random_uniform(UInt32(endDate.timeIntervalSince(startDate))))
             
-            // Create a random date within the range
             if let randomDate = Calendar.current.date(byAdding: .second, value: Int(randomTimeInterval), to: startDate) {
                 dates.append(randomDate)
             }
