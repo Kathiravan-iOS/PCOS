@@ -10,6 +10,13 @@ class PatientProfileVC: UIViewController {
     @IBOutlet weak var bmiTF: UITextField!
     @IBOutlet weak var diseaseTF: UITextField!
     @IBOutlet weak var scoreTF: UITextField!
+    
+    @IBOutlet weak var hipTF: UITextField!
+    
+    @IBOutlet weak var waistTF: UITextField!
+    
+    @IBOutlet weak var ratioTF: UITextField!
+    
     var shouldHideeditButton: Bool = false
     var selectedPatientName: String?
     
@@ -39,6 +46,9 @@ class PatientProfileVC: UIViewController {
         bmiTF.isUserInteractionEnabled = false
         diseaseTF.isUserInteractionEnabled = false
         scoreTF.isUserInteractionEnabled = false
+        hipTF.isUserInteractionEnabled = false
+        waistTF.isUserInteractionEnabled = false
+        ratioTF.isUserInteractionEnabled = false
     }
 
     func enableUserInteractionForTextFields() {
@@ -50,6 +60,9 @@ class PatientProfileVC: UIViewController {
         bmiTF.isUserInteractionEnabled = true
         diseaseTF.isUserInteractionEnabled = true
         scoreTF.isUserInteractionEnabled = true
+        hipTF.isUserInteractionEnabled = true
+        waistTF.isUserInteractionEnabled = true
+        ratioTF.isUserInteractionEnabled = true
     }
 
     
@@ -78,6 +91,9 @@ class PatientProfileVC: UIViewController {
                     self.bmiTF.text = " \(PatientProfileData.patient_details?.bmi ?? "")"
                     self.diseaseTF.text = " \(PatientProfileData.patient_details?.otherdisease ?? "")"
                     self.scoreTF.text = " \(PatientProfileData.patient_details?.obstetricscore ?? "")"
+                    self.hipTF.text = " \(PatientProfileData.patient_details?.hip ?? "")"
+                    self.waistTF.text = " \(PatientProfileData.patient_details?.waist ?? "")"
+                    self.ratioTF.text = " \(PatientProfileData.patient_details?.hipwaist ?? "")"
                 }
                 
             case .failure(let error):
@@ -94,7 +110,10 @@ class PatientProfileVC: UIViewController {
                                           "Mobile_No": self.occupationTF.text ?? "",
                                           "otherdisease": self.diseaseTF.text ?? "",
                                           "obstetricScore": self.scoreTF.text ?? "",
-                                          "bmi": self.bmiTF.text ?? ""
+                                          "bmi": self.bmiTF.text ?? "",
+                                          "hip": self.hipTF.text ?? "",
+                                          "waist": self.waistTF.text ?? "",
+                                          "hipwaist": self.ratioTF.text ?? ""
         ]
         APIHandler().postAPIValues(type: EditProfileModel.self, apiUrl: ServiceAPI.editPatientprofile, method: "POST", formData: formData) { [weak self] result in
             switch result {

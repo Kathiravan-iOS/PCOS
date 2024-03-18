@@ -72,7 +72,7 @@ extension PatientActivityVC: UITableViewDelegate, UITableViewDataSource {
         else if(indexPath.section == 1) {
             let cell = activityTable.dequeueReusableCell(withIdentifier: "TrackViewTabCell") as! TrackViewTabCell
             
-            cell.viewPatientCat?.addAction(for: .tap) {
+            cell.viewPatientCatButton?.addAction(for: .tap) {
                 
                 let catVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PcosCategory") as! PcosCategory
                 catVC.shouldHideStartButton = true

@@ -111,14 +111,14 @@
             <viewLayoutGuide key="safeArea" id="2aN-ES-ikl"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="assessment" destination="aYh-4h-TOH" id="4Vx-w2-tb0"/>
-                <outlet property="viewPatientCat" destination="l8A-7R-Src" id="6S5-To-mUm"/>
+                <outlet property="assessmentButton" destination="aYh-4h-TOH" id="NCW-1v-94y"/>
+                <outlet property="viewPatientCatButton" destination="l8A-7R-Src" id="eAe-xO-G3V"/>
             </connections>
             <point key="canvasLocation" x="158" y="67"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrow.right" catalog="system" width="128" height="95"/>
+        <image name="arrow.right" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

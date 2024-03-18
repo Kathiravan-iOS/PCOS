@@ -10,6 +10,11 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var otherdisease: UITextField!
     @IBOutlet weak var obstetricScore: UITextField!
     @IBOutlet weak var bmiTextField: UITextField!
+    @IBOutlet weak var Hip: UITextField!
+    @IBOutlet weak var waist: UITextField!
+    @IBOutlet weak var hipwaist: UITextField!
+    
+    
     var username: String = ""
     var pickerView = UIPickerView()
     var options = ["Single Child", "Two Child", "more Than 2","No child","Unmarried"]
@@ -26,6 +31,8 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
 
         height.addTarget(self, action: #selector(calculateBMI), for: .editingChanged)
         weight.addTarget(self, action: #selector(calculateBMI), for: .editingChanged)
+        Hip.addTarget(self, action: #selector(calculateratio), for: .editingChanged)
+        waist.addTarget(self, action: #selector(calculateratio), for: .editingChanged)
         
         name.text = receivedUsername
     }
@@ -50,6 +57,16 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
             bmiTextField.text = String(format: "%.2f", bmiValue)
         } else {
             bmiTextField.text = ""
+        }
+    }
+    
+    @objc func calculateratio(){
+        if let hipwaist1 = Double(Hip.text ?? ""), let waisthip = Double(waist.text ?? ""){
+            let hipwaist2 = (waisthip / hipwaist1)
+            hipwaist.text = String(format: "%.2f" , hipwaist2)
+        }
+        else{
+            hipwaist.text = ""
         }
     }
 
@@ -95,7 +112,11 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
             let weight = weight.text,
             let otherdisease = otherdisease.text,
             let obstetricScore = obstetricScore.text,
-            let bmi = bmiTextField.text
+            let bmi = bmiTextField.text,
+            let hip = Hip.text,
+            let waist =  waist.text,
+            let hipwaist = hipwaist.text
+            
         else {
             print("Failed to extract values from text fields.")
             return
@@ -109,7 +130,10 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
             "weight": weight,
             "otherdisease": otherdisease,
             "obstetricScore": obstetricScore,
-            "bmi": bmi  // Add BMI value to the parameters
+            "bmi": bmi,
+            "hip": hip,
+            "waist":waist,
+            "hipwaist": hipwaist// Add BMI value to the parameters
         ]
 
         // Assuming you have an APIHandler class with a method similar to this
