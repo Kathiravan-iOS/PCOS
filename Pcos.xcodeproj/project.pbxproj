@@ -108,13 +108,15 @@
 		B780F2202B3BF9EB001FF941 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780F21F2B3BF9EB001FF941 /* Animation.swift */; };
 		B780F2222B3C1506001FF941 /* StartHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780F2212B3C1506001FF941 /* StartHomeVC.swift */; };
 		B780F2242B3C3649001FF941 /* todayprogressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780F2232B3C3648001FF941 /* todayprogressModel.swift */; };
+		B795063A2BA2AEC500A65ED4 /* workoutplan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79506392BA2AEC500A65ED4 /* workoutplan.swift */; };
 		B7982C482B2C39EE0085C750 /* PaitientListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7982C472B2C39EE0085C750 /* PaitientListModel.swift */; };
 		B7ACE08B2B286FE300C1F6B7 /* patientprofileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ACE08A2B286FE300C1F6B7 /* patientprofileModel.swift */; };
 		B7BB35CE2B86FF9600CAAE7B /* view_reportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BB35CD2B86FF9600CAAE7B /* view_reportVC.swift */; };
 		B7C841772B7C89D4005C5CFD /* MedicalrepothomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C841762B7C89D4005C5CFD /* MedicalrepothomeViewController.swift */; };
 		B7DB96132B2AF5DF006230F9 /* weightgoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB96122B2AF5DF006230F9 /* weightgoalModel.swift */; };
 		B7DB96172B2B15EF006230F9 /* recorddailyprogreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB96162B2B15EF006230F9 /* recorddailyprogreeVC.swift */; };
-		B7FFDED42B8DEEBB0055DD62 /* LoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFDED32B8DEEBB0055DD62 /* LoaderAnimation.swift */; };
+		B7F7B7772B99751900871714 /* nutrition.csv in Resources */ = {isa = PBXBuildFile; fileRef = B7F7B7762B99751900871714 /* nutrition.csv */; };
+		B7F7B7792B99753400871714 /* NutritionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F7B7782B99753400871714 /* NutritionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,6 +289,7 @@
 		B780F21F2B3BF9EB001FF941 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		B780F2212B3C1506001FF941 /* StartHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartHomeVC.swift; sourceTree = "<group>"; };
 		B780F2232B3C3648001FF941 /* todayprogressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayprogressModel.swift; sourceTree = "<group>"; };
+		B79506392BA2AEC500A65ED4 /* workoutplan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutplan.swift; sourceTree = "<group>"; };
 		B7982C472B2C39EE0085C750 /* PaitientListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaitientListModel.swift; sourceTree = "<group>"; };
 		B7ACE08A2B286FE300C1F6B7 /* patientprofileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patientprofileModel.swift; sourceTree = "<group>"; };
 		B7BB35CD2B86FF9600CAAE7B /* view_reportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view_reportVC.swift; sourceTree = "<group>"; };
@@ -294,7 +297,8 @@
 		B7C841762B7C89D4005C5CFD /* MedicalrepothomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalrepothomeViewController.swift; sourceTree = "<group>"; };
 		B7DB96122B2AF5DF006230F9 /* weightgoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weightgoalModel.swift; sourceTree = "<group>"; };
 		B7DB96162B2B15EF006230F9 /* recorddailyprogreeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recorddailyprogreeVC.swift; sourceTree = "<group>"; };
-		B7FFDED32B8DEEBB0055DD62 /* LoaderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimation.swift; sourceTree = "<group>"; };
+		B7F7B7762B99751900871714 /* nutrition.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nutrition.csv; sourceTree = "<group>"; };
+		B7F7B7782B99753400871714 /* NutritionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,9 +379,12 @@
 				6E35F76D2B7E1ADF0016F845 /* PatientDateModel.swift */,
 				5D2EC0F72AC90A3100284374 /* SceneDelegate.swift */,
 				B7FFDED32B8DEEBB0055DD62 /* LoaderAnimation.swift */,
+				B7F7B7762B99751900871714 /* nutrition.csv */,
 				5DDB74A92B07527400819E74 /* APIHandler.swift */,
 				5DDB74AD2B07540300819E74 /* ServiceAPI.swift */,
 				5D2EC0FB2AC90A3100284374 /* Main.storyboard */,
+				B79506392BA2AEC500A65ED4 /* workoutplan.swift */,
+				B7F7B7782B99753400871714 /* NutritionVC.swift */,
 				B71B1B5C2B7B406D008FBA8C /* CollectionViewCell.swift */,
 				B7BB35CD2B86FF9600CAAE7B /* view_reportVC.swift */,
 				B780F2212B3C1506001FF941 /* StartHomeVC.swift */,
@@ -824,6 +831,7 @@
 				5D3895572ACF11310034B2D8 /* RankedUserList.xib in Resources */,
 				B77FC6212B29B0AC008C5E40 /* nightisland.mp3 in Resources */,
 				5D2EC1362AC90E0F00284374 /* Inter-Light.ttf in Resources */,
+				B7F7B7772B99751900871714 /* nutrition.csv in Resources */,
 				5D32CFC92AD9A917008EFFBF /* TrackViewTabCell.xib in Resources */,
 				5D2EC0FD2AC90A3100284374 /* Main.storyboard in Resources */,
 				5D2EC1372AC90E0F00284374 /* Inter-Regular.ttf in Resources */,
@@ -961,6 +969,7 @@
 				5D7CBF362ACFC76F00DB1F08 /* LoginVC.swift in Sources */,
 				5D7CBF402ACFC93E00DB1F08 /* PatientProfileVC.swift in Sources */,
 				5DD5CE1E2AD019FA00524ACA /* PatientListTabCell.swift in Sources */,
+				B795063A2BA2AEC500A65ED4 /* workoutplan.swift in Sources */,
 				5DD5CE202AD3008B00524ACA /* PatientCalendaVC.swift in Sources */,
 				5D2EC1392AC90F5400284374 /* UIView.swift in Sources */,
 				B766427F2B32D78C004C19B7 /* assessmentHomeVC.swift in Sources */,
@@ -1014,6 +1023,7 @@
 				5D258D5D2AF8D888008AE97F /* PaitentTrackMomentVC.swift in Sources */,
 				B780F2222B3C1506001FF941 /* StartHomeVC.swift in Sources */,
 				5DD5CE142AD002C900524ACA /* UserDefault.swift in Sources */,
+				B7F7B7792B99753400871714 /* NutritionVC.swift in Sources */,
 				5DCD78332AF89ADC00F3BA41 /* ExerciseListVC.swift in Sources */,
 				6E35F76E2B7E1AE00016F845 /* PatientDateModel.swift in Sources */,
 				5DCD782F2AF893E100F3BA41 /* MealsDetailsVC.swift in Sources */,

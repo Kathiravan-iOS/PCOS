@@ -12,7 +12,7 @@ class DoctorCatInstructionVC: UIViewController {
     var selectedPatientName: String?
 
     @IBOutlet weak var instructionTableView: UITableView!
-    var instructionList = ["Patient Profile", "Patient Activity", "Patient’s Menstural Calender", "View Assesment Result", "View Patient’s Today Progress", "View Patient’s Medical Records"]
+    var instructionList = ["Patient Profile", "Patient Activity", "Patient’s Menstural Calender", "View Patient’s Today Progress", "View Patient’s Medical Records"]
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.setupBackButton()
@@ -65,8 +65,8 @@ class DoctorCatInstructionVC: UIViewController {
                     destinationViewController = UIViewController()
                 }
                
-            case "View Assesment Result":
-                destinationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PatientAssementResultVC") as! PatientAssementResultVC
+//            case "View Assesment Result":
+//                destinationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PatientAssementResultVC") as! PatientAssementResultVC
             case "View Patient’s Today Progress":
                 let todayProgressVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodayPatientProgessVC") as! TodayPatientProgessVC
                         todayProgressVC.selectedPatientName = selectedPatientName
