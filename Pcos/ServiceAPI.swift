@@ -9,8 +9,9 @@ import Foundation
 
 
 struct ServiceAPI {
+
     
-    static var baseURL = "http://192.168.0.239/pcos_DB/"
+    static var baseURL = "http://192.168.59.144/pcos_DB/"
     static var loginURL = baseURL+"loginPost.php"
     static var profileURL = baseURL+"personaldetails.php"
     static var forgotPasswordURL = baseURL+"forgotpassword.php"

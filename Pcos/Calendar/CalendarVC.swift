@@ -19,7 +19,7 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
     
     @IBOutlet weak var calendar_View: UIView!
     var usernameForCalendar: String = ""
-    var selectedDatesArray: [String] = [] 
+    var selectedDatesArray: [String] = [] // Array to store formatted dates
     var multiSelection: UICalendarSelectionMultiDate!
     var monthSelection = DateComponents()
     var cycle = String(365)
@@ -45,10 +45,10 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
         self.fetchSelectedDates()
         customizeNavigationBar(title: "Menstrual Calendar")
     }
-    
+
     func fetchSelectedDates() {
         if !self.selectedPatientName.isEmpty {
-            let param = ["name":self.selectedPatientName]
+            let param = ["name": self.selectedPatientName]
             APIHandler.shared.postAPIValues(type: PatientDateModel.self, apiUrl: "\(ServiceAPI.baseURL)calenderD.php", method: "POST", formData: param) { response in
                 switch response {
                 case .success(let result):
@@ -61,7 +61,7 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
             }
         }
     }
-    
+
     func showSelectedDates() {
         
         if  let selectedDates = patientSelectedDates?.dates {
@@ -111,26 +111,22 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
     }
     
 
-    
     func multiDateSelection(_ selection: UICalendarSelectionMultiDate, canSelectDate dateComponents: DateComponents) -> Bool {
-        let calendar = Calendar(identifier: .gregorian)
-        let currentDate = calendar.startOfDay(for: Date())
-        let selectedDate = calendar.date(from: dateComponents)!
-        let daysFromToday = calendar.dateComponents([.day], from: currentDate, to: selectedDate).day ?? 0
-        let numericValue = Int(cycle.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())
-        if let cycleValue = numericValue {
-            intCycle = cycleValue
-        } else {
-            print("Invalid cycle value")
-        }
-        if daysFromToday >= 0 && daysFromToday < intCycle {
-            return true
-        } else {
+        // Convert the selected date components to a Date object
+        guard let selectedDate = calendar.date(from: dateComponents) else {
             return false
         }
+        
+        // Check if the selected date is already in the array of selected dates
+        if selectedDateArray?.contains(selectedDate) ?? false {
+            return false // Date is already selected, prevent selection
+        }
+        
+        // Allow selection if the date is not already selected
+        return true
     }
-    
-    
+
+
     
     func multiDateSelection(_ selection: UICalendarSelectionMultiDate, didSelectDate dateComponents: DateComponents) {
         let calendar = Calendar(identifier: .gregorian)
@@ -150,26 +146,22 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
         let formattedDate = formatter.string(from: deselectedDate)
-        
-        
         print(formattedDate, "formattedDate")
     }
 
     override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
-            
             sendDataToServer()
         }
 
     func sendDataToServer() {
-        print("Username: \(usernameForCalendar)")
+        print("Username: \(self.selectedPatientName)")
         print("Selected Dates Array: \(selectedDatesArray)")
-
         guard !selectedDatesArray.isEmpty else {
             print("No selected dates to send to the server.")
             return
         }
-        let names = usernameForCalendar
+        let names = selectedPatientName
         let formattedDates = selectedDatesArray.compactMap { formatDate($0) }
         let postData: [String: Any] = [
             "name": names,
@@ -189,8 +181,7 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
-
-
+            // Make the API request
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
 
                 if let error = error {
@@ -203,7 +194,12 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
                             print("JSON Response: \(jsonResponse)")
 
                             if let message = jsonResponse["message"] as? String {
+                                // Check if the "message" key exists in the response
+                                if message ==  "Data inserted successfully." {
+                                    self.fetchSelectedDates()
+                                }
                                 print("Server Response: \(message)")
+                                
                             } else if let error = jsonResponse["error"] as? String {
                                 print("Server Error: \(error)")
                             } else {
@@ -217,7 +213,6 @@ class CalendarVC: UIViewController, UICalendarViewDelegate, UICalendarSelectionM
                     }
                 }
             }
-
             task.resume()
         } catch {
             print("Error converting data to JSON: \(error)")

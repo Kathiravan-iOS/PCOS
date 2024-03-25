@@ -26,7 +26,8 @@ class BetterSleepVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAudioInfo()
-        
+        customizeNavigationBar(title: "Better Sleep")
+
         // Set the passed image to your UIImageView
         audioimage.image = meditationImage
     }

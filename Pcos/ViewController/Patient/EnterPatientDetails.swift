@@ -163,6 +163,7 @@ extension EnterPatientDetails {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        obstetricScore.text = options[row]
         return options[row]
     }
 

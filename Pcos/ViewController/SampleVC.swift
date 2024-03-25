@@ -7,6 +7,7 @@ class SampleVC: UIViewController {
     var mainModerate = 0
     var mainSevere = 0
     var didSelect = false
+    var isAnswerSelected = false
   
     var selectedIndexPath: IndexPath? = nil
 
@@ -114,7 +115,9 @@ extension SampleVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = qnsAnsList.dequeueReusableCell(withIdentifier: "QnsAnsTabCell", for: indexPath) as! QnsAnsTabCell
+        isAnswerSelected = false
         cell.ansLbl.text = optionModelData[indexPath.row].optionText
+        next_Ot.isHidden = true
         return cell
     }
     
@@ -128,19 +131,24 @@ extension SampleVC: UITableViewDelegate, UITableViewDataSource {
               cell.contentView.backgroundColor = .white // Set your desired background color
           }
         let cell = qnsAnsList.dequeueReusableCell(withIdentifier: "QnsAnsTabCell", for: indexPath) as! QnsAnsTabCell
+        
         if let cell = tableView.cellForRow(at: indexPath) as? QnsAnsTabCell {
-                   let isSelected = indexPath == selectedIndexPath
-                   if isSelected {
-                       cell.checkBtn.setImage(UIImage(named: "unselected"), for: .normal)
-                       selectedIndexPath = nil
-                   } else {
-                       if let previousIndexPath = selectedIndexPath, let previousCell = tableView.cellForRow(at: previousIndexPath) as? QnsAnsTabCell {
-                           previousCell.checkBtn.setImage(UIImage(named: "unselected"), for: .normal)
-                       }
-                       cell.checkBtn.setImage(UIImage(named: "selected"), for: .normal)
-                       selectedIndexPath = indexPath
-                   }
-               }
+            next_Ot.isHidden = false
+            let isSelected = indexPath == selectedIndexPath
+            if isSelected {
+                cell.checkBtn.setImage(UIImage(named: "unselected"), for: .normal)
+                selectedIndexPath = nil
+                isAnswerSelected = false
+            } else {
+                if let previousIndexPath = selectedIndexPath, let previousCell = tableView.cellForRow(at: previousIndexPath) as? QnsAnsTabCell {
+                    previousCell.checkBtn.setImage(UIImage(named: "unselected"), for: .normal)
+                    isAnswerSelected = false
+                }
+                cell.checkBtn.setImage(UIImage(named: "selected"), for: .normal)
+                selectedIndexPath = indexPath
+                isAnswerSelected = true
+            }
+        }
         switch indexPath.row {
         case 0..<3:
             mild += 1
@@ -152,24 +160,30 @@ extension SampleVC: UITableViewDelegate, UITableViewDataSource {
             break
         }
         self.next_Ot.addAction(for: .tap) {
-            self.currentQuestionIndex = self.currentQuestionIndex + 1
+            if !self.isAnswerSelected {
+                self.popUpAlert(title: "", message: "Please select any option", actionTitles: ["OK"], actionStyle: [.cancel]) { _ in
+                    
+                }
+            } else {
+                self.currentQuestionIndex = self.currentQuestionIndex + 1
                 self.mainMild += mild
                 self.mainModerate += moderate
                 self.mainSevere += severe
-            self.selectedIndexPath = nil
-            print("mainMild",self.mainMild,"mainModerate",self.mainModerate,"mainSevere",self.mainSevere)
-            UserDB.shared.setValue(self.mainMild, forKey: "mainMild")
-            UserDB.shared.setValue(self.mainModerate, forKey: "mainModerate")
-            UserDB.shared.setValue(self.mainSevere, forKey: "mainSevere")
-
-            for cell in self.qnsAnsList.visibleCells as! [QnsAnsTabCell] {
+                self.selectedIndexPath = nil
+                print("mainMild",self.mainMild,"mainModerate",self.mainModerate,"mainSevere",self.mainSevere)
+                UserDB.shared.setValue(self.mainMild, forKey: "mainMild")
+                UserDB.shared.setValue(self.mainModerate, forKey: "mainModerate")
+                UserDB.shared.setValue(self.mainSevere, forKey: "mainSevere")
+                
+                for cell in self.qnsAnsList.visibleCells as! [QnsAnsTabCell] {
                     cell.checkBtn.setImage(UIImage(named: "unselected"), for: .normal)
                 }
-            self.nextQnsLoad()
-            self.qnsAnsList.reloadData()
-            
+                self.nextQnsLoad()
+                self.qnsAnsList.reloadData()
+                
+            }
+            _ = self.optionModelData[indexPath.row].optionText
         }
-        let selectedOption = optionModelData[indexPath.row].optionText
     }
 }
 

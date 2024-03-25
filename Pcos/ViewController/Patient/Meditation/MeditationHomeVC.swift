@@ -17,7 +17,8 @@ class MeditationHomeVC: UIViewController {
     
     
     override func viewDidLoad() {
-        
+        customizeNavigationBar(title: "Meditation")
+
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sleepImageTapped))
         sleep.isUserInteractionEnabled = true

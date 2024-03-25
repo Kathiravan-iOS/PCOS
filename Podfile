@@ -16,6 +16,6 @@ target 'Pcos' do
     # Pods for testing
   end
 pod 'Charts'
-
+pod 'NVActivityIndicatorView'
 
 end

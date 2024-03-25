@@ -94,9 +94,17 @@ class SignupVC: UIViewController {
 
     
     func detailsVC(username : String) {
-        let signup = UIStoryboard(name: "Main", bundle: nil)
-        let vc = signup.instantiateViewController(withIdentifier: "DoctorHomeVC") as! DoctorHomeVC
-//        vc.username = username
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let navigationController = self.navigationController {
+            for controller in navigationController.viewControllers {
+                if controller is DoctorHomeVC {
+                    navigationController.popToViewController(controller, animated: true)
+                    break
+                }
+            }
+        }
+//        let signup = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = signup.instantiateViewController(withIdentifier: "DoctorHomeVC") as! DoctorHomeVC
+////        vc.username = username
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
