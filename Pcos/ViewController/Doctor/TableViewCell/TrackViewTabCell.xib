@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,16 +32,24 @@
                                                 <color key="backgroundColor" red="1" green="0.63529411759999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="Right" imagePlacement="trailing" title="Track Assesment Result" imagePadding="50">
+                                                <buttonConfiguration key="configuration" style="plain" title="Assessment">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                                 </buttonConfiguration>
                                             </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="W9W-Fy-GdZ">
+                                                <rect key="frame" x="367" y="31.5" width="35" height="24"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="aYh-4h-TOH" firstAttribute="leading" secondItem="hKS-Xp-QhN" secondAttribute="leading" id="65C-Vz-92b"/>
+                                            <constraint firstItem="W9W-Fy-GdZ" firstAttribute="leading" secondItem="hKS-Xp-QhN" secondAttribute="leading" constant="367" id="Fip-1H-YH6"/>
+                                            <constraint firstAttribute="bottom" secondItem="W9W-Fy-GdZ" secondAttribute="bottom" constant="8" id="THB-iN-cZu"/>
+                                            <constraint firstAttribute="trailing" secondItem="W9W-Fy-GdZ" secondAttribute="trailing" constant="8" id="WGx-DS-zZo"/>
                                             <constraint firstAttribute="bottom" secondItem="aYh-4h-TOH" secondAttribute="bottom" id="csi-7U-rGd"/>
                                             <constraint firstItem="aYh-4h-TOH" firstAttribute="top" secondItem="hKS-Xp-QhN" secondAttribute="top" constant="20" id="lT8-sh-lwY"/>
+                                            <constraint firstItem="W9W-Fy-GdZ" firstAttribute="top" secondItem="hKS-Xp-QhN" secondAttribute="top" constant="29" id="p7C-Pp-fSc"/>
                                             <constraint firstAttribute="trailing" secondItem="aYh-4h-TOH" secondAttribute="trailing" id="sfd-Rs-X7o"/>
                                         </constraints>
                                     </view>
@@ -53,16 +61,24 @@
                                                 <color key="backgroundColor" red="0.62745098040000002" green="0.85882352939999995" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="Right" imagePlacement="trailing" title="View Patient Category" imagePadding="50">
+                                                <buttonConfiguration key="configuration" style="plain" title="View Patient Category">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                                 </buttonConfiguration>
                                             </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4Nw-l5-ozd">
+                                                <rect key="frame" x="367" y="10.5" width="35" height="26"/>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="l8A-7R-Src" secondAttribute="bottom" constant="20" id="1JK-7K-89Z"/>
                                             <constraint firstItem="l8A-7R-Src" firstAttribute="leading" secondItem="PYu-up-Yf1" secondAttribute="leading" id="3MX-e8-bEi"/>
+                                            <constraint firstItem="4Nw-l5-ozd" firstAttribute="leading" secondItem="PYu-up-Yf1" secondAttribute="leading" constant="367" id="MAz-AN-Mxl"/>
+                                            <constraint firstItem="4Nw-l5-ozd" firstAttribute="top" secondItem="PYu-up-Yf1" secondAttribute="top" constant="8" id="UG4-2k-otE"/>
                                             <constraint firstItem="l8A-7R-Src" firstAttribute="top" secondItem="PYu-up-Yf1" secondAttribute="top" id="a7U-YG-SzU"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Nw-l5-ozd" secondAttribute="trailing" constant="8" id="bnM-I2-wYi"/>
+                                            <constraint firstAttribute="bottom" secondItem="4Nw-l5-ozd" secondAttribute="bottom" constant="27" id="jgd-tP-A1i"/>
                                             <constraint firstAttribute="trailing" secondItem="l8A-7R-Src" secondAttribute="trailing" id="pMc-71-dud"/>
                                         </constraints>
                                     </view>
@@ -95,14 +111,14 @@
             <viewLayoutGuide key="safeArea" id="2aN-ES-ikl"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="assessment" destination="aYh-4h-TOH" id="4Vx-w2-tb0"/>
-                <outlet property="viewPatientCat" destination="l8A-7R-Src" id="6S5-To-mUm"/>
+                <outlet property="assessmentButton" destination="aYh-4h-TOH" id="NCW-1v-94y"/>
+                <outlet property="viewPatientCatButton" destination="l8A-7R-Src" id="eAe-xO-G3V"/>
             </connections>
             <point key="canvasLocation" x="158" y="67"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Right" width="30" height="30"/>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

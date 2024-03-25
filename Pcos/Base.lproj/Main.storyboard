@@ -1267,58 +1267,78 @@ Successfully !</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zRR-p6-01f">
-                                <rect key="frame" x="21.333333333333343" y="256" width="385.33333333333326" height="427"/>
+                                <rect key="frame" x="21.333333333333343" y="266" width="385.33333333333326" height="474"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vop-K9-lgL">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="427"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="474"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FCn-rP-xPT">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="427"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="474"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zi-bv-pap">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="44.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJj-Cl-so1">
-                                                        <rect key="frame" x="0.0" y="54.333333333333314" width="187.66666666666666" height="44.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="44" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile No:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5a-J6-hWK">
-                                                        <rect key="frame" x="0.0" y="109.00000000000001" width="187.66666666666666" height="44.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="88" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height(cm) :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9X-zQ-3vN">
-                                                        <rect key="frame" x="0.0" y="163.66666666666669" width="187.66666666666666" height="44.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="132" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight (Kg):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oov-qz-IaY">
-                                                        <rect key="frame" x="0.0" y="218.33333333333331" width="187.66666666666666" height="44.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="176" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6c-4v-EEw">
-                                                        <rect key="frame" x="0.0" y="273" width="187.66666666666666" height="44.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="220" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any Other Disease :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3x-pQ-zPt">
-                                                        <rect key="frame" x="0.0" y="327.66666666666663" width="187.66666666666666" height="44.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="264" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obstetric Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vog-Mr-cqX">
-                                                        <rect key="frame" x="0.0" y="382.33333333333337" width="187.66666666666666" height="44.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="308" width="187.66666666666666" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hip (cm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ7-aH-XAS">
+                                                        <rect key="frame" x="0.0" y="352" width="187.66666666666666" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="waist(cm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1hi-Br-K9D">
+                                                        <rect key="frame" x="0.0" y="396" width="187.66666666666666" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hip waist Ratio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="by5-Vy-pWO">
+                                                        <rect key="frame" x="0.0" y="440" width="187.66666666666666" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1335,49 +1355,64 @@ Successfully !</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6SU-zr-hz8">
-                                        <rect key="frame" x="197.66666666666669" y="0.0" width="187.66666666666669" height="427"/>
+                                        <rect key="frame" x="197.66666666666669" y="0.0" width="187.66666666666669" height="474"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LFW-qy-but">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="427"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="474"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVB-ef-Z4v">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="44.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.95925635099999995" green="0.52648091320000001" blue="0.7602482438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMj-qx-8xO">
-                                                        <rect key="frame" x="0.0" y="54.333333333333314" width="187.66666666666666" height="44.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="44" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hy5-h4-6es">
-                                                        <rect key="frame" x="0.0" y="109.00000000000001" width="187.66666666666666" height="44.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="88" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TVu-Ak-TR8">
-                                                        <rect key="frame" x="0.0" y="163.66666666666669" width="187.66666666666666" height="44.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="132" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eS3-df-kwh">
-                                                        <rect key="frame" x="0.0" y="218.33333333333331" width="187.66666666666666" height="44.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="176" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oIk-Uz-xpJ">
-                                                        <rect key="frame" x="0.0" y="273" width="187.66666666666666" height="44.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="220" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YAY-OV-Jpp">
-                                                        <rect key="frame" x="0.0" y="327.66666666666663" width="187.66666666666666" height="44.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="264" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVG-9k-8AP">
-                                                        <rect key="frame" x="0.0" y="382.33333333333337" width="187.66666666666666" height="44.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="308" width="187.66666666666666" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHJ-sL-0HB">
+                                                        <rect key="frame" x="0.0" y="352" width="187.66666666666666" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yr9-2X-AXd">
+                                                        <rect key="frame" x="0.0" y="396" width="187.66666666666666" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCE-Kl-4fa">
+                                                        <rect key="frame" x="0.0" y="440" width="187.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -1395,7 +1430,7 @@ Successfully !</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKC-yN-xY0">
-                                <rect key="frame" x="128.33333333333331" y="703" width="171.33333333333331" height="55.666666666666629"/>
+                                <rect key="frame" x="128.33333333333331" y="760" width="171.33333333333331" height="59.666666666666629"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.49019607840000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Submit"/>
@@ -1424,7 +1459,7 @@ Successfully !</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile 1" translatesAutoresizingMaskIntoConstraints="NO" id="dFb-i0-9Ly">
-                                <rect key="frame" x="128.33333333333331" y="77" width="171.33333333333331" height="139"/>
+                                <rect key="frame" x="128.33333333333331" y="77" width="171.33333333333331" height="149"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IcD-DW-Ash"/>
@@ -1451,9 +1486,12 @@ Successfully !</string>
                         <outlet property="diseaseTF" destination="YAY-OV-Jpp" id="A2l-OO-Is3"/>
                         <outlet property="editButton" destination="pKC-yN-xY0" id="Qh7-qv-xmS"/>
                         <outlet property="heightTF" destination="TVu-Ak-TR8" id="eon-Ba-Rli"/>
+                        <outlet property="hipTF" destination="nHJ-sL-0HB" id="7cL-8T-gTe"/>
                         <outlet property="nameTF" destination="FVB-ef-Z4v" id="utT-UY-CC1"/>
                         <outlet property="occupationTF" destination="hy5-h4-6es" id="wkR-Pg-Vuz"/>
+                        <outlet property="ratioTF" destination="TCE-Kl-4fa" id="GOC-4S-c2Q"/>
                         <outlet property="scoreTF" destination="CVG-9k-8AP" id="ZEl-yH-OsV"/>
+                        <outlet property="waistTF" destination="yr9-2X-AXd" id="4Ss-oZ-UlR"/>
                         <outlet property="weight" destination="eS3-df-kwh" id="trC-Mt-L2Y"/>
                     </connections>
                 </viewController>
@@ -1682,7 +1720,7 @@ Successfully !</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-SR-RaB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Taken(Kcal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-SR-RaB">
                                                 <rect key="frame" x="0.0" y="65.999999999999972" width="137.66666666666666" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -1837,7 +1875,7 @@ Successfully !</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5H-Gw-oHh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8796" y="734"/>
+            <point key="canvasLocation" x="8795.3271028037379" y="733.47732181425488"/>
         </scene>
         <!--Today Patient ProgessVC-->
         <scene sceneID="5Uu-Ff-ISH">
@@ -1884,7 +1922,7 @@ Successfully !</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-Da-kEw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Taken(Kcal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-Da-kEw">
                                                 <rect key="frame" x="0.0" y="74.000000000000028" width="137.66666666666666" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -1896,7 +1934,7 @@ Successfully !</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caR-P0-8Ag">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Duration(min)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caR-P0-8Ag">
                                                 <rect key="frame" x="0.0" y="148.00000000000003" width="137.66666666666666" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -1926,7 +1964,7 @@ Successfully !</string>
                                         <rect key="frame" x="21" y="26.333333333333314" width="169" height="212"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="esl-u1-Krr">
-                                                <rect key="frame" x="0.0" y="0.0" width="192.33333333333334" height="27"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="27"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1947,7 +1985,7 @@ Successfully !</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="5ys-Rw-wDF">
-                                                <rect key="frame" x="0.0" y="111" width="192.33333333333334" height="27"/>
+                                                <rect key="frame" x="0.0" y="111" width="169" height="27"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3756,39 +3794,37 @@ vitamin B6 10%.</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzD-QJ-bWX">
                                 <rect key="frame" x="10" y="265" width="408" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Polycystic ovary syndrome (PCOS) is an endocrine system disorder where small fluid-filled sacs develop on the ovaries. PCOS affects women in their reproductive years.
+                                <mutableString key="text">Polycystic Ovary Syndrome (PCOS) affects millions of women worldwide, impacting their physical and mental health. To assist in managing PCOS effectively, our app provides meal plans, exercise routines, and meditation practices. This guide aims to help users maximize the app's benefits, providing detailed instructions on usage and understanding the impact of these practices on PCOS management.
 
-It is also known as or Stein-Leventhal syndrome.
+Section 1: Meal Planning
+1. Follow the Plan: Stick to the meal plans provided by the app.
+2.Regular Eating Schedule: Maintain regular eating times to prevent blood sugar spikes and crashes, which can exacerbate PCOS symptoms.
+3.Portion Control: Pay attention to portion sizes to avoid overeating and support weight management goals.
 
-Symptoms include changes to the menstrual cycle and excess hair growth. Untreated, it can lead to infertility and other complications. The exact cause is unknown.
+Result: Consistently following the app's meal plans can lead to improved insulin sensitivity, weight management, and reduction in PCOS symptoms such as irregular periods and acne.
 
-Early diagnosis and treatment are recommended. Weight loss may also decrease the risk of associated health risks, such as insulin resistance, type 2 diabetes, high cholesterol, heart disease, and high blood pressure.Fast facts on PCOS
-PCOS is one of the most common hormonal endocrine disorders affecting 8-20 percent of women, many of whom do not have a diagnosis.
-PCOS is linked to the development of other medical conditions, such as insulin resistance, type 2 diabetes, high cholesterol, high blood pressure, and heart disease.
-More than half of women with PCOS develop type 2 diabetes before the age of 40 years.
-Around 70 percent of ovulatory fertility issues are related to PCOS. Symptoms
-Apart from cysts on the ovaries, symptoms of PCOS include:
+Section 2: Exercise Routines
+Exercise is crucial for managing PCOS as it helps improve insulin sensitivity, boost metabolism, and reduce stress. Here's how to effectively utilize the exercise routines provided by the app:
 
-irregular menses
-excess androgen levels
-sleep apnea
-high stress levels
-high blood pressure
-skin tags
-infertility
-acne, oily skin, and dandruff
-high cholesterol and triglycerides
-acanthosis nigricans, or dark patches of skin
-fatigue
-female pattern balding
-insulin resistance
-type 2 diabetes
-pelvic pain
-depression and anxiety
-weight management difficulties including weight gain or difficulty losing weight
-excessive facial and body hair growth, known as hirsutism
-decreased libido
-</string>
+1. Variety: Explore the diverse range of exercise routines offered by the app, including cardio, strength training, to find what works best for you.
+2. Consistency: Aim for regular exercise sessions, ideally 3-5 times per week, to experience the full benefits of physical activity in managing PCOS.
+3. Progression: Gradually increase the intensity and duration of your workouts as your fitness level improves to challenge your body and achieve better results.
+4. Listen to Your Body: Pay attention to how your body responds to exercise and modify workouts as needed to avoid injury and accommodate any PCOS-related symptoms.
+
+Results: Regular exercise can help improve insulin sensitivity, promote weight loss, regulate menstrual cycles, and reduce stress levels, contributing to better PCOS management overall.
+
+Section 3: Meditation Practices
+Meditation and mindfulness techniques can be powerful tools for managing stress, which is often heightened in individuals with PCOS. Here's how to incorporate meditation into your routine:
+
+1. Daily Practice: Set aside time each day for meditation, even if it's just a few minutes, to cultivate a sense of calm and relaxation.
+2. Guided Meditations: Utilize the guided meditation sessions provided by the app to help you focus your mind and reduce stress effectively.
+3. Mindful Breathing: Practice deep breathing exercises throughout the day to alleviate anxiety and promote mental clarity.
+4. Gratitude Practice: Cultivate a gratitude mindset by reflecting on things you're thankful for, which can help shift your focus away from stressors associated with PCOS.
+
+Results : Regular meditation can reduce cortisol levels, improve mood, enhance emotional well-being, and mitigate the impact of stress on PCOS symptoms.
+
+Conclusion:
+By following the guidelines outlined in this comprehensive guide, users can harness the full potential of our PCOS app to effectively manage their condition. Consistent adherence to meal plans, engaging in regular exercise routines, and incorporating meditation practices can lead to significant improvements in PCOS symptoms and overall quality of life. Remember, managing PCOS is a journey, and the app is here to support you every step of the way.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3919,63 +3955,81 @@ decreased libido
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUk-Jr-MBL">
-                                <rect key="frame" x="0.0" y="46.999999999999993" width="375.66666666666669" height="70.333333333333314"/>
+                                <rect key="frame" x="0.0" y="47" width="375.66666666666669" height="95"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-bi-blY">
-                                <rect key="frame" x="0.0" y="117.33333333333331" width="375.66666666666669" height="586"/>
+                                <rect key="frame" x="0.0" y="141.99999999999994" width="375.66666666666669" height="809.66666666666652"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVg-uh-8LY">
-                                        <rect key="frame" x="10" y="10" width="144" height="341"/>
+                                        <rect key="frame" x="10" y="10" width="144" height="471.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="puJ-Ys-vkp">
-                                                <rect key="frame" x="7.3333333333333286" y="12.666666666666686" width="129.66666666666669" height="316"/>
+                                                <rect key="frame" x="7.3333333333333286" y="77" width="129.66666666666669" height="317.33333333333331"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7SX-bm-H09">
-                                                        <rect key="frame" x="0.0" y="0.0" width="129.66666666666666" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="129.66666666666666" height="10.666666666666666"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fGB-Qq-EbN">
-                                                        <rect key="frame" x="0.0" y="42" width="129.66666666666666" height="22"/>
+                                                        <rect key="frame" x="0.0" y="30.666666666666668" width="129.66666666666666" height="10.666666666666668"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile No:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAm-al-sS7">
-                                                        <rect key="frame" x="0.0" y="84" width="129.66666666666666" height="22"/>
+                                                        <rect key="frame" x="0.0" y="61.333333333333336" width="129.66666666666666" height="10.666666666666664"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height (cm):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duA-ZV-gl2">
-                                                        <rect key="frame" x="0.0" y="126.00000000000003" width="129.66666666666666" height="22"/>
+                                                        <rect key="frame" x="0.0" y="92" width="129.66666666666666" height="10.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight(Kg) :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIW-JJ-FOt">
-                                                        <rect key="frame" x="0.0" y="168.00000000000003" width="129.66666666666666" height="22"/>
+                                                        <rect key="frame" x="0.0" y="122.6666666666667" width="129.66666666666666" height="10.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-m1-axy">
-                                                        <rect key="frame" x="0.0" y="210.00000000000003" width="129.66666666666666" height="22"/>
+                                                        <rect key="frame" x="0.0" y="153.33333333333331" width="129.66666666666666" height="10.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any Other Disease :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXM-6H-bt8">
-                                                        <rect key="frame" x="0.0" y="252" width="129.66666666666666" height="22"/>
+                                                        <rect key="frame" x="0.0" y="184" width="129.66666666666666" height="10.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obstetric Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJA-2s-Jba">
-                                                        <rect key="frame" x="0.0" y="294" width="129.66666666666666" height="22"/>
+                                                        <rect key="frame" x="0.0" y="214.66666666666669" width="129.66666666666666" height="10.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hip (cm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3z0-sg-3WC">
+                                                        <rect key="frame" x="0.0" y="245.33333333333331" width="129.66666666666666" height="10.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waist (cm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeI-hZ-jP4">
+                                                        <rect key="frame" x="0.0" y="276" width="129.66666666666666" height="10.666666666666686"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HipWaist Ratio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Em2-kp-REA">
+                                                        <rect key="frame" x="0.0" y="306.66666666666669" width="129.66666666666666" height="10.666666666666686"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3992,10 +4046,10 @@ decreased libido
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBd-S6-9Mb">
-                                        <rect key="frame" x="164" y="10" width="201.66666666666663" height="341"/>
+                                        <rect key="frame" x="164" y="10" width="201.66666666666663" height="471.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7mA-nF-yiR">
-                                                <rect key="frame" x="10" y="17" width="181.66666666666666" height="307"/>
+                                                <rect key="frame" x="10" y="23.666666666666657" width="181.66666666666666" height="424"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DlV-Uv-4br">
                                                         <rect key="frame" x="0.0" y="0.0" width="181.66666666666666" height="34"/>
@@ -4014,27 +4068,42 @@ decreased libido
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pQp-Kq-4BT">
-                                                        <rect key="frame" x="0.0" y="116.99999999999997" width="181.66666666666666" height="34"/>
+                                                        <rect key="frame" x="0.0" y="117.00000000000003" width="181.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHK-VX-0dr">
-                                                        <rect key="frame" x="0.0" y="155.99999999999997" width="181.66666666666666" height="34"/>
+                                                        <rect key="frame" x="0.0" y="156.00000000000003" width="181.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRE-e9-Xef">
-                                                        <rect key="frame" x="0.0" y="194.99999999999997" width="181.66666666666666" height="34"/>
+                                                        <rect key="frame" x="0.0" y="195.00000000000003" width="181.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehl-hZ-1fT">
-                                                        <rect key="frame" x="0.0" y="233.99999999999997" width="181.66666666666666" height="34.000000000000028"/>
+                                                        <rect key="frame" x="0.0" y="234.00000000000003" width="181.66666666666666" height="33.999999999999972"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fwn-FB-dQA">
                                                         <rect key="frame" x="0.0" y="273" width="181.66666666666666" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9c-rE-xlF">
+                                                        <rect key="frame" x="0.0" y="312" width="181.66666666666666" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNC-CW-zuX">
+                                                        <rect key="frame" x="0.0" y="351" width="181.66666666666666" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJQ-ee-YtG">
+                                                        <rect key="frame" x="0.0" y="390" width="181.66666666666666" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -4064,7 +4133,7 @@ decreased libido
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nri-PW-9Ci">
-                                <rect key="frame" x="131.66666666666666" y="549.66666666666663" width="112.66666666666666" height="44.666666666666629"/>
+                                <rect key="frame" x="131.66666666666666" y="781" width="112.66666666666666" height="61.666666666666629"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.49019607840000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Submit"/>
@@ -4111,13 +4180,16 @@ decreased libido
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Hip" destination="x9c-rE-xlF" id="Mdb-bd-ywP"/>
                         <outlet property="age" destination="6O6-Gs-gB1" id="4g1-1o-uhh"/>
                         <outlet property="bmiTextField" destination="oRE-e9-Xef" id="UpE-ho-QkE"/>
                         <outlet property="height" destination="pQp-Kq-4BT" id="JQQ-u6-rsJ"/>
+                        <outlet property="hipwaist" destination="RJQ-ee-YtG" id="gzI-iE-82H"/>
                         <outlet property="mobile_no" destination="Hwp-z8-8ai" id="3ar-F5-EYk"/>
                         <outlet property="name" destination="DlV-Uv-4br" id="aam-eJ-OLQ"/>
                         <outlet property="obstetricScore" destination="Fwn-FB-dQA" id="TKT-zQ-Fvv"/>
                         <outlet property="otherdisease" destination="ehl-hZ-1fT" id="QgJ-Vr-wDn"/>
+                        <outlet property="waist" destination="DNC-CW-zuX" id="jQC-ke-DUS"/>
                         <outlet property="weight" destination="ZHK-VX-0dr" id="evo-oa-0wA"/>
                     </connections>
                 </viewController>
@@ -4256,15 +4328,13 @@ decreased libido
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7x-yz-hkp">
                                 <rect key="frame" x="0.0" y="705.33333333333337" width="428" height="186.66666666666663"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Patient Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVg-mD-Dab">
-                                        <rect key="frame" x="21.333333333333343" y="10" width="385.33333333333326" height="37.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsX-Ua-zUH">
-                                        <rect key="frame" x="85" y="97.333333333333258" width="256.66666666666669" height="49.333333333333343"/>
+                                        <rect key="frame" x="85.666666666666657" y="68.666666666666629" width="256.66666666666674" height="49.333333333333343"/>
                                         <color key="backgroundColor" red="0.92156862750000001" green="0.49019607840000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49.329999999999998" id="xR8-mz-cls"/>
+                                            <constraint firstAttribute="width" constant="256.67000000000002" id="zAk-wT-MJD"/>
+                                        </constraints>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Add Patient"/>
                                         <userDefinedRuntimeAttributes>
@@ -4291,21 +4361,21 @@ decreased libido
                                             <action selector="addpatinet:" destination="fNh-EM-vlB" eventType="touchUpInside" id="fkC-Pp-WFb"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Patient Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVg-mD-Dab">
+                                        <rect key="frame" x="21.333333333333343" y="10" width="385.33333333333326" height="37.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="top" secondItem="yVg-mD-Dab" secondAttribute="bottom" constant="50" id="7uE-4b-aqZ"/>
-                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="top" secondItem="yVg-mD-Dab" secondAttribute="bottom" constant="50" id="AJs-wX-OFN"/>
                                     <constraint firstItem="yVg-mD-Dab" firstAttribute="height" secondItem="I7x-yz-hkp" secondAttribute="height" multiplier="0.2" id="AhY-CX-siu"/>
                                     <constraint firstItem="yVg-mD-Dab" firstAttribute="top" secondItem="I7x-yz-hkp" secondAttribute="top" constant="10" id="LQk-MD-ZCO"/>
-                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="leading" secondItem="I7x-yz-hkp" secondAttribute="leading" constant="85" id="SbV-qr-lMw"/>
                                     <constraint firstItem="yVg-mD-Dab" firstAttribute="centerX" secondItem="I7x-yz-hkp" secondAttribute="centerX" id="TjT-qG-GIS"/>
-                                    <constraint firstAttribute="trailing" secondItem="BsX-Ua-zUH" secondAttribute="trailing" constant="86.329999999999998" id="UTx-KB-GW8"/>
-                                    <constraint firstAttribute="bottom" secondItem="BsX-Ua-zUH" secondAttribute="bottom" constant="40" id="bE6-4H-ReT"/>
+                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="centerY" secondItem="I7x-yz-hkp" secondAttribute="centerY" id="bpp-Kz-na6"/>
                                     <constraint firstItem="yVg-mD-Dab" firstAttribute="width" secondItem="I7x-yz-hkp" secondAttribute="width" multiplier="0.9" id="eGp-yd-kuz"/>
-                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="leading" secondItem="I7x-yz-hkp" secondAttribute="leading" constant="85" id="r8z-dm-FAu"/>
-                                    <constraint firstAttribute="bottom" secondItem="BsX-Ua-zUH" secondAttribute="bottom" constant="40" id="u9n-nO-BCP"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BsX-Ua-zUH" secondAttribute="trailing" constant="20" symbolic="YES" id="uEk-gt-I5l"/>
+                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="centerX" secondItem="I7x-yz-hkp" secondAttribute="centerX" id="vww-ky-cbb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -4333,7 +4403,7 @@ decreased libido
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOU-n3-1ks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="733"/>
+            <point key="canvasLocation" x="851" y="707"/>
         </scene>
     </scenes>
     <resources>
@@ -4372,7 +4442,7 @@ decreased libido
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -49,22 +49,28 @@ class PatientMedicalRecordVC: UIViewController, UICollectionViewDataSource, UICo
                     print("Failed to fetch data: \(error?.localizedDescription ?? "Unknown error")")
                     return
                 }
-
                 do {
                     let decodedResponse = try JSONDecoder().decode(MedicalRecordResponse.self, from: data)
-                    if decodedResponse.success {
-                        DispatchQueue.main.async {
+                    DispatchQueue.main.async {
+                        if decodedResponse.success {
                             self?.records = decodedResponse.records
                             self?.collectionView.reloadData()
-                        }
-                    } else {
-                        DispatchQueue.main.async {
-                            self?.showAlertWith(message: decodedResponse.message ?? "No record found")
+
+                            if self?.records.isEmpty ?? true {
+                                self?.showAlertWith(message: "No records found")
+                            }
+                        } else {
+                           
+                            self?.showAlertWith(message: "No records found")
                         }
                     }
                 } catch {
-                    print("Error decoding JSON: \(error)")
+                    DispatchQueue.main.async {
+                        self?.showAlertWith(message: "No records found")
+                    }
                 }
+
+
             }.resume()
         }
 
@@ -75,9 +81,19 @@ class PatientMedicalRecordVC: UIViewController, UICollectionViewDataSource, UICo
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if UserDefaultsManager.shared.getUserName() == "Doctor" {
-                if let doctorHomeVC = storyboard.instantiateViewController(withIdentifier: "DoctorCatInstructionVC") as? DoctorCatInstructionVC {
-                    doctorHomeVC.selectedPatientName = self.reportName
-                    self.navigationController?.pushViewController(doctorHomeVC, animated: true)
+                // Loop through the view controllers in the navigation stack
+                if let viewControllers = self.navigationController?.viewControllers {
+                    for viewController in viewControllers {
+                        // Check if the view controller is an instance of DoctorCatInstructionVC
+                        if let doctorHomeVC = viewController as? DoctorCatInstructionVC {
+                            // Set any properties you need on doctorHomeVC here
+                            doctorHomeVC.selectedPatientName = self.reportName
+                            
+                            // Pop to the found view controller
+                            self.navigationController?.popToViewController(doctorHomeVC, animated: true)
+                            break // Exit the loop once the desired view controller is found and popped to
+                        }
+                    }
                 }
             } else if UserDefaultsManager.shared.getUserName() == "Patient" {
                 if let patientPlanVC = storyboard.instantiateViewController(withIdentifier: "PatientPlanVC") as? PatientPlanVC {

@@ -12,5 +12,8 @@ struct PatientProfileModel: Codable {
         let bmi: String?
         let otherdisease: String?
         let obstetricscore: String?
+        let hip: String?
+        let waist: String?
+        let hipwaist: String?
     }
 }

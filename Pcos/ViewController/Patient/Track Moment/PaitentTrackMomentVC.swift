@@ -81,7 +81,7 @@ extension PaitentTrackMomentVC: UITableViewDelegate, UITableViewDataSource {
         else if(indexPath.section == 1) {
             let cell = activityTable.dequeueReusableCell(withIdentifier: "TrackViewTabCell") as! TrackViewTabCell
             
-            cell.viewPatientCat?.addAction(for: .tap) {
+            cell.viewPatientCatButton?.addAction(for: .tap) {
                 
                 let catVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PcosCategory") as! PcosCategory
                 catVC.shouldHideStartButton = true
@@ -89,11 +89,43 @@ extension PaitentTrackMomentVC: UITableViewDelegate, UITableViewDataSource {
                 self.navigationController?.pushViewController(catVC, animated: true)
                 
             }
-//            cell.assessment?.addAction(for: .tap){
-//                let assVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "assessmentHomeVC") as! assessmentHomeVC
-//                self.navigationController?.pushViewController(assVC, animated: true)
-//            }
+            cell.assessmentButton?.addAction(UIAction(handler: { [weak self] _ in
+                    guard let self = self else { return }
+                    let urlString = "\(ServiceAPI.baseURL)assessment.php?username=\(self.name2)"
+                    
+                    guard let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                          let url = URL(string: encodedURLString) else {
+                        return
+                    }
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = "GET"
+                request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+                
+                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard let data = data, error == nil else {
+                        print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                        return
+                    }
+                    if let responseString = String(data: data, encoding: .utf8), responseString.contains("eligible") {
+                        DispatchQueue.main.async {
+                            guard let sampleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SampleVC") as? SampleVC else { return }
+                            self.navigationController?.pushViewController(sampleVC, animated: true)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            // Show alert for waiting
+                            let alert = UIAlertController(title: "wait for the Assessment", message: "You can take the assessment every 2 weeks. Please wait a little longer.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default))
+                            self.present(alert, animated: true)
+                        }
+                    }
+                }
+                task.resume()
+            }), for: .touchUpInside)
+
             return cell
+
         }
         else if (indexPath.section == 2){
             let weightCell = activityTable.dequeueReusableCell(withIdentifier: "WeightMeasureCell") as! WeightMeasureCell

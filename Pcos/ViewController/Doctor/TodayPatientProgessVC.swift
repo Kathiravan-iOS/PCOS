@@ -52,18 +52,24 @@ class TodayPatientProgessVC: UIViewController {
     func showAlert(withTitle title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default){
-            action in self.DoctorHomeVC()
+            action in self.popToDoctorCatInstructionVC()
         }
         alertController.addAction(okAction)
         DispatchQueue.main.async {
             self.present(alertController, animated: true)
         }
     }
-    func DoctorHomeVC(){
-        let back = UIStoryboard(name: "Main", bundle: nil)
-        let vc = back.instantiateViewController(withIdentifier: "DoctorCatInstructionVC") as! DoctorCatInstructionVC
-        vc.selectedPatientName = selectedPatientName
-        self.navigationController?.pushViewController(vc, animated: true)
+    func popToDoctorCatInstructionVC() {
+        if let viewControllers = self.navigationController?.viewControllers {
+            for viewController in viewControllers.reversed() {
+                if let doctorCatInstructionVC = viewController as? DoctorCatInstructionVC {
+                    doctorCatInstructionVC.selectedPatientName = self.selectedPatientName
+                    self.navigationController?.popToViewController(doctorCatInstructionVC, animated: true)
+                    return
+                }
+            }
+        }
     }
+
 
 }

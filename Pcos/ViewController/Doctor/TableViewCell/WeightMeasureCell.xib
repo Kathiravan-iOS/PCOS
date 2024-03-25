@@ -28,14 +28,14 @@
                                         <rect key="frame" x="8" y="10.000000000000004" width="143.33333333333334" height="58.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXr-PN-3OA">
-                                                <rect key="frame" x="0.0" y="0.0" width="143.33333333333334" height="27"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="143.33333333333334" height="33"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    72.4 Kg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-Tw-cbV">
-                                                <rect key="frame" x="0.0" y="27" width="143.33333333333334" height="31.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    65 Kg normal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-Tw-cbV">
+                                                <rect key="frame" x="0.0" y="33" width="143.33333333333334" height="25.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
