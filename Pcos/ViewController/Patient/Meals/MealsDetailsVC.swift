@@ -9,22 +9,36 @@ import UIKit
 
 class MealsDetailsVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var detailsTextView: UITextView!
+    var nameLabelText: String?
 
+    var nutritionInfos: [NutritionInfo] = []
+        var totalCalories: Double = 0
+        var namelabel: String? // Property to hold the value
         
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            updateUI()
+        }
+        
+    func updateUI() {
+        var detailsText = ""
+        for nutritionInfo in nutritionInfos {
+            detailsText += "\(nutritionInfo.name) - Calories: \(nutritionInfo.calories) "
+        }
+        // Here, we round the totalCalories and convert it to Int just for display purposes
+        let displayTotalCalories = Int(totalCalories)
+        detailsText += "\nTotal Calories: \(displayTotalCalories)"
+        detailsTextView.text = detailsText
+        
+        nameLabel.text = nameLabelText // Assuming this is where you want to display the name
     }
-//    override func viewDidDisappear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.isHidden = false
-//
-//    }
-//    @IBAction func home(_ sender: Any) {
-//        for controller in self.navigationController!.viewControllers as Array {
-//            if controller.isKind(of: PatientPlanVC.self) {
-//                self.navigationController!.popToViewController(controller, animated: true)
-//                break
-//            }
-//        }
-//    }
+    @IBAction func backhome(_ sender: Any) {
+        let mealDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PatientPlanVC") as! PatientPlanVC
+        mealDetailsVC.username5 = namelabel ?? ""
+        self.navigationController?.pushViewController(mealDetailsVC, animated: true)
+    }
     
-}
+
+    }

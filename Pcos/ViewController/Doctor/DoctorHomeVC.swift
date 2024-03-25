@@ -4,16 +4,21 @@ class DoctorHomeVC: UIViewController {
     @IBOutlet weak var patientList: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
-    var allPatients: [String] = [] // Full list of patients
-    var filteredPatients: [String] = [] // Filtered list based on search
-    var selectedName: String? // Property to store the selected patient's name
-
+    var allPatients: [String] = []
+    var filteredPatients: [String] = []
+    var selectedName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         patientList.delegate = self
         patientList.dataSource = self
         searchBar.delegate = self
         GetUserNameAPI()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     @IBAction func addpatinet(_ sender: Any) {
         let addpatinet = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
@@ -51,12 +56,10 @@ extension DoctorHomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         patientList.deselectRow(at: indexPath, animated: true)
           if let cell = tableView.cellForRow(at: indexPath) {
-              cell.contentView.backgroundColor = .white // Set your desired background color
+              cell.contentView.backgroundColor = .white
           }
-        // Store the selected patient's name
         selectedName = filteredPatients[indexPath.row]
 
-        // Navigate to DoctorCatInstructionVC
         let doctorCatInstructionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorCatInstructionVC") as! DoctorCatInstructionVC
         doctorCatInstructionVC.selectedPatientName = selectedName
         self.navigationController?.pushViewController(doctorCatInstructionVC, animated: true)
@@ -74,7 +77,20 @@ extension DoctorHomeVC: UISearchBarDelegate {
         } else {
             filteredPatients = allPatients.filter { $0.lowercased().contains(searchText.lowercased()) }
         }
+        
         patientList.reloadData()
+        
+        if filteredPatients.isEmpty && !searchText.isEmpty {
+            showAlertForNoPatientFound()
+        }
     }
+    func showAlertForNoPatientFound() {
+        let alert = UIAlertController(title: "No Patient Found", message: "No patient matches the search.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
     
 }

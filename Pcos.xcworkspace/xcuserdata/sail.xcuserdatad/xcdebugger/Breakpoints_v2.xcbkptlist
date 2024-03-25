@@ -7,157 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D8FA8761-45A6-433F-AA0F-A55F3337ACCF"
+            uuid = "FE45A12C-D9A2-45B7-A791-B712DA71A145"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pcos/APIHandler.swift"
+            filePath = "Pcos/ViewController/Doctor/Custom XIB/ProgressBar.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "postAPIValues(type:apiUrl:method:formData:onCompletion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D8FA8761-45A6-433F-AA0F-A55F3337ACCF - 7b7daae4b599b1a9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pcos.APIHandler.postAPIValues&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, apiUrl: Swift.String, method: Swift.String, formData: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, onCompletion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Pcos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sail/Downloads/Pcos%202%202%207/Pcos/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "2388">
-               </Location>
-               <Location
-                  uuid = "D8FA8761-45A6-433F-AA0F-A55F3337ACCF - 4499ab0b1947b2b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pcos.APIHandler.postAPIValues&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, apiUrl: Swift.String, method: Swift.String, formData: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, onCompletion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Pcos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sail/Downloads/Pcos%202%202%207/Pcos/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "392">
-               </Location>
-               <Location
-                  uuid = "D8FA8761-45A6-433F-AA0F-A55F3337ACCF - 4499ab0b1947b2b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pcos.APIHandler.postAPIValues&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, apiUrl: Swift.String, method: Swift.String, formData: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, onCompletion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Pcos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sail/Downloads/Pcos%202%202%207/Pcos/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "396">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8CC7BD55-DF70-40F1-8E5C-ED877320922F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pcos/APIHandler.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "postAPIValues(type:apiUrl:method:formData:onCompletion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8CC7BD55-DF70-40F1-8E5C-ED877320922F - 4499ab0b1947b274"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pcos.APIHandler.postAPIValues&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, apiUrl: Swift.String, method: Swift.String, formData: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, onCompletion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Pcos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sail/Downloads/Pcos%202%202%207/Pcos/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "404">
-               </Location>
-               <Location
-                  uuid = "8CC7BD55-DF70-40F1-8E5C-ED877320922F - 4499ab0b1947b274"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pcos.APIHandler.postAPIValues&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, apiUrl: Swift.String, method: Swift.String, formData: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, onCompletion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Pcos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sail/Downloads/Pcos%202%202%207/Pcos/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "544">
-               </Location>
-               <Location
-                  uuid = "8CC7BD55-DF70-40F1-8E5C-ED877320922F - 4499ab0b1947b274"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pcos.APIHandler.postAPIValues&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, apiUrl: Swift.String, method: Swift.String, formData: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, onCompletion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Pcos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sail/Downloads/Pcos%202%202%207/Pcos/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "408">
-               </Location>
-               <Location
-                  uuid = "8CC7BD55-DF70-40F1-8E5C-ED877320922F - 4499ab0b1947b274"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pcos.APIHandler.postAPIValues&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, apiUrl: Swift.String, method: Swift.String, formData: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, onCompletion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Pcos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sail/Downloads/Pcos%202%202%207/Pcos/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "584">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8E1CC9A6-EA67-4244-AB8F-1F873B9B9F35"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pcos/APIHandler.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "postAPIValues(type:apiUrl:method:formData:onCompletion:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "awakeFromNib()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

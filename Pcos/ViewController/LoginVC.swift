@@ -1,5 +1,5 @@
 import UIKit
-
+//import LiquidLoader
 class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userNameView: UIView!
@@ -8,13 +8,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var forgotBtn: UIButton!
 
     var loginModel: LoginModel?
+//    let red: CGFloat = 255 / 255.0 // Example red value (0 to 1)
+//    let green: CGFloat = 172 / 255.0 // Example green value (0 to 1)
+//    let blue: CGFloat = 211 / 255.0 // Example blue value (0 to 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         userNameTF.text = "shobana"
-        passwordTF.text = "12345678"
+        passwordTF.text = "123456789"
         userNameTF.delegate = self
         passwordTF.delegate = self
         passwordTF.isSecureTextEntry = true
@@ -35,8 +36,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             "username": userNameTF.text ?? "",
             "password": passwordTF.text ?? ""
         ]
-
+        self.view.startLoader()
         APIHandler.shared.postAPIValues(type: LoginModel.self, apiUrl: ServiceAPI.loginURL, method: "POST", formData: userInfo) { result in
+            DispatchQueue.main.async {
+                self.view.stopLoader()
+            }
             switch result {
             case .success(let data):
                 if !data.success! {
@@ -48,16 +52,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     }
                 } else {
                     self.loginModel = data
-                    if self.loginModel?.existingUser == true {
-                        DispatchQueue.main.async {
-                            let patientPlanVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PatientPlanVC") as! PatientPlanVC
-                            patientPlanVC.username5 = self.userNameTF.text ?? ""
-                            self.navigationController?.pushViewController(patientPlanVC, animated: true)
-                        }
-                    } else if self.loginModel?.existingUser == false {
-                        DispatchQueue.main.async {
-                            self.navigateToNextScreen()
-                        }
+                    DispatchQueue.main.async {
+                        self.navigateToNextScreen()
                     }
                 }
 
@@ -67,17 +63,44 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         }
     }
 
+
     func navigateToNextScreen() {
-        if UserDefaultsManager.shared.getUserName() == "Doctor" {
-            let doctorVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeVC") as! DoctorHomeVC
-            self.navigationController?.pushViewController(doctorVC, animated: true)
-        } else if UserDefaultsManager.shared.getUserName() == "Patient" {
-            let patientPlanVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EnterPatientDetails") as! EnterPatientDetails //EnterPatientDetails
-            patientPlanVC.receivedUsername = self.userNameTF.text ?? ""
-//            patientPlanVC.username2 = self.userNameTF.text ?? ""
-            self.navigationController?.pushViewController(patientPlanVC, animated: true)
+        guard let role = loginModel?.role else { return }
+
+        let expectedRole = UserDefaultsManager.shared.getUserName()?.lowercased()
+
+        if role.lowercased() != expectedRole {
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(title: "Role Mismatch", message: "Your user role does not match the expected role. Please select the correct profile.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    let selectProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectProfileVC") as! SelectProfileVC
+                    self.navigationController?.pushViewController(selectProfileVC, animated: true)
+                }
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        } else {
+            switch role.lowercased() {
+            case "doctor":
+                let doctorVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeVC") as! DoctorHomeVC
+                self.navigationController?.pushViewController(doctorVC, animated: true)
+            case "patient":
+                if loginModel?.existingUser == true {
+                    let patientPlanVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PatientPlanVC") as! PatientPlanVC
+                    patientPlanVC.username5 = self.userNameTF.text ?? ""
+                    self.navigationController?.pushViewController(patientPlanVC, animated: true)
+                } else {
+                    let enterPatientDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EnterPatientDetails") as! EnterPatientDetails
+                    enterPatientDetailsVC.receivedUsername = self.userNameTF.text ?? ""
+                    self.navigationController?.pushViewController(enterPatientDetailsVC, animated: true)
+                }
+            default:
+                print("Unknown role: \(role)")
+            }
         }
     }
+
+
 
     func Didload() {
         if UserDefaultsManager.shared.getUserName() == "Doctor" {

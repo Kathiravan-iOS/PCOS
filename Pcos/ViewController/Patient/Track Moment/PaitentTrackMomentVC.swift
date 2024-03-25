@@ -21,6 +21,8 @@ class PaitentTrackMomentVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customizeNavigationBar(title: "Track Your Moment")
+
         let nib = UINib(nibName: "ProgressBar", bundle: nil)
         let trackNib = UINib(nibName: "TrackViewTabCell", bundle: nil)
         let leader = UINib(nibName: "LeaderBoardCell", bundle: nil)
@@ -45,7 +47,7 @@ class PaitentTrackMomentVC: UIViewController {
     }
     
     func getStepsGraph(_ completionHandler : @escaping (Bool)-> Void) {
-        let name = ["name": "\("shobana")"]
+        let name = ["name": name2]
         APIHandler().postAPIValues(type: StepsDataModel.self, apiUrl: ServiceAPI.stepsGraph, method: "POST", formData: name) { result in
             switch result{
             case.success(let data):
@@ -73,7 +75,7 @@ extension PaitentTrackMomentVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.section == 0) {
             let cell = activityTable.dequeueReusableCell(withIdentifier: "ProgressBar") as! ProgressBar
-            
+            cell.name24 = name2
             return cell
         }
         else if(indexPath.section == 1) {
@@ -87,10 +89,10 @@ extension PaitentTrackMomentVC: UITableViewDelegate, UITableViewDataSource {
                 self.navigationController?.pushViewController(catVC, animated: true)
                 
             }
-            cell.assessment?.addAction(for: .tap){
-                let assVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "assessmentHomeVC") as! assessmentHomeVC
-                self.navigationController?.pushViewController(assVC, animated: true)
-            }
+//            cell.assessment?.addAction(for: .tap){
+//                let assVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "assessmentHomeVC") as! assessmentHomeVC
+//                self.navigationController?.pushViewController(assVC, animated: true)
+//            }
             return cell
         }
         else if (indexPath.section == 2){

@@ -66,13 +66,17 @@ class SignupVC: UIViewController {
             "confirm_password": confirmtxt.text ?? ""
         ]
         
-        // Placeholder logic for API call
         APIHandler().postAPIValues(type: SignupResponse.self, apiUrl: ServiceAPI.SignupURL, method: "POST", formData: SignupModel){
             result in switch result{
             case .success(let data):
                 if data.success {
                     DispatchQueue.main.async {
-                        self.detailsVC(username: self.usertxt.text ?? "")
+                        let alertController = UIAlertController(title: "Success", message: "Patient added successfully", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                            self.detailsVC(username: self.usertxt.text ?? "")
+                        }
+                        alertController.addAction(okAction)
+                        self.present(alertController, animated: true, completion: nil)
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -83,21 +87,24 @@ class SignupVC: UIViewController {
                     }
                 }
             case .failure(let error):
-                // Print or log the decoding error for further inspection
                 print("Decoding error: \(error)")
             }
         }
-        
-//        //Simulated success response to navigate to EnterPatientDetailsVC
-//        DispatchQueue.main.async {
-//            self.detailsVC(username: self.usertxt.text ?? "")
-//        }
     }
+
     
     func detailsVC(username : String) {
-        let signup = UIStoryboard(name: "Main", bundle: nil)
-        let vc = signup.instantiateViewController(withIdentifier: "DoctorHomeVC") as! DoctorHomeVC
-//        vc.username = username
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let navigationController = self.navigationController {
+            for controller in navigationController.viewControllers {
+                if controller is DoctorHomeVC {
+                    navigationController.popToViewController(controller, animated: true)
+                    break
+                }
+            }
+        }
+//        let signup = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = signup.instantiateViewController(withIdentifier: "DoctorHomeVC") as! DoctorHomeVC
+////        vc.username = username
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

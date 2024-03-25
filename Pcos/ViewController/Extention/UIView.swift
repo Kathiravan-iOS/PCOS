@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
+
 
 @IBDesignable extension UIView {
     @IBInspectable var cornerRadius: CGFloat {
@@ -135,3 +137,39 @@ extension UIViewController {
         title.map { self.title = $0 }
     }
 }
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int, alpha: CGFloat = 1.0) {
+        precondition(red >= 0 && red <= 255, "Invalid red component")
+        precondition(green >= 0 && green <= 255, "Invalid green component")
+        precondition(blue >= 0 && blue <= 255, "Invalid blue component")
+
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: alpha)
+    }
+}
+
+extension UIView {
+    private static var loaderView: UIView?
+    
+    func startLoader() {
+        if UIView.loaderView != nil {
+            return
+        }
+        let loaderView = UIView(frame: self.bounds)
+        loaderView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        self.addSubview(loaderView)
+        let loader = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: .ballClipRotateMultiple, color: UIColor(hex: "#FFACD3"))
+        loader.center = loaderView.center
+        loaderView.addSubview(loader)
+        loader.startAnimating()
+        UIView.loaderView = loaderView
+    }
+    
+    func stopLoader() {
+        DispatchQueue.main.async {
+            UIView.loaderView?.removeFromSuperview()
+            UIView.loaderView = nil
+        }
+    }
+}
+

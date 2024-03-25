@@ -6,28 +6,27 @@ class ProgressBar: UITableViewCell {
     @IBOutlet weak var carbView: UIView!
     @IBOutlet weak var proView: UIView!
     @IBOutlet weak var fatView: UIView!
-    @IBOutlet weak var calories: UIView!
 
     private let shapeLayer = CAShapeLayer()
-
+    var name24 : String = ""
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let progressBarView1 = PercentageProgressBarView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
-        let yellowColor = UIColor(red: 254/255, green: 198/255, blue: 53/255, alpha: 1.0)
+        let yellowColor = UIColor(hex: "#FEC635") // UIColor(red: 254/255, green: 198/255, blue: 53/255, alpha: 1.0)
         progressBarView1.progressBarColor = yellowColor
         addCenteredView(to: fatView, viewToAdd: progressBarView1, width: 80, height: 80)
         progressBarView1.setPercentage(50, customText: "Fat")
         
         let progressBarView2 = PercentageProgressBarView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
-        let blueColor = UIColor(red: 53/255, green: 133/255, blue: 254/255, alpha: 1.0)
+        let blueColor = UIColor(hex: "#3585FE") //UIColor(red: 53/255, green: 133/255, blue: 254/255, alpha: 1.0)
         progressBarView2.progressBarColor = blueColor
         addCenteredView(to: proView, viewToAdd: progressBarView2, width: 80, height: 80)
         progressBarView2.setPercentage(70, customText: "Pro")
         
         let progressBarView3 = PercentageProgressBarView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
 //        progressBarView3.progressBarColor = UIColor.black
-        let voiletColor = UIColor(red: 128/255, green: 118/255, blue: 245/255, alpha: 1.0)
+        let voiletColor = UIColor(hex: "#8076F5") //UIColor(red: 128/255, green: 118/255, blue: 245/255, alpha: 1.0)
         progressBarView3.progressBarColor = voiletColor
         addCenteredView(to: carbView, viewToAdd: progressBarView3, width: 80, height: 80)
         progressBarView3.setPercentage(30, customText: "Carb")

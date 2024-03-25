@@ -1,7 +1,7 @@
 import UIKit
 
 class ForgotPasswordVC: UIViewController {
-
+    
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var password: UILabel!
@@ -14,8 +14,8 @@ class ForgotPasswordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      customizeNavigationBar(title: "ForgotPassword")
+        
+        customizeNavigationBar(title: "ForgotPassword")
         if UserDefaultsManager.shared.getUserName() == "Doctor" {
             userName.text = "Doctor ID"
         } else if UserDefaultsManager.shared.getUserName() == "Patient" {
@@ -27,7 +27,7 @@ class ForgotPasswordVC: UIViewController {
     @IBAction func forgotPasswordAction(_ sender: Any) {
         GetforgotAPI()
     }
-
+    
     func GetforgotAPI() {
         let forgotPasswordModel: [String: String] = [
             "username": userNameTF.text ?? "",
@@ -35,11 +35,11 @@ class ForgotPasswordVC: UIViewController {
             "newpassword": passwordTF.text ?? "",
             "confirmpassword": confirmPwd.text ?? ""
         ]
-
+        
         // Print or log the raw data before decoding
         print("Raw data before decoding: \(forgotPasswordModel)")
-
-
+        
+        
         APIHandler().postAPIValues(type: ForgotPasswordModel.self, apiUrl: ServiceAPI.forgotPasswordURL, method: "POST", formData: forgotPasswordModel) { result in
             switch result {
             case .success(let data):
@@ -52,24 +52,33 @@ class ForgotPasswordVC: UIViewController {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.LoginVC()
+                        let alertController = UIAlertController(title: "Alert", message: data.message, preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK", style: .cancel) { action in
+                            self.LoginVC()
+                        }
+                        
+                        alertController.addAction(okAction)
+                        self.present(alertController, animated: true, completion: nil)
                     }
                 }
-           
-
             case .failure(let error):
-                // Print or log the decoding error for further inspection
                 print("Decoding error: \(error)")
             }
         }
     }
-
-    func LoginVC() {
-        // Add your logic to navigate to the EnterPatientVC
-        let forgotvc = UIStoryboard(name: "Main", bundle: nil)
-        let vc = forgotvc.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        func LoginVC() {
+            
+            if let navigationController = self.navigationController {
+                for controller in navigationController.viewControllers {
+                    if controller is LoginVC {
+                        navigationController.popToViewController(controller, animated: true)
+                        break
+                    }
+                }
+            }
+//            let forgotvc = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = forgotvc.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
-}
-
-
+    

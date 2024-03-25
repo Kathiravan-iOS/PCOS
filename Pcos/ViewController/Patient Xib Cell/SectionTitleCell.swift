@@ -10,7 +10,7 @@ import UIKit
 class SectionTitleCell: UITableViewCell {
 
     @IBOutlet weak var hometitle: UILabel!
-    var titles = ["Start your routine", "Stay Hydrated Drink Water", "Do exercise!", "Stay Healthy"]
+    var titles = ["Start your routine", "Stay Hydrated Drink Water"]
     var titleTimer: Timer?
     
     override func awakeFromNib() {
