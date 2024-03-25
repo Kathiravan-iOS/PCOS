@@ -2,7 +2,7 @@ import UIKit
 
 class CalendarCell: UITableViewCell {
     var usernameForCalendar: String?
-
+    var selectedPatientName: String?
     @IBOutlet weak var calenderimage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!  // Add this line if not already defined
 
@@ -30,6 +30,7 @@ class CalendarCell: UITableViewCell {
             let calendarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CalendarVC") as! CalendarVC
             // Pass the username to CalendarVC
             calendarVC.usernameForCalendar = self.usernameForCalendar ?? ""
+            calendarVC.selectedPatientName = self.selectedPatientName ?? ""
 
             // Assuming your CalendarCell is part of a view controller, you need to get the navigation controller from the view hierarchy
             if let navigationController = self.window?.rootViewController as? UINavigationController {

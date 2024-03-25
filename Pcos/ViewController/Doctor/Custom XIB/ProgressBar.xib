@@ -34,13 +34,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DEi-b2-GKO">
-                                                <rect key="frame" x="10.5" y="55.5" width="82" height="31.5"/>
+                                                <rect key="frame" x="0.0" y="55.5" width="102.5" height="20.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-fire 1" translatesAutoresizingMaskIntoConstraints="NO" id="FnN-Xk-pVN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="13" height="31.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="14" height="20.5"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf7-go-NR8">
-                                                        <rect key="frame" x="18" y="0.0" width="64" height="31.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500Kcal " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf7-go-NR8">
+                                                        <rect key="frame" x="19" y="0.0" width="83.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -51,13 +51,13 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="ZK1-dj-yh9" firstAttribute="top" secondItem="gBz-Y9-7aW" secondAttribute="top" constant="30" id="J3Y-GF-MmO"/>
-                                            <constraint firstItem="DEi-b2-GKO" firstAttribute="width" secondItem="gBz-Y9-7aW" secondAttribute="width" multiplier="0.8" id="OvS-Qt-zkR"/>
-                                            <constraint firstItem="DEi-b2-GKO" firstAttribute="centerX" secondItem="gBz-Y9-7aW" secondAttribute="centerX" id="UtK-C6-LA6"/>
+                                            <constraint firstAttribute="trailing" secondItem="DEi-b2-GKO" secondAttribute="trailing" id="QLo-ST-smD"/>
                                             <constraint firstItem="ZK1-dj-yh9" firstAttribute="height" secondItem="gBz-Y9-7aW" secondAttribute="height" multiplier="0.193651" id="bKK-sG-Mh0"/>
+                                            <constraint firstAttribute="bottom" secondItem="DEi-b2-GKO" secondAttribute="bottom" constant="29" id="cfM-zS-ikN"/>
+                                            <constraint firstItem="DEi-b2-GKO" firstAttribute="leading" secondItem="gBz-Y9-7aW" secondAttribute="leading" id="eyz-Gs-vUU"/>
                                             <constraint firstItem="ZK1-dj-yh9" firstAttribute="centerX" secondItem="gBz-Y9-7aW" secondAttribute="centerX" id="mLo-EK-uzo"/>
-                                            <constraint firstItem="DEi-b2-GKO" firstAttribute="height" secondItem="gBz-Y9-7aW" secondAttribute="height" multiplier="0.3" id="ozX-un-Mmp"/>
+                                            <constraint firstItem="DEi-b2-GKO" firstAttribute="top" secondItem="ZK1-dj-yh9" secondAttribute="bottom" constant="5" id="nzY-J2-wl5"/>
                                             <constraint firstItem="ZK1-dj-yh9" firstAttribute="width" secondItem="gBz-Y9-7aW" secondAttribute="width" multiplier="0.8" id="q8N-aF-gV7"/>
-                                            <constraint firstItem="DEi-b2-GKO" firstAttribute="top" secondItem="ZK1-dj-yh9" secondAttribute="bottom" constant="5" id="qds-Pf-wZ3"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPW-Vu-Pgv">

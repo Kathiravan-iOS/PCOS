@@ -138,6 +138,7 @@ extension PatientPlanVC : UITableViewDelegate, UITableViewDataSource {
         else if (indexPath.section == 1) {
             let cell = patientTable.dequeueReusableCell(withIdentifier: "CalendarCell") as! CalendarCell
             cell.usernameForCalendar = username5
+            cell.selectedPatientName = username5
             return cell
         }
         else if (indexPath.section == 2) {

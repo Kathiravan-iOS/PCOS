@@ -1720,7 +1720,7 @@ Successfully !</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-SR-RaB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Taken(Kcal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-SR-RaB">
                                                 <rect key="frame" x="0.0" y="65.999999999999972" width="137.66666666666666" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -1922,7 +1922,7 @@ Successfully !</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-Da-kEw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Taken(Kcal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-Da-kEw">
                                                 <rect key="frame" x="0.0" y="74.000000000000028" width="137.66666666666666" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -3794,39 +3794,37 @@ vitamin B6 10%.</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzD-QJ-bWX">
                                 <rect key="frame" x="10" y="265" width="408" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Polycystic ovary syndrome (PCOS) is an endocrine system disorder where small fluid-filled sacs develop on the ovaries. PCOS affects women in their reproductive years.
+                                <mutableString key="text">Polycystic Ovary Syndrome (PCOS) affects millions of women worldwide, impacting their physical and mental health. To assist in managing PCOS effectively, our app provides meal plans, exercise routines, and meditation practices. This guide aims to help users maximize the app's benefits, providing detailed instructions on usage and understanding the impact of these practices on PCOS management.
 
-It is also known as or Stein-Leventhal syndrome.
+Section 1: Meal Planning
+1. Follow the Plan: Stick to the meal plans provided by the app.
+2.Regular Eating Schedule: Maintain regular eating times to prevent blood sugar spikes and crashes, which can exacerbate PCOS symptoms.
+3.Portion Control: Pay attention to portion sizes to avoid overeating and support weight management goals.
 
-Symptoms include changes to the menstrual cycle and excess hair growth. Untreated, it can lead to infertility and other complications. The exact cause is unknown.
+Result: Consistently following the app's meal plans can lead to improved insulin sensitivity, weight management, and reduction in PCOS symptoms such as irregular periods and acne.
 
-Early diagnosis and treatment are recommended. Weight loss may also decrease the risk of associated health risks, such as insulin resistance, type 2 diabetes, high cholesterol, heart disease, and high blood pressure.Fast facts on PCOS
-PCOS is one of the most common hormonal endocrine disorders affecting 8-20 percent of women, many of whom do not have a diagnosis.
-PCOS is linked to the development of other medical conditions, such as insulin resistance, type 2 diabetes, high cholesterol, high blood pressure, and heart disease.
-More than half of women with PCOS develop type 2 diabetes before the age of 40 years.
-Around 70 percent of ovulatory fertility issues are related to PCOS. Symptoms
-Apart from cysts on the ovaries, symptoms of PCOS include:
+Section 2: Exercise Routines
+Exercise is crucial for managing PCOS as it helps improve insulin sensitivity, boost metabolism, and reduce stress. Here's how to effectively utilize the exercise routines provided by the app:
 
-irregular menses
-excess androgen levels
-sleep apnea
-high stress levels
-high blood pressure
-skin tags
-infertility
-acne, oily skin, and dandruff
-high cholesterol and triglycerides
-acanthosis nigricans, or dark patches of skin
-fatigue
-female pattern balding
-insulin resistance
-type 2 diabetes
-pelvic pain
-depression and anxiety
-weight management difficulties including weight gain or difficulty losing weight
-excessive facial and body hair growth, known as hirsutism
-decreased libido
-</string>
+1. Variety: Explore the diverse range of exercise routines offered by the app, including cardio, strength training, to find what works best for you.
+2. Consistency: Aim for regular exercise sessions, ideally 3-5 times per week, to experience the full benefits of physical activity in managing PCOS.
+3. Progression: Gradually increase the intensity and duration of your workouts as your fitness level improves to challenge your body and achieve better results.
+4. Listen to Your Body: Pay attention to how your body responds to exercise and modify workouts as needed to avoid injury and accommodate any PCOS-related symptoms.
+
+Results: Regular exercise can help improve insulin sensitivity, promote weight loss, regulate menstrual cycles, and reduce stress levels, contributing to better PCOS management overall.
+
+Section 3: Meditation Practices
+Meditation and mindfulness techniques can be powerful tools for managing stress, which is often heightened in individuals with PCOS. Here's how to incorporate meditation into your routine:
+
+1. Daily Practice: Set aside time each day for meditation, even if it's just a few minutes, to cultivate a sense of calm and relaxation.
+2. Guided Meditations: Utilize the guided meditation sessions provided by the app to help you focus your mind and reduce stress effectively.
+3. Mindful Breathing: Practice deep breathing exercises throughout the day to alleviate anxiety and promote mental clarity.
+4. Gratitude Practice: Cultivate a gratitude mindset by reflecting on things you're thankful for, which can help shift your focus away from stressors associated with PCOS.
+
+Results : Regular meditation can reduce cortisol levels, improve mood, enhance emotional well-being, and mitigate the impact of stress on PCOS symptoms.
+
+Conclusion:
+By following the guidelines outlined in this comprehensive guide, users can harness the full potential of our PCOS app to effectively manage their condition. Consistent adherence to meal plans, engaging in regular exercise routines, and incorporating meditation practices can lead to significant improvements in PCOS symptoms and overall quality of life. Remember, managing PCOS is a journey, and the app is here to support you every step of the way.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -4330,15 +4328,13 @@ decreased libido
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7x-yz-hkp">
                                 <rect key="frame" x="0.0" y="705.33333333333337" width="428" height="186.66666666666663"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Patient Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVg-mD-Dab">
-                                        <rect key="frame" x="21.333333333333343" y="10" width="385.33333333333326" height="37.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsX-Ua-zUH">
-                                        <rect key="frame" x="85" y="97.333333333333258" width="256.66666666666669" height="49.333333333333343"/>
+                                        <rect key="frame" x="85.666666666666657" y="68.666666666666629" width="256.66666666666674" height="49.333333333333343"/>
                                         <color key="backgroundColor" red="0.92156862750000001" green="0.49019607840000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49.329999999999998" id="xR8-mz-cls"/>
+                                            <constraint firstAttribute="width" constant="256.67000000000002" id="zAk-wT-MJD"/>
+                                        </constraints>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Add Patient"/>
                                         <userDefinedRuntimeAttributes>
@@ -4365,21 +4361,21 @@ decreased libido
                                             <action selector="addpatinet:" destination="fNh-EM-vlB" eventType="touchUpInside" id="fkC-Pp-WFb"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Patient Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVg-mD-Dab">
+                                        <rect key="frame" x="21.333333333333343" y="10" width="385.33333333333326" height="37.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="top" secondItem="yVg-mD-Dab" secondAttribute="bottom" constant="50" id="7uE-4b-aqZ"/>
-                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="top" secondItem="yVg-mD-Dab" secondAttribute="bottom" constant="50" id="AJs-wX-OFN"/>
                                     <constraint firstItem="yVg-mD-Dab" firstAttribute="height" secondItem="I7x-yz-hkp" secondAttribute="height" multiplier="0.2" id="AhY-CX-siu"/>
                                     <constraint firstItem="yVg-mD-Dab" firstAttribute="top" secondItem="I7x-yz-hkp" secondAttribute="top" constant="10" id="LQk-MD-ZCO"/>
-                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="leading" secondItem="I7x-yz-hkp" secondAttribute="leading" constant="85" id="SbV-qr-lMw"/>
                                     <constraint firstItem="yVg-mD-Dab" firstAttribute="centerX" secondItem="I7x-yz-hkp" secondAttribute="centerX" id="TjT-qG-GIS"/>
-                                    <constraint firstAttribute="trailing" secondItem="BsX-Ua-zUH" secondAttribute="trailing" constant="86.329999999999998" id="UTx-KB-GW8"/>
-                                    <constraint firstAttribute="bottom" secondItem="BsX-Ua-zUH" secondAttribute="bottom" constant="40" id="bE6-4H-ReT"/>
+                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="centerY" secondItem="I7x-yz-hkp" secondAttribute="centerY" id="bpp-Kz-na6"/>
                                     <constraint firstItem="yVg-mD-Dab" firstAttribute="width" secondItem="I7x-yz-hkp" secondAttribute="width" multiplier="0.9" id="eGp-yd-kuz"/>
-                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="leading" secondItem="I7x-yz-hkp" secondAttribute="leading" constant="85" id="r8z-dm-FAu"/>
-                                    <constraint firstAttribute="bottom" secondItem="BsX-Ua-zUH" secondAttribute="bottom" constant="40" id="u9n-nO-BCP"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BsX-Ua-zUH" secondAttribute="trailing" constant="20" symbolic="YES" id="uEk-gt-I5l"/>
+                                    <constraint firstItem="BsX-Ua-zUH" firstAttribute="centerX" secondItem="I7x-yz-hkp" secondAttribute="centerX" id="vww-ky-cbb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -4407,7 +4403,7 @@ decreased libido
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOU-n3-1ks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="733"/>
+            <point key="canvasLocation" x="851" y="707"/>
         </scene>
     </scenes>
     <resources>
