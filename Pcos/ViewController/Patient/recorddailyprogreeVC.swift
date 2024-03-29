@@ -12,6 +12,14 @@ class recorddailyprogreeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = recordname
+        
+        day.delegate = TextFieldHelper.shared
+        exerciseduration.delegate = TextFieldHelper.shared
+        feedback.delegate = TextFieldHelper.shared
+        steps.delegate = TextFieldHelper.shared
+        calorie.delegate = TextFieldHelper.shared
+        name.delegate = TextFieldHelper.shared
+       
     }
 
     @IBAction func submitprogree(_ sender: Any) {

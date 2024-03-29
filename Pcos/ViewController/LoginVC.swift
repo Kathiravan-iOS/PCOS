@@ -1,4 +1,5 @@
 import UIKit
+import AVKit
 //import LiquidLoader
 class LoginVC: UIViewController, UITextFieldDelegate {
 
@@ -8,16 +9,18 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var forgotBtn: UIButton!
 
     var loginModel: LoginModel?
+    var audioPlayer: AVAudioPlayer?
 //    let red: CGFloat = 255 / 255.0 // Example red value (0 to 1)
 //    let green: CGFloat = 172 / 255.0 // Example green value (0 to 1)
 //    let blue: CGFloat = 211 / 255.0 // Example blue value (0 to 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameTF.text = "shobana"
-        passwordTF.text = "123456789"
-        userNameTF.delegate = self
-        passwordTF.delegate = self
+        prepareAudioPlayer()
+        _ = UITextField()
+        userNameTF.delegate = TextFieldHelper.shared
+        passwordTF.delegate = TextFieldHelper.shared
+
         passwordTF.isSecureTextEntry = true
         Didload()
 
@@ -26,9 +29,19 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             self.navigationController?.pushViewController(doctorVC, animated: true)
         }
     }
+    func prepareAudioPlayer() {
+            guard let soundURL = Bundle.main.url(forResource: "click-124467", withExtension: "mp3") else { return }
+            
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+                audioPlayer?.prepareToPlay()
+            } catch {
+                print("Error: Couldn't load the sound file.")
+            }
+        }
 
     @IBAction func loginAction(_ sender: Any) {
-        self.getLoginAPI()
+            self.getLoginAPI()
     }
 
     func getLoginAPI() {
@@ -52,6 +65,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     }
                 } else {
                     self.loginModel = data
+                    self.audioPlayer?.play()
                     DispatchQueue.main.async {
                         self.navigateToNextScreen()
                     }
@@ -62,6 +76,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             }
         }
     }
+
 
 
     func navigateToNextScreen() {

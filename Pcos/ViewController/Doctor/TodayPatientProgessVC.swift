@@ -13,12 +13,14 @@ class TodayPatientProgessVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchTodayProgressDetails()
+        disableTextFieldsForDoctors()
     }
 
     func fetchTodayProgressDetails() {
         guard let name = selectedPatientName else {
             return
         }
+        
 
         print("Patient Name:", name)
 
@@ -46,6 +48,16 @@ class TodayPatientProgessVC: UIViewController {
                 print("Error fetching today's progress details:", error)
                 self.showAlert(withTitle: "Error", message: "Failed to fetch today's progress details.")
             }
+        }
+    }
+    func disableTextFieldsForDoctors() {
+        if UserDefaultsManager.shared.getUserName() == "Doctor" {
+            Dday.isUserInteractionEnabled = false
+            Dfeedback.isUserInteractionEnabled = false
+            Dduration.isUserInteractionEnabled = false
+            Dsteps.isUserInteractionEnabled = false
+            Dcalorie.isUserInteractionEnabled = false
+            Dname.isUserInteractionEnabled = false
         }
     }
 

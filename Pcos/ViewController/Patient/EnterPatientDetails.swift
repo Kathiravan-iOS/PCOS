@@ -22,6 +22,18 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        name.delegate = TextFieldHelper.shared
+        age.delegate = TextFieldHelper.shared
+        mobile_no.delegate = TextFieldHelper.shared
+        height.delegate = TextFieldHelper.shared
+        weight.delegate = TextFieldHelper.shared
+        bmiTextField.delegate = TextFieldHelper.shared
+        Hip.delegate = TextFieldHelper.shared
+        waist.delegate = TextFieldHelper.shared
+        obstetricScore.delegate = TextFieldHelper.shared
+        hipwaist.delegate = TextFieldHelper.shared
+        
         customizeNavigationBar(title: "Enter The Details")
         pickerView.dataSource = self
         pickerView.delegate = self

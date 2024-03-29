@@ -110,6 +110,8 @@
 		B780F2242B3C3649001FF941 /* todayprogressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780F2232B3C3648001FF941 /* todayprogressModel.swift */; };
 		B795063A2BA2AEC500A65ED4 /* workoutplan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79506392BA2AEC500A65ED4 /* workoutplan.swift */; };
 		B7982C482B2C39EE0085C750 /* PaitientListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7982C472B2C39EE0085C750 /* PaitientListModel.swift */; };
+		B7A8CEE92BB528A600C9E051 /* TextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8CEE82BB528A600C9E051 /* TextFieldHelper.swift */; };
+		B7A8CEEB2BB533AF00C9E051 /* click-124467.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7A8CEEA2BB533AF00C9E051 /* click-124467.mp3 */; };
 		B7ACE08B2B286FE300C1F6B7 /* patientprofileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ACE08A2B286FE300C1F6B7 /* patientprofileModel.swift */; };
 		B7BB35CE2B86FF9600CAAE7B /* view_reportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BB35CD2B86FF9600CAAE7B /* view_reportVC.swift */; };
 		B7C841772B7C89D4005C5CFD /* MedicalrepothomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C841762B7C89D4005C5CFD /* MedicalrepothomeViewController.swift */; };
@@ -291,6 +293,8 @@
 		B780F2232B3C3648001FF941 /* todayprogressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayprogressModel.swift; sourceTree = "<group>"; };
 		B79506392BA2AEC500A65ED4 /* workoutplan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutplan.swift; sourceTree = "<group>"; };
 		B7982C472B2C39EE0085C750 /* PaitientListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaitientListModel.swift; sourceTree = "<group>"; };
+		B7A8CEE82BB528A600C9E051 /* TextFieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHelper.swift; sourceTree = "<group>"; };
+		B7A8CEEA2BB533AF00C9E051 /* click-124467.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "click-124467.mp3"; sourceTree = "<group>"; };
 		B7ACE08A2B286FE300C1F6B7 /* patientprofileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patientprofileModel.swift; sourceTree = "<group>"; };
 		B7BB35CD2B86FF9600CAAE7B /* view_reportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view_reportVC.swift; sourceTree = "<group>"; };
 		B7C11FE42B88565000425C9C /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../../../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -354,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				5D2EC0F42AC90A3100284374 /* Pcos */,
-				5D2EC10B2AC90A3200284374 /* PcosTests */,
 				5D2EC1152AC90A3200284374 /* PcosUITests */,
 				5D2EC0F32AC90A3100284374 /* Products */,
 				1D0CA50E27CD3504DF2E44D3 /* Pods */,
@@ -378,8 +381,8 @@
 				5D2EC0F52AC90A3100284374 /* AppDelegate.swift */,
 				6E35F76D2B7E1ADF0016F845 /* PatientDateModel.swift */,
 				5D2EC0F72AC90A3100284374 /* SceneDelegate.swift */,
-				B7FFDED32B8DEEBB0055DD62 /* LoaderAnimation.swift */,
 				B7F7B7762B99751900871714 /* nutrition.csv */,
+				B7A8CEEA2BB533AF00C9E051 /* click-124467.mp3 */,
 				5DDB74A92B07527400819E74 /* APIHandler.swift */,
 				5DDB74AD2B07540300819E74 /* ServiceAPI.swift */,
 				5D2EC0FB2AC90A3100284374 /* Main.storyboard */,
@@ -403,6 +406,7 @@
 				5D7CBF2F2ACFC46900DB1F08 /* ViewController */,
 				5DD3422F2AF60140006E0375 /* Utilites */,
 				5D2EC1252AC90DEB00284374 /* Font */,
+				B7A8CEE82BB528A600C9E051 /* TextFieldHelper.swift */,
 			);
 			path = Pcos;
 			sourceTree = "<group>";
@@ -465,6 +469,7 @@
 				5D7CBF3A2ACFC7CC00DB1F08 /* Patient */,
 				5DD342302AF60249006E0375 /* Patient Xib Cell */,
 				5D7CBF312ACFC4CC00DB1F08 /* SplashScreenVC.swift */,
+				5D2EC10B2AC90A3200284374 /* PcosTests */,
 				5DD3422E2AF6012A006E0375 /* Extention */,
 				5D7CBF332ACFC50500DB1F08 /* SelectProfileVC.swift */,
 				5D7CBF352ACFC76F00DB1F08 /* LoginVC.swift */,
@@ -834,6 +839,7 @@
 				B7F7B7772B99751900871714 /* nutrition.csv in Resources */,
 				5D32CFC92AD9A917008EFFBF /* TrackViewTabCell.xib in Resources */,
 				5D2EC0FD2AC90A3100284374 /* Main.storyboard in Resources */,
+				B7A8CEEB2BB533AF00C9E051 /* click-124467.mp3 in Resources */,
 				5D2EC1372AC90E0F00284374 /* Inter-Regular.ttf in Resources */,
 				5D2EC1342AC90E0F00284374 /* Inter-Medium.ttf in Resources */,
 			);
@@ -987,7 +993,6 @@
 				5DDB74AE2B07540300819E74 /* ServiceAPI.swift in Sources */,
 				5DD342332AF60284006E0375 /* MealPlanCell.swift in Sources */,
 				6EB5C55D2B844A6200828B41 /* StepsCell.swift in Sources */,
-				B7FFDED42B8DEEBB0055DD62 /* LoaderAnimation.swift in Sources */,
 				5DDA9C722ACBBAB000BBB473 /* SampleVC.swift in Sources */,
 				5DD5CE182AD0136200524ACA /* WelcomePatientVC.swift in Sources */,
 				5DD5CE242AD3027D00524ACA /* PatientMedicalRecordVC.swift in Sources */,
@@ -1014,6 +1019,7 @@
 				B7ACE08B2B286FE300C1F6B7 /* patientprofileModel.swift in Sources */,
 				5D3895532ACEAA7F0034B2D8 /* PcosCategory.swift in Sources */,
 				B77FC61D2B296876008C5E40 /* SignupVC.swift in Sources */,
+				B7A8CEE92BB528A600C9E051 /* TextFieldHelper.swift in Sources */,
 				B766427D2B32BFE3004C19B7 /* dailyprogressModel.swift in Sources */,
 				B71B1B5B2B7B3596008FBA8C /* uploadreports.swift in Sources */,
 				5DD5CE262AD3141000524ACA /* SuccessFullVC.swift in Sources */,
@@ -1220,7 +1226,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8345VS28B7;
+				DEVELOPMENT_TEAM = U4KLJ47VG6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pcos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1250,7 +1256,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8345VS28B7;
+				DEVELOPMENT_TEAM = U4KLJ47VG6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pcos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
