@@ -15,5 +15,6 @@ struct PatientProfileModel: Codable {
         let hip: String?
         let waist: String?
         let hipwaist: String?
+        let profile_image: String?
     }
 }

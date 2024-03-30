@@ -14,6 +14,10 @@ class SignupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customizeNavigationBar(title: "Add Patient")
+        usertxt.delegate = TextFieldHelper.shared
+        emailtxt.delegate = TextFieldHelper.shared
+        passwordtxt.delegate = TextFieldHelper.shared
+        confirmtxt.delegate = TextFieldHelper.shared
     }
     
     @IBAction func signupbt(_ sender: Any) {

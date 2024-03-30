@@ -71,6 +71,7 @@ class SampleVC: UIViewController {
     
     func nextQnsLoad() {
         if self.currentQuestionIndex < (self.qnsAnsData?.questions.count ?? 0) {
+
             let qnsAnsData = self.qnsAnsData!.questions[self.currentQuestionIndex]
             self.qnsLbl.text = qnsAnsData.question
             self.optionModelData = qnsAnsData.options

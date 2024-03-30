@@ -6,11 +6,10 @@
 //
 import Foundation
 
-// MARK: - Welcome
-struct leaderboard: Codable {
-    var success: Bool?
-    var message: String?
-    var topScores: [TopScore]?
+struct Leaderboard: Codable {
+    var success: Bool
+    var message: String
+    var topScores: [TopScore]
 
     enum CodingKeys: String, CodingKey {
         case success, message
@@ -18,12 +17,16 @@ struct leaderboard: Codable {
     }
 }
 
-// MARK: - TopScore
 struct TopScore: Codable {
-    var name: String, totalscore: Int?
+    let name: String
+    let totalscore: Int
+    let profileImage: String?
 
     enum CodingKeys: String, CodingKey {
-        case name = "Name"
-        case totalscore = "Totalscore"
+        case name = "Name", totalscore = "Totalscore"
+        case profileImage = "ProfileImage"
     }
 }
+
+
+

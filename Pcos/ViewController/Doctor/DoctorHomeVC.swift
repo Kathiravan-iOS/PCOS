@@ -9,6 +9,7 @@ class DoctorHomeVC: UIViewController {
     var selectedName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         patientList.delegate = self
         patientList.dataSource = self
         searchBar.delegate = self
@@ -67,7 +68,11 @@ extension DoctorHomeVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DoctorHomeVC: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            searchBar.resignFirstResponder() // This dismisses the keyboard
+        }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
         filterPatients(with: searchText)
     }
 

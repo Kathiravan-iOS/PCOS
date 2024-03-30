@@ -108,29 +108,25 @@ extension PatientPlanVC : UITableViewDelegate, UITableViewDataSource {
             return label
         }
         else if section == 2 {
-            // Create a container view to hold the label and the image
             let containerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 50))
             containerView.backgroundColor = UIColor(hex: "#FFA2CF") 
 
-            // Create the label
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: containerView.bounds.width - 50, height: 50))
             label.textAlignment = .center
             label.text = "RECORD DAILY PROGRESS"
             label.clipsToBounds = true
-            label.backgroundColor = .clear // Set label's background color to be transparent
+            label.backgroundColor = .clear
             label.layer.shadowColor = UIColor.black.cgColor
             label.layer.shadowOffset = CGSize(width: 0, height: 2)
             label.layer.shadowOpacity = 0.5
             label.layer.shadowRadius = 2
             containerView.addSubview(label)
 
-            // Create the image view
             let imageView = UIImageView(frame: CGRect(x: containerView.bounds.width - 50, y: 0, width: 50, height: 50))
             imageView.contentMode = .center
             imageView.image = UIImage(named: "Right")
             containerView.addSubview(imageView)
 
-            // Add tap gesture to the container view
             containerView.addAction(for: .tap) {
                 let dailyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "recorddailyprogreeVC") as! recorddailyprogreeVC
                 dailyVC.recordname = self.username5

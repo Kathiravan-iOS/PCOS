@@ -15,6 +15,11 @@ class ForgotPasswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userNameTF.delegate = TextFieldHelper.shared
+        emailTF.delegate = TextFieldHelper.shared
+        passwordTF.delegate = TextFieldHelper.shared
+        confirmPwd.delegate = TextFieldHelper.shared
+        
         customizeNavigationBar(title: "ForgotPassword")
         if UserDefaultsManager.shared.getUserName() == "Doctor" {
             userName.text = "Doctor ID"
