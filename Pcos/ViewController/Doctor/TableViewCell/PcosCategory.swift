@@ -18,7 +18,7 @@ class PcosCategory: UIViewController {
         self.patientScoreAPI()
         if shouldHideStartButton {
             startButton.isHidden = true
-            self.navigationController?.navigationBar.isHidden = true
+//            self.navigationController?.navigationBar.isHidden = true
         }
     }
     
