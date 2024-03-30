@@ -21,6 +21,14 @@ class MealsDetailsVC: UIViewController {
             super.viewDidLoad()
             updateUI()
         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationItem.hidesBackButton = true
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationItem.hidesBackButton = false
+
+    }
         
     func updateUI() {
         var detailsText = ""
