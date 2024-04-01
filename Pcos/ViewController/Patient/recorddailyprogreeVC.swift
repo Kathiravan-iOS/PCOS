@@ -12,7 +12,7 @@ class recorddailyprogreeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = recordname
-        
+        self.title = "Record Your Progress"
         day.delegate = TextFieldHelper.shared
         exerciseduration.delegate = TextFieldHelper.shared
         feedback.delegate = TextFieldHelper.shared

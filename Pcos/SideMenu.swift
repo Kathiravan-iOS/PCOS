@@ -87,24 +87,36 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
               cell.contentView.backgroundColor = .white
           }
         func logoutUser() {
-          
-            clearAllUserDefaultsData()
-
-        
-            if let selectProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SelectProfileVC") as? SelectProfileVC {
+            let alertController = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .destructive) { _ in
+                func clearAllUserDefaultsData() {
+                    if let bundleIdentifier = Bundle.main.bundleIdentifier {
+                        UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
+                    }
+                    UserDefaults.standard.synchronize()
+                }
                 
-                let newNavigationController = UINavigationController(rootViewController: selectProfileVC)
-                newNavigationController.modalPresentationStyle = .fullScreen
-                self.present(newNavigationController, animated: true, completion: nil)
+                
+                if let selectProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SelectProfileVC") as? SelectProfileVC {
+                    let newNavigationController = UINavigationController(rootViewController: selectProfileVC)
+                    newNavigationController.modalPresentationStyle = .fullScreen
+                    self.present(newNavigationController, animated: true, completion: nil)
+                }
             }
+            
+            let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alertController.addAction(yesAction)
+            alertController.addAction(noAction)
+            
+            self.present(alertController, animated: true, completion: nil)
         }
 
-        func clearAllUserDefaultsData() {
-            if let bundleIdentifier = Bundle.main.bundleIdentifier {
-                UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
-            }
-            UserDefaults.standard.synchronize()
-        }
+//        func clearAllUserDefaultsData() {
+//            if let bundleIdentifier = Bundle.main.bundleIdentifier {
+//                UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
+//            }
+//            UserDefaults.standard.synchronize()
+//        }
         
         let nameListIndex = admingMenuTitle[indexPath.row]
         switch nameListIndex {

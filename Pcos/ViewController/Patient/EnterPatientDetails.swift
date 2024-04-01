@@ -19,7 +19,7 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
     var pickerView = UIPickerView()
     var options = ["Single Child", "Two Child", "more Than 2","No child","Unmarried"]
     var selectedOption: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +40,7 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
         obstetricScore.inputView = pickerView
         pickerView.backgroundColor = UIColor.white
         createToolBar()
-
+        
         height.addTarget(self, action: #selector(calculateBMI), for: .editingChanged)
         weight.addTarget(self, action: #selector(calculateBMI), for: .editingChanged)
         Hip.addTarget(self, action: #selector(calculateratio), for: .editingChanged)
@@ -48,7 +48,7 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
         
         name.text = receivedUsername
     }
-   
+    
     func createToolBar() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -57,12 +57,12 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
         toolBar.setItems([spaceButton, doneButton], animated: false)
         obstetricScore.inputAccessoryView = toolBar
     }
-
+    
     @objc func donePicker() {
         obstetricScore.text = selectedOption
         obstetricScore.resignFirstResponder()
     }
-
+    
     @objc func calculateBMI() {
         if let heightValue = Double(height.text ?? ""), let weightValue = Double(weight.text ?? "") {
             let bmiValue = weightValue / ((heightValue / 100) * (heightValue / 100))
@@ -81,41 +81,53 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
             hipwaist.text = ""
         }
     }
-
+    
     @IBAction func submit(_ sender: Any) {
         if areAllFieldsFilled() {
-            // Extracting details and sending to API
-            getProfileAPI()
-            if let enteredName = name.text {
-                receivedUsername = enteredName
-                        print("Username: \(receivedUsername)")
+            getProfileAPI { [weak self] success in
+                guard success else {
+                    self?.showAlert(message: "Failed to create profile due to an error.")
+                    return
+                }
+                DispatchQueue.main.async {
+                    if let enteredName = self?.name.text {
+                        self?.receivedUsername = enteredName
+                        print("Username: \(self?.receivedUsername ?? "")")
                     }
-            let welcome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomePatientVC") as! WelcomePatientVC
-            welcome.username1 = receivedUsername
-            self.navigationController?.pushViewController(welcome, animated: true)
+                    let welcome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomePatientVC") as! WelcomePatientVC
+                    welcome.username1 = self?.receivedUsername ?? ""
+                    self?.navigationController?.pushViewController(welcome, animated: true)
+                }
+            }
         } else {
             showAlert(message: "Please fill in all fields.")
         }
     }
-
+    
+    
+    
     func areAllFieldsFilled() -> Bool {
         return !name.text!.isEmpty &&
-            !age.text!.isEmpty &&
-            !mobile_no.text!.isEmpty &&
-            !height.text!.isEmpty &&
-            !weight.text!.isEmpty &&
-            !otherdisease.text!.isEmpty
+        !age.text!.isEmpty &&
+        !mobile_no.text!.isEmpty &&
+        !height.text!.isEmpty &&
+        !weight.text!.isEmpty &&
+        !otherdisease.text!.isEmpty &&
+        !bmiTextField.text!.isEmpty &&
+        !obstetricScore.text!.isEmpty &&
+        !Hip.text!.isEmpty &&
+        !waist.text!.isEmpty &&
+        !hipwaist.text!.isEmpty
     }
-
+    
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
-
-    func getProfileAPI() {
-        // Extracting the values from the text fields
+    
+    func getProfileAPI(completion: @escaping (Bool) -> Void) {
         guard
             let name = name.text,
             let age = age.text,
@@ -145,25 +157,27 @@ class EnterPatientDetails: UIViewController, UIPickerViewDataSource, UIPickerVie
             "bmi": bmi,
             "hip": hip,
             "waist":waist,
-            "hipwaist": hipwaist// Add BMI value to the parameters
+            "hipwaist": hipwaist
         ]
-
-        // Assuming you have an APIHandler class with a method similar to this
-        APIHandler().postAPIValues(type: profileModel.self, apiUrl: ServiceAPI.profileURL, method: "POST", formData: patientDetails) { result in
+        APIHandler().postAPIValues(type: profileModel.self, apiUrl: ServiceAPI.profileURL, method: "POST", formData: patientDetails) { [weak self] result in
             switch result {
-            case .success(let profile):
-                print("Profile created successfully: \(profile)")
-                // Handle success as needed
+            case .success(_):
+                print("Profile created successfully")
+                DispatchQueue.main.async {
+                    completion(true)
+                }
 
             case .failure(let error):
                 print("Error creating profile: \(error)")
-                // Handle error as needed
+                DispatchQueue.main.async {
+                    self?.showAlert(message: "Error creating profile: \(error.localizedDescription)")
+                    completion(false)
+                }
             }
         }
     }
 
 }
-
 extension EnterPatientDetails {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

@@ -9,8 +9,12 @@ class DoctorHomeVC: UIViewController {
     var allPatients: [String] = []
     var filteredPatients: [String] = []
     var selectedName: String?
+    func reloadData() {
+        GetUserNameAPI()
+        }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         patientList.delegate = self
         patientList.dataSource = self
@@ -30,9 +34,16 @@ class DoctorHomeVC: UIViewController {
            logout.addGestureRecognizer(tapGesture)
        }
     @objc func handleLogoutTap() {
-        clearUserDefaults()
+        let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { action in
+            self.clearUserDefaults()
             self.navigationController?.popToRootViewController(animated: true)
-        }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+
     
     
     @IBAction func addpatinet(_ sender: Any) {
@@ -70,9 +81,8 @@ extension DoctorHomeVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         patientList.deselectRow(at: indexPath, animated: true)
-          if let cell = tableView.cellForRow(at: indexPath) {
-              cell.contentView.backgroundColor = .white
-          }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PatientListTabCell", for: indexPath) as! PatientListTabCell
+        cell.selectionStyle = .none
         selectedName = filteredPatients[indexPath.row]
 
         let doctorCatInstructionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorCatInstructionVC") as! DoctorCatInstructionVC
@@ -83,39 +93,37 @@ extension DoctorHomeVC: UITableViewDelegate, UITableViewDataSource {
 
 extension DoctorHomeVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder() // This dismisses the keyboard
+        searchBar.resignFirstResponder()
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterPatients(with: searchText)
     }
     func clearUserDefaults() {
         if let bundleID = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: bundleID)
         }
-        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            
-            filterPatients(with: searchText)
+    }
+    func filterPatients(with searchText: String) {
+        if searchText.isEmpty {
+            filteredPatients = allPatients
+        } else {
+            filteredPatients = allPatients.filter { $0.lowercased().contains(searchText.lowercased()) }
         }
-        
-        func filterPatients(with searchText: String) {
-            if searchText.isEmpty {
-                filteredPatients = allPatients
-            } else {
-                filteredPatients = allPatients.filter { $0.lowercased().contains(searchText.lowercased()) }
-            }
-            
-            patientList.reloadData()
-            
-            if filteredPatients.isEmpty && !searchText.isEmpty {
-                showAlertForNoPatientFound()
-            }
+
+        patientList.reloadData()
+
+        if filteredPatients.isEmpty && !searchText.isEmpty {
+            showAlertForNoPatientFound()
         }
-        func showAlertForNoPatientFound() {
-            let alert = UIAlertController(title: "No Patient Found", message: "No patient matches the search.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            DispatchQueue.main.async {
-                self.present(alert, animated: true, completion: nil)
-            }
+    }
+
+    func showAlertForNoPatientFound() {
+        let alert = UIAlertController(title: "No Patient Found", message: "No patient matches the search.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
         }
-        
-        
-        
     }
 }
+

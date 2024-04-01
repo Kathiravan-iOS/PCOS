@@ -122,10 +122,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             forgotBtn.isHidden = false
             userNameTF.placeholder = "DOCTOR ID"
             passwordTF.placeholder = "PASSWORD"
+            self.title = "Doctor Login"
         } else if UserDefaultsManager.shared.getUserName() == "Patient" {
             forgotBtn.isHidden = false
             userNameTF.placeholder = "USERNAME"
             passwordTF.placeholder = "PASSWORD"
+            self.title = "Patient Login"
         }
     }
 }

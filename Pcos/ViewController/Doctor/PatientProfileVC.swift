@@ -4,7 +4,6 @@ class PatientProfileVC: UIViewController, UIImagePickerControllerDelegate, UINav
     
     
     @IBOutlet weak var profile: UIImageView!
-    
     @IBOutlet weak var nameTF: UILabel!
     @IBOutlet weak var ageTF: UITextField!
     @IBOutlet weak var occupationTF: UITextField!
@@ -13,21 +12,22 @@ class PatientProfileVC: UIViewController, UIImagePickerControllerDelegate, UINav
     @IBOutlet weak var bmiTF: UITextField!
     @IBOutlet weak var diseaseTF: UITextField!
     @IBOutlet weak var scoreTF: UITextField!
-    
     @IBOutlet weak var hipTF: UITextField!
-    
     @IBOutlet weak var waistTF: UITextField!
-    
     @IBOutlet weak var ratioTF: UITextField!
-    
+    @IBOutlet weak var editButton : UIButton!
+
     var shouldHideeditButton: Bool = false
     var selectedPatientName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped(tapGestureRecognizer:)))
-                profile.isUserInteractionEnabled = true
-                profile.addGestureRecognizer(tapGestureRecognizer)
+        profile.layer.masksToBounds = true
+        profile.layer.cornerRadius = profile.frame.height / 2
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped(tapGestureRecognizer:)))
+        profile.isUserInteractionEnabled = true
+        profile.addGestureRecognizer(tapGestureRecognizer)
         
         
         ageTF.delegate = TextFieldHelper.shared
@@ -48,23 +48,14 @@ class PatientProfileVC: UIViewController, UIImagePickerControllerDelegate, UINav
             enableUserInteractionForTextFields()
         }
         fetchPatientDetails()
-        makeProfileImageCircular()
     }
-    @IBOutlet weak var editButton : UIButton!
+    
     @IBAction func editProfile(_ sender: Any) {
+        self.title = "Edit Profile"
         self.editProfileDetails()
         self.enableUserInteractionForTextFields()
         
     }
-    func makeProfileImageCircular() {
-           profile.translatesAutoresizingMaskIntoConstraints = false
-           NSLayoutConstraint.activate([
-               profile.widthAnchor.constraint(equalToConstant: 100),
-               profile.heightAnchor.constraint(equalToConstant: 100)
-           ])
-           profile.layer.cornerRadius = 50 
-           profile.clipsToBounds = true
-       }
     
     func disableUserInteractionForTextFields() {
         profile.isUserInteractionEnabled = false
@@ -107,115 +98,115 @@ class PatientProfileVC: UIViewController, UIImagePickerControllerDelegate, UINav
             }
         }.resume()
     }
-
+    
     @objc func profileImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         presentImagePicker()
     }
     
     func presentImagePicker() {
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = .photoLibrary
-            present(imagePickerController, animated: true, completion: nil)
-        }
-
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
-
+        
         guard let image = info[.originalImage] as? UIImage else {
             print("No image found")
             return
         }
-
+        
         profile.image = image
         let fileName = "image_\(Date().timeIntervalSince1970).jpg"
-        
+//        profile.image = image.roundedImage()
         uploadImage(image: image, fileName: fileName)
     }
-
-
-       func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-           picker.dismiss(animated: true, completion: nil)
-       }
-
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
     func uploadImage(image: UIImage, fileName: String) {
-            guard let patientName = selectedPatientName,
-                  let imageData = image.jpegData(compressionQuality: 0.5) else {
-                print("Patient name is not set or image data could not be created.")
-                return
-            }
-
-            guard let url = URL(string: ServiceAPI.profile_image) else {
-                print("Invalid URL")
-                return
-            }
-
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-
-            let boundary = "Boundary-\(UUID().uuidString)"
-            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-
-            var body = Data()
-
-            // Append patient name part
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Disposition: form-data; name=\"name\"\r\n\r\n".data(using: .utf8)!)
-            body.append("\(patientName)\r\n".data(using: .utf8)!)
-
-            // Append image part with dynamic filename
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Disposition: form-data; name=\"image\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
-            body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
-            body.append(imageData)
-            body.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
-
-            request.httpBody = body
-
-            URLSession.shared.dataTask(with: request) { responseData, response, error in
-                if let error = error {
-                    DispatchQueue.main.async {
-                        print("Error uploading image: \(error.localizedDescription)")
-                    }
-                    return
-                }
-
-                guard let responseData = responseData else {
-                    DispatchQueue.main.async {
-                        print("No data received")
-                    }
-                    return
-                }
-                
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any],
-                       let message = json["message"] as? String {
-                        DispatchQueue.main.async {
-                            print("Response: \(message)")
-                        }
-                    }
-                } catch {
-                    DispatchQueue.main.async {
-                        print("JSON error: \(error.localizedDescription)")
-                    }
-                }
-            }.resume()
+        guard let patientName = selectedPatientName,
+              let imageData = image.jpegData(compressionQuality: 0.5) else {
+            print("Patient name is not set or image data could not be created.")
+            return
         }
+        
+        guard let url = URL(string: ServiceAPI.profile_image) else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        let boundary = "Boundary-\(UUID().uuidString)"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        var body = Data()
+        
+        // Append patient name part
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"name\"\r\n\r\n".data(using: .utf8)!)
+        body.append("\(patientName)\r\n".data(using: .utf8)!)
+        
+        // Append image part with dynamic filename
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"image\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
+        body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+        body.append(imageData)
+        body.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        request.httpBody = body
+        
+        URLSession.shared.dataTask(with: request) { responseData, response, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Error uploading image: \(error.localizedDescription)")
+                }
+                return
+            }
+            
+            guard let responseData = responseData else {
+                DispatchQueue.main.async {
+                    print("No data received")
+                }
+                return
+            }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any],
+                   let message = json["message"] as? String {
+                    DispatchQueue.main.async {
+                        print("Response: \(message)")
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    print("JSON error: \(error.localizedDescription)")
+                }
+            }
+        }.resume()
+    }
     
     func fetchPatientDetails() {
         guard let name = selectedPatientName else {
             return
         }
-
+        
         print("Patient Name:", name)
-
+        
         let patientProfileAPIURL = "\(ServiceAPI.baseURL)profile.php?name=\(name)"
-
+        
         APIHandler().getAPIValues(type: PatientProfileModel.self, apiUrl: patientProfileAPIURL, method: "GET") { result in
             switch result {
             case .success(let PatientProfileData):
                 print("Received JSON response:", PatientProfileData)
-
+                
                 DispatchQueue.main.async {
                     self.nameTF.text = " \(PatientProfileData.patient_details?.name ?? "")"
                     self.ageTF.text = " \(PatientProfileData.patient_details?.age.map(String.init) ?? "")"
@@ -228,7 +219,7 @@ class PatientProfileVC: UIViewController, UIImagePickerControllerDelegate, UINav
                     self.hipTF.text = " \(PatientProfileData.patient_details?.hip ?? "")"
                     self.waistTF.text = " \(PatientProfileData.patient_details?.waist ?? "")"
                     self.ratioTF.text = " \(PatientProfileData.patient_details?.hipwaist ?? "")"
-
+                    
                     // Load and set profile image
                     if let profileImageURL = PatientProfileData.patient_details?.profile_image,
                        let url = URL(string: profileImageURL) {
@@ -238,10 +229,10 @@ class PatientProfileVC: UIViewController, UIImagePickerControllerDelegate, UINav
                                 return
                             }
                             DispatchQueue.main.async {
-                                self.profile.image = UIImage(data: data)
-                                self.profile.contentMode = .scaleAspectFill
-                                self.profile.layer.cornerRadius = self.profile.frame.width / 2
-                                self.profile.clipsToBounds = true
+                                if let image = UIImage(data: data) {
+                                    self.profile.image = image.roundedImage()
+                                    self.profile.contentMode = .scaleAspectFill
+                                }
                             }
                         }.resume()
                     }
@@ -252,7 +243,7 @@ class PatientProfileVC: UIViewController, UIImagePickerControllerDelegate, UINav
             }
         }
     }
-
+    
     
     func editProfileDetails() {
         let formData: [String: String] = ["name": self.nameTF.text ?? "",
@@ -288,5 +279,26 @@ class PatientProfileVC: UIViewController, UIImagePickerControllerDelegate, UINav
             
         }
     }
+    
+}
 
+
+
+extension UIImage {
+    func roundedImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        let rect = CGRect(origin: .zero, size: size)
+        UIBezierPath(roundedRect: rect, cornerRadius: min(size.width, size.height)/2).addClip()
+        draw(in: rect)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return roundedImage
+    }
+}
+
+extension UIImageView {
+    func makeRounded() {
+        self.layer.cornerRadius = self.frame.width / 2
+        self.clipsToBounds = true
+    }
 }

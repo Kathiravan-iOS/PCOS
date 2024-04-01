@@ -17,7 +17,7 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var selectedRows = Set<IndexPath>()
     var nutritionData: [NutritionInfo] = []
     var namef1 : String = ""
-    //var calorieLimit: Double = 500
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,28 +28,38 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         parseCSV()
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nutritionData.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NutritionCell", for: indexPath)
         let nutritionInfo = nutritionData[indexPath.row]
         
         cell.textLabel?.text = "\(nutritionInfo.name) - Calories: \(nutritionInfo.calories)"
+        cell.selectionStyle = .none
+        if selectedRows.contains(indexPath) {
+            cell.backgroundColor = UIColor(red: 255/255.0, green: 162/255.0, blue: 207/255.0, alpha: 1.0)
+        } else {
+            cell.backgroundColor = .white
+        }
         
         return cell
     }
+
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRows.insert(indexPath)
+        tableView.cellForRow(at: indexPath)?.backgroundColor = UIColor(red: 255/255.0, green: 162/255.0, blue: 207/255.0, alpha: 1.0)
     }
-    
+
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         selectedRows.remove(indexPath)
+        tableView.cellForRow(at: indexPath)?.backgroundColor = .white
     }
-    
     
     func parseCSV() {
         guard let filepath = Bundle.main.path(forResource: "nutrition", ofType: "csv") else {
@@ -100,7 +110,7 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 }
             }
     func showAlertWith(message: String) {
-        let alert = UIAlertController(title: "Selection Required", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Limit Your Calorie Intake", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

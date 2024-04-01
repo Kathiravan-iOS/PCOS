@@ -8,9 +8,8 @@
 import UIKit
 
 class RankedUserList: UITableViewCell {
-  @IBOutlet weak var namelabel : UILabel?
-  @IBOutlet weak var scoreLabel : UILabel?
-
+    @IBOutlet weak var namelabel : UILabel?
+    @IBOutlet weak var scoreLabel : UILabel?
     @IBOutlet weak var profile: UIImageView!
     
     func loadImage(from urlString: String?) {
@@ -50,6 +49,8 @@ class RankedUserList: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         makeProfileImageCircular()
+        profile.layer.masksToBounds = true
+        profile.layer.cornerRadius = profile.frame.height / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
