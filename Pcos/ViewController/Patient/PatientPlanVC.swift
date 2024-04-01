@@ -9,7 +9,8 @@ import UIKit
 
 class PatientPlanVC: UIViewController {
     var username5 : String = ""
-    var headerTitles = ["Start your routine", "Stay Hydrated Drink Water!"]
+    var headerTitles = ["Start your routine", "💧Stay Hydrated Drink Water!💧"]
+
         var currentHeaderTitle: String = "Select Your Routine"
     @IBOutlet weak var homename: UILabel!
     
