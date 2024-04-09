@@ -114,7 +114,6 @@ extension PaitentTrackMomentVC: UITableViewDelegate, UITableViewDataSource {
                         }
                     } else {
                         DispatchQueue.main.async {
-                            // Show alert for waiting
                             let alert = UIAlertController(title: "wait for the Assessment", message: "You can take the assessment every 2 weeks. Please wait a little longer.", preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .default))
                             self.present(alert, animated: true)
@@ -133,7 +132,6 @@ extension PaitentTrackMomentVC: UITableViewDelegate, UITableViewDataSource {
         }
         else if (indexPath.section == 3){
             let leaderCell = activityTable.dequeueReusableCell(withIdentifier: "LeaderBoardCell") as! LeaderBoardCell
-            // Usage example:
             UserDB.shared.setValue("LeaderBoardCell", forKey: "LeaderBoardCell")
             
             

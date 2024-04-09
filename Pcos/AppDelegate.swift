@@ -32,7 +32,7 @@ var window: UIWindow?
     func customizeNavigationBarAppearance() {
            // Adjusting navigation bar appearance globally
            UINavigationBar.appearance().barTintColor = UIColor.white
-           UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+           UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
            // You can also adjust other appearance attributes as needed
        }
 }

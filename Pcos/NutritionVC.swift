@@ -17,7 +17,7 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var selectedRows = Set<IndexPath>()
     var nutritionData: [NutritionInfo] = []
     var namef1 : String = ""
-    //var calorieLimit: Double = 500
+    var type: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,28 +28,38 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         parseCSV()
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nutritionData.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NutritionCell", for: indexPath)
         let nutritionInfo = nutritionData[indexPath.row]
         
         cell.textLabel?.text = "\(nutritionInfo.name) - Calories: \(nutritionInfo.calories)"
+        cell.selectionStyle = .none
+        if selectedRows.contains(indexPath) {
+            cell.backgroundColor = UIColor(red: 255/255.0, green: 162/255.0, blue: 207/255.0, alpha: 1.0)
+        } else {
+            cell.backgroundColor = .white
+        }
         
         return cell
     }
+
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRows.insert(indexPath)
+        tableView.cellForRow(at: indexPath)?.backgroundColor = UIColor(red: 255/255.0, green: 162/255.0, blue: 207/255.0, alpha: 1.0)
     }
-    
+
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         selectedRows.remove(indexPath)
+        tableView.cellForRow(at: indexPath)?.backgroundColor = .white
     }
-    
     
     func parseCSV() {
         guard let filepath = Bundle.main.path(forResource: "nutrition", ofType: "csv") else {
@@ -100,72 +110,43 @@ class NutritionVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 }
             }
     func showAlertWith(message: String) {
-        let alert = UIAlertController(title: "Selection Required", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Limit Your Calorie Intake", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 
     func proceedWithSelectedItems() {
         let selectedNutritionInfos = selectedRows.map { nutritionData[$0.row] }
+        let totalCalories = calculateTotalCalories()
 
-        var postData = [String: Any]()
-        postData["nameLabel"] = namef1
-
-        var foodsData = [[String: Any]]()
-        for nutritionInfo in selectedNutritionInfos {
-            var foodData = [String: Any]()
-            foodData["name"] = nutritionInfo.name
-            foodData["calories"] = nutritionInfo.calories
-            foodsData.append(foodData)
-        }
-        postData["foods"] = foodsData
-
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: postData) else {
-            print("Error converting data to JSON")
-            return
-        }
-
-        guard let url = URL(string: "\(ServiceAPI.baseURL)/insertFood.php") else {
-            print("Invalid URL")
-            return
-        }
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: URL(string: "\(ServiceAPI.baseURL)/insertFood.php")!)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonData
-        
-        // Send the request
-        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-            guard let self = self else { return }
-            
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                print("Unexpected response status code")
-                return
-            }
-            
-            if let data = data, let responseString = String(data: data, encoding: .utf8) {
-                print("Response from server: \(responseString)")
-                if responseString.lowercased().contains("successfully") {
-                    DispatchQueue.main.async {
-                        self.navigateToMealDetailsVC()
-                    }
-                }
-            }
-        }
-        task.resume()
-    }
+        let postData = "name=\(namef1)&type=\(type)&calorie=\(totalCalories)"
+        request.httpBody = postData.data(using: .utf8)
 
+        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let self = self else { return }
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseString = String(data: data, encoding: .utf8) ?? ""
+            if responseString.contains("successfully") {
+                DispatchQueue.main.async {
+                    self.navigateToMealDetailsVC()
+                }
+            } else {
+                print("Server response: \(responseString)")
+            }
+        }.resume()
+    }
     func navigateToMealDetailsVC() {
         let selectedNutritionInfos = selectedRows.map { nutritionData[$0.row] }
            let totalCalories = calculateTotalCalories()
 
            if let mealPlanVC = storyboard?.instantiateViewController(withIdentifier: "MealsDetailsVC") as? MealsDetailsVC {
                mealPlanVC.namelabel = namef1
+               mealPlanVC.type1 = type
                mealPlanVC.nutritionInfos = selectedNutritionInfos
                mealPlanVC.totalCalories = Double((totalCalories))
                mealPlanVC.nameLabelText = namelabel

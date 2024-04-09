@@ -18,27 +18,30 @@ class MealsShceduleVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         breakfast.addAction(for: .tap) { [self] in
             let mealDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutritionVC") as! NutritionVC
             mealDetailsVC.namelabel = "300 Calories"
+            mealDetailsVC.type = "breakfast"
             mealDetailsVC.namef1 = namef
             self.navigationController?.pushViewController(mealDetailsVC, animated: true)
         }
         lunch.addAction(for: .tap) { [self] in
             let mealDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutritionVC") as! NutritionVC
             mealDetailsVC.namelabel = "500 Calories"
+            mealDetailsVC.type = "lunch"
             mealDetailsVC.namef1 = namef
             self.navigationController?.pushViewController(mealDetailsVC, animated: true)
         }
         dinner.addAction(for: .tap) { [self] in
             let mealDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutritionVC") as! NutritionVC
             mealDetailsVC.namelabel = "300 Calories"
+            mealDetailsVC.type = "dinner"
             mealDetailsVC.namef1 = namef
             self.navigationController?.pushViewController(mealDetailsVC, animated: true)
         }
 
         
     }
+   }
 
-
-}

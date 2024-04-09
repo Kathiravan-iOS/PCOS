@@ -52,7 +52,6 @@ class uploadreports: UIViewController, UIImagePickerControllerDelegate, UINaviga
         let imageData = image.jpegData(compressionQuality: 0.5)!
         var body = Data()
         
-        // Append image data
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
         body.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
         body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
@@ -103,7 +102,6 @@ class uploadreports: UIViewController, UIImagePickerControllerDelegate, UINaviga
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
-            // Ensure strong self reference is captured for navigation
             guard let strongSelf = self else { return }
 
             strongSelf.dismiss(animated: true) {
@@ -115,18 +113,17 @@ class uploadreports: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
 
     func navigateToMedicalRecordHomeVC() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let medicalRecordHomeVC = storyboard.instantiateViewController(withIdentifier: "PatientPlanVC") as? PatientPlanVC {
-            if let navigator = navigationController {
-                medicalRecordHomeVC.username5 = name1
-                navigator.pushViewController(medicalRecordHomeVC, animated: true)
-            } else {
-                present(medicalRecordHomeVC, animated: true, completion: nil)
+        if let viewControllers = navigationController?.viewControllers {
+            for currentVC in viewControllers {
+                if currentVC.isKind(of: PatientPlanVC.self) {
+                    if let patientHomeVc = currentVC as? PatientPlanVC {
+                        patientHomeVc.username5 = name1
+                        self.navigationController?.popToViewController(patientHomeVc, animated: true)
+                    }
+                }
             }
         }
     }
-
-
 }
 
 extension Data {

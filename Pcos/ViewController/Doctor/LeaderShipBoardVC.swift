@@ -4,11 +4,11 @@ class LeaderShipBoardVC: UIViewController {
 
     @IBOutlet weak var rankTable: UITableView!
     
-    var highScores: [TopScore] = [] // Corrected the type name to 'TopScore'
+    var highScores: [TopScore] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Assuming `customizeNavigationBar` is defined elsewhere
+       
         customizeNavigationBar(title: "Leadership Board")
         
         rankTable.delegate = self

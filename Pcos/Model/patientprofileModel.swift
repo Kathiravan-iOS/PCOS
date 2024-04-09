@@ -5,7 +5,7 @@ struct PatientProfileModel: Codable {
 
     struct PatientDetails: Codable {
         let name: String?
-        let age: Int?  // Keep age as Int
+        let age: Int?  
         let Mobile_No: String?
         let height: String?
         let weight: String?

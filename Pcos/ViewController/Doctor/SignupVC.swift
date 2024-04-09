@@ -38,7 +38,7 @@ class SignupVC: UIViewController {
             return
         }
         
-        let requiredPasswordLength = 8 // Set your required password length here
+        let requiredPasswordLength = 8
         guard password.count == requiredPasswordLength else {
             showAlert(message: "Password should be \(requiredPasswordLength) characters long.")
             return
@@ -48,8 +48,6 @@ class SignupVC: UIViewController {
             showAlert(message: "Password and confirm password do not match.")
             return
         }
-
-        // If all validations pass, proceed with API call
         GetSignupAPI()
     }
     
@@ -95,20 +93,18 @@ class SignupVC: UIViewController {
             }
         }
     }
-
     
-    func detailsVC(username : String) {
-        if let navigationController = self.navigationController {
-            for controller in navigationController.viewControllers {
-                if controller is DoctorHomeVC {
-                    navigationController.popToViewController(controller, animated: true)
+    
+    func detailsVC(username: String) {
+        if let viewControllers = navigationController?.viewControllers {
+            for viewController in viewControllers {
+                if let doctorHomeVC = viewController as? DoctorHomeVC {
+                    doctorHomeVC.reloadData()
+                    navigationController?.popToViewController(doctorHomeVC, animated: true)
                     break
                 }
             }
         }
-//        let signup = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = signup.instantiateViewController(withIdentifier: "DoctorHomeVC") as! DoctorHomeVC
-////        vc.username = username
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
+
 }

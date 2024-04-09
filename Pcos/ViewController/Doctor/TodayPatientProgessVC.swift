@@ -36,12 +36,12 @@ class TodayPatientProgessVC: UIViewController {
                 print("Received JSON response:", TodayProgressData)
                 
                 DispatchQueue.main.async {
-                    self.Dday.text = "\(progressData.day ?? 0)"
+                    self.Dday.text = progressData.Date
                     self.Dcalorie.text = "\(progressData.calories_taken ?? 0)"
                     self.Dduration.text = "\(progressData.exercise_duration ?? 0)"
-                    self.Dfeedback.text = "\(progressData.todays_feedback ?? "")"
+                    self.Dfeedback.text = "\(progressData.todays_feedback ?? 0)"
                     self.Dsteps.text = "\(progressData.no_of_steps ?? 0)"
-                    self.Dname.text = "\(progressData.name ?? "")"
+                    self.Dname.text = progressData.name
                 }
 
             case .failure(let error):

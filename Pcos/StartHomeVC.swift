@@ -19,8 +19,6 @@ class StartHomeVC: UIViewController {
             imageView.animationDuration = 2.0
             imageView.animationRepeatCount = 0
             imageView.startAnimating()
-
-            // Use a delay to wait for the animation to complete
             DispatchQueue.main.asyncAfter(deadline: .now() + imageView.animationDuration) {
                 self.navigateToRecordDailyProgressVC()
             }

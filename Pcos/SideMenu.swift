@@ -1,9 +1,4 @@
-//
-//  SideMenu.swift
-//  Sidemenu
-//
-//  Created by Haris Madhavan on 07/11/23.
-//
+
 
 import Foundation
 import UIKit
@@ -21,13 +16,13 @@ class SideMenuViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(hex: "#FF89C0")
         let BaseView = UIView()
         BaseView.backgroundColor = .white
-        BaseView.layer.borderColor = UIColor(hex: "#FF89C0").cgColor//CGColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+        BaseView.layer.borderColor = UIColor(hex: "#FF89C0").cgColor
         BaseView.layer.borderWidth = 1
         BaseView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(BaseView)
         
         let imageView = UIImageView()
-            imageView.image = UIImage(named: "pcos1 1") // Set the image for the UIImageView
+            imageView.image = UIImage(named: "pcos1 1") 
             imageView.translatesAutoresizingMaskIntoConstraints = false
             BaseView.addSubview(imageView)
         
@@ -73,15 +68,15 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        cell.contentView.layer.borderColor = UIColor(hex: "#FF89C0").cgColor//CGColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+        cell.contentView.layer.borderColor = UIColor(hex: "#FF89C0").cgColor
         cell.contentView.layer.borderWidth = 1
         
         cell.textLabel?.text = admingMenuTitle[indexPath.row]
         if indexPath.row % 2 == 0 {
-            cell.textLabel?.textColor = UIColor(hex: "#FF89C0")//UIColor(red: 255/255, green: 172/255, blue: 211/255, alpha: 1.0)
+            cell.textLabel?.textColor = UIColor(hex: "#FF89C0")
          } else {
-             // Set a different text color for odd rows
-             cell.textLabel?.textColor =  UIColor(hex: "#FF89C0") //UIColor(red: 255/255, green: 172/255, blue: 211/255, alpha: 1.0)
+             
+             cell.textLabel?.textColor =  UIColor(hex: "#FF89C0")
          }
         return cell
     }
@@ -89,8 +84,33 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
           if let cell = tableView.cellForRow(at: indexPath) {
-              cell.contentView.backgroundColor = .white // Set your desired background color
+              cell.contentView.backgroundColor = .white
           }
+        func logoutUser() {
+            let alertController = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .destructive) { _ in
+                func clearAllUserDefaultsData() {
+                    if let bundleIdentifier = Bundle.main.bundleIdentifier {
+                        UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
+                    }
+                    UserDefaults.standard.synchronize()
+                }
+                
+                
+                if let selectProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SelectProfileVC") as? SelectProfileVC {
+                    let newNavigationController = UINavigationController(rootViewController: selectProfileVC)
+                    newNavigationController.modalPresentationStyle = .fullScreen
+                    self.present(newNavigationController, animated: true, completion: nil)
+                }
+            }
+            
+            let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alertController.addAction(yesAction)
+            alertController.addAction(noAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+       
         
         let nameListIndex = admingMenuTitle[indexPath.row]
         switch nameListIndex {
@@ -113,17 +133,8 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(reports, animated: true)
             print("Reports")
         case "Logout":
-            let logoutVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SelectProfileVC") as! SelectProfileVC
-            self.navigationController?.pushViewController(logoutVC, animated: true)
+            logoutUser()
             print("Logout")
-//            if let navigationController = self.navigationController {
-//                for controller in navigationController.viewControllers {
-//                    if controller is SelectProfileVC {
-//                        navigationController.popToViewController(controller, animated: true)
-//                        break
-//                    }
-//                }
-//            }
         default:
             break
         }

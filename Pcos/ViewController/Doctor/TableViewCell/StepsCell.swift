@@ -1,9 +1,4 @@
-//
-//  StepsCell.swift
-//  Pcos
-//
-//  Created by Karthik Babu on 16/10/23.
-//
+
 import UIKit
 import Charts
 
@@ -32,6 +27,7 @@ class StepsCell: UITableViewCell {
         let chartData = BarChartData(dataSet: chartDataSet)
         barChart.data = chartData
         
+        barChart.isUserInteractionEnabled = false
         
         let xAxis = barChart.xAxis
         xAxis.valueFormatter = IndexAxisValueFormatter(values: labels)
@@ -39,6 +35,7 @@ class StepsCell: UITableViewCell {
         
         barChart.notifyDataSetChanged()
     }
+
 
 
 }

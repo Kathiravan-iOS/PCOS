@@ -22,6 +22,7 @@ class PatientMedicalRecordVC: UIViewController, UICollectionViewDataSource, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Reports"
         collectionView.delegate = self
         collectionView.dataSource = self
         fetchMedicalRecords()
@@ -81,24 +82,26 @@ class PatientMedicalRecordVC: UIViewController, UICollectionViewDataSource, UICo
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if UserDefaultsManager.shared.getUserName() == "Doctor" {
-                // Loop through the view controllers in the navigation stack
                 if let viewControllers = self.navigationController?.viewControllers {
                     for viewController in viewControllers {
-                        // Check if the view controller is an instance of DoctorCatInstructionVC
                         if let doctorHomeVC = viewController as? DoctorCatInstructionVC {
-                            // Set any properties you need on doctorHomeVC here
                             doctorHomeVC.selectedPatientName = self.reportName
                             
-                            // Pop to the found view controller
                             self.navigationController?.popToViewController(doctorHomeVC, animated: true)
-                            break // Exit the loop once the desired view controller is found and popped to
+                            break
                         }
                     }
                 }
             } else if UserDefaultsManager.shared.getUserName() == "Patient" {
-                if let patientPlanVC = storyboard.instantiateViewController(withIdentifier: "PatientPlanVC") as? PatientPlanVC {
-                    patientPlanVC.username5 = self.reportName
-                    self.navigationController?.pushViewController(patientPlanVC, animated: true)
+                if let viewControllers = self.navigationController?.viewControllers {
+                    for viewController in viewControllers {
+                        if let doctorHomeVC = viewController as? PatientPlanVC {
+                            doctorHomeVC.username5 = self.reportName
+                            
+                            self.navigationController?.popToViewController(doctorHomeVC, animated: true)
+                            break
+                        }
+                    }
                 }
             }
         }
