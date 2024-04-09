@@ -28,7 +28,7 @@ class ForgotPasswordVC: UIViewController {
         }
     }
     
-    // Function to handle the forgot password action
+    
     @IBAction func forgotPasswordAction(_ sender: Any) {
         GetforgotAPI()
     }
@@ -41,7 +41,6 @@ class ForgotPasswordVC: UIViewController {
             "confirmpassword": confirmPwd.text ?? ""
         ]
         
-        // Print or log the raw data before decoding
         print("Raw data before decoding: \(forgotPasswordModel)")
         
         
@@ -81,9 +80,7 @@ class ForgotPasswordVC: UIViewController {
                     }
                 }
             }
-//            let forgotvc = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = forgotvc.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-//            self.navigationController?.pushViewController(vc, animated: true)
+         
         }
     }
     

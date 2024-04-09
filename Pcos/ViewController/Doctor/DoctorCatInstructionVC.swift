@@ -1,9 +1,4 @@
-//
-//  DoctorCatInstructionVC.swift
-//  Pcos
-//
-//  Created by Karthik Babu on 06/10/23.
-//
+
 
 import UIKit
 
@@ -11,22 +6,69 @@ class DoctorCatInstructionVC: UIViewController {
     
     var selectedPatientName: String?
 
+    @IBOutlet weak var delete: UIImageView!
     @IBOutlet weak var instructionTableView: UITableView!
     var instructionList = ["Patient Profile", "Patient Activity", "Patient’s Menstural Calender", "View Patient’s Today Progress", "View Patient’s Medical Records"]
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.setupBackButton()
         instructionTableView.delegate = self
         instructionTableView.dataSource = self
         customizeNavigationBar(title: "Doctor Category Instructions")
+        
+        let deleteTapGesture = UITapGestureRecognizer(target: self, action: #selector(deletePatient))
+            delete.isUserInteractionEnabled = true
+            delete.addGestureRecognizer(deleteTapGesture)
+        }
+
+    @objc func deletePatient() {
+        guard let patientName = selectedPatientName, let url = URL(string: ServiceAPI.delete) else {
+            print("Invalid details")
+            return
+        }
+
+        let confirmationAlert = UIAlertController(title: "Confirm Deletion", message: "Are you sure you want to delete this patient?", preferredStyle: .alert)
+        confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            let bodyParameters = "name=\(patientName)"
+            request.httpBody = bodyParameters.data(using: .utf8)
+            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    print("Error or Invalid response received from the server")
+                    return
+                }
+
+                guard error == nil else {
+                    print("Error making request: \(String(describing: error))")
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    // Pop to DoctorHomeVC
+                    self?.popToDoctorHomeVC()
+                }
+            }.resume()
+        })
+
+        present(confirmationAlert, animated: true, completion: nil)
     }
-//    func setupBackButton() {
-//        let backImage = UIImage(named: "back")?.withRenderingMode(.alwaysOriginal)
-//            let backButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backAction))
-//            backButton.imageInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0) 
-//            
-//            self.navigationItem.leftBarButtonItem = backButton
-//    }
+
+
+    func popToDoctorHomeVC() {
+        if let navigationController = self.navigationController {
+            for controller in navigationController.viewControllers {
+                if let doctorHomeVC = controller as? DoctorHomeVC {
+                    navigationController.popToViewController(doctorHomeVC, animated: true)
+                    doctorHomeVC.reloadData() 
+                    break
+                }
+            }
+        }
+    }
+
 
     @objc func backAction() {
         if let navigationController = self.navigationController {
@@ -65,8 +107,6 @@ class DoctorCatInstructionVC: UIViewController {
                     destinationViewController = UIViewController()
                 }
                
-//            case "View Assesment Result":
-//                destinationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PatientAssementResultVC") as! PatientAssementResultVC
             case "View Patient’s Today Progress":
                 let todayProgressVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodayPatientProgessVC") as! TodayPatientProgessVC
                         todayProgressVC.selectedPatientName = selectedPatientName
@@ -101,7 +141,7 @@ extension DoctorCatInstructionVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         instructionTableView.deselectRow(at: indexPath, animated: true)
           if let cell = tableView.cellForRow(at: indexPath) {
-              cell.contentView.backgroundColor = .white // Set your desired background color
+              cell.contentView.backgroundColor = .white
           }
         let selectedItem = instructionList[indexPath.row]
         navigateToViewController(for: selectedItem)

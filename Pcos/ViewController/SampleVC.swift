@@ -35,21 +35,13 @@ class SampleVC: UIViewController {
     }
     
     @IBAction func nextAc(_ sender: Any) {
-//        self.currentQuestionIndex = self.currentQuestionIndex + 1
-//        if let selectedIndexPath = selectedIndexPath {
-////            self.mainMild += mild
-////            self.mainModerate += moderate
-////            self.mainSevere += severe
-//        }
-//        self.previous_Ot.isHidden  = false
-//        self.nextQnsLoad()
+
     }
     func qnsValue(mild: Int, moderate: Int, severe: Int) {
         
     }
     
     @IBAction func previous(_ sender: Any) {
-//        self.previousQnsLoad()
     }
     
    
@@ -77,12 +69,10 @@ class SampleVC: UIViewController {
             self.optionModelData = qnsAnsData.options
             self.qnsAnsList.reloadData()
         } else {
-            // Post scores to API before navigating to the next screen
             postScoresToAPI()
 
-            // Navigate to the next screen
-            let story = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SuccessFullVC") as! SuccessFullVC
-            story.username3 = username2
+            let story = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "Gifloader") as! Gifloader
+            story.usernamee = username2
             self.navigationController?.pushViewController(story, animated: true)
         }
     }

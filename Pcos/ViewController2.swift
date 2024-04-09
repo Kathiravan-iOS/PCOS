@@ -13,16 +13,13 @@ class ViewController2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Create and add the side menu view controller
         sideMenu = SideMenuViewController()
         addChild(sideMenu!)
         view.addSubview(sideMenu!.view)
         sideMenu!.didMove(toParent: self)
-        
-        // Position the side menu offscreen
+    
         sideMenu!.view.frame = CGRect(x: -view.frame.size.width, y: 0, width: view.frame.size.width, height: view.frame.size.height)
         
-        // Add tap gesture to close the side menu
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeSideMenu))
         view.addGestureRecognizer(tapGesture)
         

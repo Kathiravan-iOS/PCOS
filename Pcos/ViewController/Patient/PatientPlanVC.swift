@@ -67,6 +67,9 @@ class PatientPlanVC: UIViewController {
         patientVC.selectedPatientName = username5
         self.navigationController?.pushViewController(patientVC, animated: true)
     }
+    
+    
+    
     @objc func openSideMenu() {
         UIView.animate(withDuration: 0.5) {
             self.sideMenu?.view.frame.origin.x = 0
@@ -180,9 +183,21 @@ extension PatientPlanVC : UITableViewDelegate, UITableViewDataSource {
                 
             }
             else if indexPath.row == 1 {
-                let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "workoutplan") as! workoutplan
-                self.navigationController?.pushViewController(nextVC, animated: true)
+                let alert = UIAlertController(title: "Exercise Caution",
+                                              message: "Avoid or modify any exercise that causes you pain or discomfort.",
+                                              preferredStyle: .alert)
+
+                let proceedAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "workoutplan") as! workoutplan
+                    self.navigationController?.pushViewController(nextVC, animated: true)
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alert.addAction(proceedAction)
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true, completion: nil)
+
             }
+
             
             else if indexPath.row == 2 {
                 let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PaitentTrackMomentVC") as! PaitentTrackMomentVC

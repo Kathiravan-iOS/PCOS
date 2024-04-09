@@ -6,6 +6,9 @@ class DoctorHomeVC: UIViewController {
 
     @IBOutlet weak var logout: UIImageView!
     
+    @IBOutlet weak var pcos_image: UIImageView!
+    
+    
     var allPatients: [String] = []
     var filteredPatients: [String] = []
     var selectedName: String?
@@ -15,12 +18,19 @@ class DoctorHomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        addBlurEffectToImage()
         patientList.delegate = self
         patientList.dataSource = self
         searchBar.delegate = self
         setupLogoutTapGesture()
         GetUserNameAPI()
+    }
+    func addBlurEffectToImage() {
+            let blurEffect = UIBlurEffect(style: .regular)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = pcos_image.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            pcos_image.addSubview(blurEffectView)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true

@@ -110,13 +110,7 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
             
             self.present(alertController, animated: true, completion: nil)
         }
-
-//        func clearAllUserDefaultsData() {
-//            if let bundleIdentifier = Bundle.main.bundleIdentifier {
-//                UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
-//            }
-//            UserDefaults.standard.synchronize()
-//        }
+       
         
         let nameListIndex = admingMenuTitle[indexPath.row]
         switch nameListIndex {

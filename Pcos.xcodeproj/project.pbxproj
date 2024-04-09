@@ -102,6 +102,9 @@
 		B76F95592B0CBC2F004B132A /* profileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F95582B0CBC2F004B132A /* profileModel.swift */; };
 		B77851A12B3427A3003F53D3 /* QnsAnsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77851A02B3427A3003F53D3 /* QnsAnsModel.swift */; };
 		B77A2B2B2B1AF6C400CFDEA3 /* forgotPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77A2B2A2B1AF6C400CFDEA3 /* forgotPasswordModel.swift */; };
+		B77BA80F2BC3B321001C51BE /* Gifloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BA80E2BC3B321001C51BE /* Gifloader.swift */; };
+		B77BA8192BC3B647001C51BE /* Gif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = B77BA8182BC3B647001C51BE /* Gif1.gif */; };
+		B77BA81C2BC3B9D4001C51BE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BA81B2BC3B9D4001C51BE /* UIImage+Extension.swift */; };
 		B77FC61D2B296876008C5E40 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77FC61C2B296876008C5E40 /* SignupVC.swift */; };
 		B77FC61F2B296BB7008C5E40 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77FC61E2B296BB7008C5E40 /* SignupModel.swift */; };
 		B77FC6212B29B0AC008C5E40 /* nightisland.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B77FC6202B29B0AC008C5E40 /* nightisland.mp3 */; };
@@ -285,6 +288,9 @@
 		B76F95582B0CBC2F004B132A /* profileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileModel.swift; sourceTree = "<group>"; };
 		B77851A02B3427A3003F53D3 /* QnsAnsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnsAnsModel.swift; sourceTree = "<group>"; };
 		B77A2B2A2B1AF6C400CFDEA3 /* forgotPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordModel.swift; sourceTree = "<group>"; };
+		B77BA80E2BC3B321001C51BE /* Gifloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gifloader.swift; sourceTree = "<group>"; };
+		B77BA8182BC3B647001C51BE /* Gif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Gif1.gif; sourceTree = "<group>"; };
+		B77BA81B2BC3B9D4001C51BE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		B77FC61C2B296876008C5E40 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		B77FC61E2B296BB7008C5E40 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		B77FC6202B29B0AC008C5E40 /* nightisland.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nightisland.mp3; sourceTree = "<group>"; };
@@ -386,6 +392,7 @@
 				5DDB74A92B07527400819E74 /* APIHandler.swift */,
 				5DDB74AD2B07540300819E74 /* ServiceAPI.swift */,
 				5D2EC0FB2AC90A3100284374 /* Main.storyboard */,
+				B77BA80E2BC3B321001C51BE /* Gifloader.swift */,
 				B79506392BA2AEC500A65ED4 /* workoutplan.swift */,
 				B7F7B7782B99753400871714 /* NutritionVC.swift */,
 				B71B1B5C2B7B406D008FBA8C /* CollectionViewCell.swift */,
@@ -396,8 +403,10 @@
 				5D2EC1002AC90A3200284374 /* LaunchScreen.storyboard */,
 				B77FC6202B29B0AC008C5E40 /* nightisland.mp3 */,
 				5D2EC0FE2AC90A3200284374 /* Assets.xcassets */,
+				B77BA8182BC3B647001C51BE /* Gif1.gif */,
 				5D2EC1032AC90A3200284374 /* Info.plist */,
 				5D3B306E2AFC80B600892DC9 /* SideMenu.swift */,
+				B77BA81B2BC3B9D4001C51BE /* UIImage+Extension.swift */,
 				B7C841762B7C89D4005C5CFD /* MedicalrepothomeViewController.swift */,
 				B71B1B5A2B7B3596008FBA8C /* uploadreports.swift */,
 				5D3B306D2AFC80B600892DC9 /* ViewController2.swift */,
@@ -743,6 +752,8 @@
 				Base,
 			);
 			mainGroup = 5D2EC0E92AC90A3100284374;
+			packageReferences = (
+			);
 			productRefGroup = 5D2EC0F32AC90A3100284374 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -842,6 +853,7 @@
 				B7A8CEEB2BB533AF00C9E051 /* click-124467.mp3 in Resources */,
 				5D2EC1372AC90E0F00284374 /* Inter-Regular.ttf in Resources */,
 				5D2EC1342AC90E0F00284374 /* Inter-Medium.ttf in Resources */,
+				B77BA8192BC3B647001C51BE /* Gif1.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,6 +1029,7 @@
 				5D2EC0F82AC90A3100284374 /* SceneDelegate.swift in Sources */,
 				B7982C482B2C39EE0085C750 /* PaitientListModel.swift in Sources */,
 				B7ACE08B2B286FE300C1F6B7 /* patientprofileModel.swift in Sources */,
+				B77BA81C2BC3B9D4001C51BE /* UIImage+Extension.swift in Sources */,
 				5D3895532ACEAA7F0034B2D8 /* PcosCategory.swift in Sources */,
 				B77FC61D2B296876008C5E40 /* SignupVC.swift in Sources */,
 				B7A8CEE92BB528A600C9E051 /* TextFieldHelper.swift in Sources */,
@@ -1040,6 +1053,7 @@
 				5DD5CE162AD012CB00524ACA /* EnterPatientDetails.swift in Sources */,
 				B780F2202B3BF9EB001FF941 /* Animation.swift in Sources */,
 				5D7CBF422ACFC98700DB1F08 /* PatientActivityVC.swift in Sources */,
+				B77BA80F2BC3B321001C51BE /* Gifloader.swift in Sources */,
 				5D3895562ACF11310034B2D8 /* RankedUserList.swift in Sources */,
 				B7BB35CE2B86FF9600CAAE7B /* view_reportVC.swift in Sources */,
 				5D3B306F2AFC80B600892DC9 /* ViewController2.swift in Sources */,

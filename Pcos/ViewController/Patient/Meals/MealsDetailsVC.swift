@@ -12,7 +12,7 @@ class MealsDetailsVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var detailsTextView: UITextView!
     var nameLabelText: String?
-
+    var type1 : String?
     var nutritionInfos: [NutritionInfo] = []
         var totalCalories: Double = 0
         var namelabel: String?
