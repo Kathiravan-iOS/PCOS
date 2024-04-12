@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/sail/Documents/Pcos/Pcos/AdminLoginVC.swift">
-   </FileRef>
-   <FileRef
       location = "group:Pcos.xcodeproj">
    </FileRef>
    <FileRef
