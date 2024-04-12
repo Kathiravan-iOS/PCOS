@@ -34,8 +34,7 @@ class ProgressBar: UITableViewCell {
     }
 
     func loadData() {
-        let urlString = "ServiceAPI.baseURpercentage.php"
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: "\(ServiceAPI.baseURL)percentage.php")  else { return }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -59,15 +58,15 @@ class ProgressBar: UITableViewCell {
     }
 
     private func setupProgressBarViews() {
-        fatProgressBar = createAndAddProgressBar(to: fatView, colorHex: "#FEC635", defaultPercentage: 0, label: "Fat")
-        sleepProgressBar = createAndAddProgressBar(to: proView, colorHex: "#3585FE", defaultPercentage: 0, label: "Sleep")
-        exerciseProgressBar = createAndAddProgressBar(to: carbView, colorHex: "#8076F5", defaultPercentage: 0, label: "Exercise")
+        fatProgressBar = createAndAddProgressBar(to: fatView, colorHex: "#FEC635", defaultPercentage: 0, label: "Calorie")
+        sleepProgressBar = createAndAddProgressBar(to: proView, colorHex: "#3585FE", defaultPercentage: 0, label: "Steps")
+        exerciseProgressBar = createAndAddProgressBar(to: carbView, colorHex: "#8076F5", defaultPercentage: 0, label: "Sleep")
     }
 
     private func updateProgressBar(percentages: Percentages) {
-        fatProgressBar?.setPercentage(percentages.calories_percentage, customText: "Fat")
-        sleepProgressBar?.setPercentage(percentages.steps_percentage, customText: "Sleep")
-        exerciseProgressBar?.setPercentage(percentages.feedback_percentage, customText: "Exercise")
+        fatProgressBar?.setPercentage(percentages.calories_percentage, customText: "Calorie")
+        sleepProgressBar?.setPercentage(percentages.steps_percentage, customText: "Steps")
+        exerciseProgressBar?.setPercentage(percentages.feedback_percentage, customText: "Sleep")
     }
 
     private func createAndAddProgressBar(to view: UIView, colorHex: String, defaultPercentage: CGFloat, label: String) -> PercentageProgressBarView {

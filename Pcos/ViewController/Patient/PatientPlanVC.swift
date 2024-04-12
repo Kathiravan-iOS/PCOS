@@ -26,6 +26,7 @@ class PatientPlanVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //fetchProfileImageURL()
         startHeaderTitleRotation()
         homename.text = "Welcome, \(username5)"
         self.sideMenu?.view.frame.origin.x = -self.view.frame.size.width
@@ -51,6 +52,7 @@ class PatientPlanVC: UIViewController {
         sideMenu!.didMove(toParent: self)
         sideMenu!.view.frame = CGRect(x: view.frame.size.width, y: 0, width: view.frame.size.width, height: view.frame.size.height)
     }
+    
     func startHeaderTitleRotation() {
            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [weak self] timer in
                guard let self = self else { return }
@@ -60,7 +62,46 @@ class PatientPlanVC: UIViewController {
                }
            }
        }
-    
+//    func fetchProfileImageURL() {
+//            guard let url = URL(string: "\(ServiceAPI.baseURL)profile_fetch.php") else { return }
+//            var request = URLRequest(url: url)
+//            request.httpMethod = "POST"
+//        let bodyData = "name=\(username5)"
+//             request.httpBody = bodyData.data(using: .utf8)
+//             request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//             
+//             URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+//                 guard let data = data, error == nil else {
+//                     print("Error: \(error?.localizedDescription ?? "Failed to fetch data")")
+//                     return
+//                 }
+//                 
+//                 do {
+//                     if let jsonResult = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+//                        let success = jsonResult["success"] as? Bool, success,
+//                        let imageUrlString = jsonResult["image_url"] as? String {
+//                         self?.downloadAndSetProfileImage(from: imageUrlString)
+//                     }
+//                 } catch {
+//                     print("JSON Serialization error: \(error)")
+//                 }
+//             }.resume()
+//         }
+         
+//         func downloadAndSetProfileImage(from urlString: String) {
+//             guard let url = URL(string: urlString) else { return }
+//             
+//             URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+//                 guard let data = data, error == nil, let image = UIImage(data: data) else {
+//                     print("Error downloading image: \(error?.localizedDescription ?? "Failed to download image")")
+//                     return
+//                 }
+//                 
+//                 DispatchQueue.main.async {
+//                     self?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(self?.profilePage))
+//                 }
+//             }.resume()
+//         }
     @objc func profilePage(){
         let patientVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PatientProfileVC") as! PatientProfileVC
         patientVC.shouldHideeditButton = true

@@ -36,4 +36,12 @@ class SelectProfileVC: UIViewController {
         let loginVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC // LoginVC
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
+    
+    @IBAction func admin(_ sender: Any) {
+        let loginVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminLoginVC") as! AdminLoginVC // LoginVC
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
+    
+    
 }
