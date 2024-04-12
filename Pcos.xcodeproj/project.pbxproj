@@ -113,6 +113,8 @@
 		B780F2242B3C3649001FF941 /* todayprogressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780F2232B3C3648001FF941 /* todayprogressModel.swift */; };
 		B795063A2BA2AEC500A65ED4 /* workoutplan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79506392BA2AEC500A65ED4 /* workoutplan.swift */; };
 		B7982C482B2C39EE0085C750 /* PaitientListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7982C472B2C39EE0085C750 /* PaitientListModel.swift */; };
+		B7A52BB72BC917C30050D62E /* add_doctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A52BB62BC917C30050D62E /* add_doctorVC.swift */; };
+		B7A52BCF2BC92E7D0050D62E /* AdminLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A52BCE2BC92E7D0050D62E /* AdminLoginVC.swift */; };
 		B7A8CEE92BB528A600C9E051 /* TextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8CEE82BB528A600C9E051 /* TextFieldHelper.swift */; };
 		B7A8CEEB2BB533AF00C9E051 /* click-124467.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7A8CEEA2BB533AF00C9E051 /* click-124467.mp3 */; };
 		B7ACE08B2B286FE300C1F6B7 /* patientprofileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ACE08A2B286FE300C1F6B7 /* patientprofileModel.swift */; };
@@ -299,6 +301,8 @@
 		B780F2232B3C3648001FF941 /* todayprogressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayprogressModel.swift; sourceTree = "<group>"; };
 		B79506392BA2AEC500A65ED4 /* workoutplan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutplan.swift; sourceTree = "<group>"; };
 		B7982C472B2C39EE0085C750 /* PaitientListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaitientListModel.swift; sourceTree = "<group>"; };
+		B7A52BB62BC917C30050D62E /* add_doctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = add_doctorVC.swift; sourceTree = "<group>"; };
+		B7A52BCE2BC92E7D0050D62E /* AdminLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminLoginVC.swift; sourceTree = "<group>"; };
 		B7A8CEE82BB528A600C9E051 /* TextFieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHelper.swift; sourceTree = "<group>"; };
 		B7A8CEEA2BB533AF00C9E051 /* click-124467.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "click-124467.mp3"; sourceTree = "<group>"; };
 		B7ACE08A2B286FE300C1F6B7 /* patientprofileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patientprofileModel.swift; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 				B7BB35CD2B86FF9600CAAE7B /* view_reportVC.swift */,
 				B780F2212B3C1506001FF941 /* StartHomeVC.swift */,
 				B780F21F2B3BF9EB001FF941 /* Animation.swift */,
+				B7A52BB62BC917C30050D62E /* add_doctorVC.swift */,
+				B7A52BCE2BC92E7D0050D62E /* AdminLoginVC.swift */,
 				B766427E2B32D78C004C19B7 /* assessmentHomeVC.swift */,
 				5D2EC1002AC90A3200284374 /* LaunchScreen.storyboard */,
 				B77FC6202B29B0AC008C5E40 /* nightisland.mp3 */,
@@ -1027,6 +1033,7 @@
 				5D2EC0F62AC90A3100284374 /* AppDelegate.swift in Sources */,
 				B7DB96172B2B15EF006230F9 /* recorddailyprogreeVC.swift in Sources */,
 				5D2EC0F82AC90A3100284374 /* SceneDelegate.swift in Sources */,
+				B7A52BCF2BC92E7D0050D62E /* AdminLoginVC.swift in Sources */,
 				B7982C482B2C39EE0085C750 /* PaitientListModel.swift in Sources */,
 				B7ACE08B2B286FE300C1F6B7 /* patientprofileModel.swift in Sources */,
 				B77BA81C2BC3B9D4001C51BE /* UIImage+Extension.swift in Sources */,
@@ -1040,6 +1047,7 @@
 				5DF048BA2ADD871400949B45 /* WeightMeasureCell.swift in Sources */,
 				5DDA9C792ACC6DC900BBB473 /* QnsTableCell.swift in Sources */,
 				5D258D5D2AF8D888008AE97F /* PaitentTrackMomentVC.swift in Sources */,
+				B7A52BB72BC917C30050D62E /* add_doctorVC.swift in Sources */,
 				B780F2222B3C1506001FF941 /* StartHomeVC.swift in Sources */,
 				5DD5CE142AD002C900524ACA /* UserDefault.swift in Sources */,
 				B7F7B7792B99753400871714 /* NutritionVC.swift in Sources */,
