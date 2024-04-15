@@ -95,6 +95,8 @@
 		B728FD472B4E9B3F00C7ECE5 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728FD462B4E9B3F00C7ECE5 /* CalendarVC.swift */; };
 		B73228E72B70AA8F008D37BC /* EditProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73228E62B70AA8F008D37BC /* EditProfileModel.swift */; };
 		B73228E92B70B697008D37BC /* PatientScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73228E82B70B697008D37BC /* PatientScoreViewModel.swift */; };
+		B73D90AE2BC9483E00A58B0F /* WeeklyProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D90AD2BC9483E00A58B0F /* WeeklyProgressVC.swift */; };
+		B73D90B62BC9486600A58B0F /* WeeklyProgressTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D90B52BC9486600A58B0F /* WeeklyProgressTableCell.swift */; };
 		B766427D2B32BFE3004C19B7 /* dailyprogressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B766427C2B32BFE3004C19B7 /* dailyprogressModel.swift */; };
 		B766427F2B32D78C004C19B7 /* assessmentHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B766427E2B32D78C004C19B7 /* assessmentHomeVC.swift */; };
 		B76642802B32FB56004C19B7 /* EnterPatientDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD5CE152AD012CB00524ACA /* EnterPatientDetails.swift */; };
@@ -284,6 +286,8 @@
 		B728FD462B4E9B3F00C7ECE5 /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		B73228E62B70AA8F008D37BC /* EditProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileModel.swift; sourceTree = "<group>"; };
 		B73228E82B70B697008D37BC /* PatientScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientScoreViewModel.swift; sourceTree = "<group>"; };
+		B73D90AD2BC9483E00A58B0F /* WeeklyProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyProgressVC.swift; sourceTree = "<group>"; };
+		B73D90B52BC9486600A58B0F /* WeeklyProgressTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyProgressTableCell.swift; sourceTree = "<group>"; };
 		B766427C2B32BFE3004C19B7 /* dailyprogressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyprogressModel.swift; sourceTree = "<group>"; };
 		B766427E2B32D78C004C19B7 /* assessmentHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assessmentHomeVC.swift; sourceTree = "<group>"; };
 		B76C62162B455ABB0093EC21 /* leaderboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaderboardModel.swift; sourceTree = "<group>"; };
@@ -513,6 +517,7 @@
 				5D3895552ACF11310034B2D8 /* RankedUserList.xib */,
 				5DD5CE1B2AD016CD00524ACA /* InstructionTabCell.swift */,
 				5DD5CE1D2AD019FA00524ACA /* PatientListTabCell.swift */,
+				B73D90B52BC9486600A58B0F /* WeeklyProgressTableCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				B77FC61C2B296876008C5E40 /* SignupVC.swift */,
 				5D7CBF3D2ACFC90100DB1F08 /* DoctorCatInstructionVC.swift */,
 				5D7CBF3F2ACFC93E00DB1F08 /* PatientProfileVC.swift */,
+				B73D90AD2BC9483E00A58B0F /* WeeklyProgressVC.swift */,
 				5DC90A4E2ADD9E87003C84F9 /* LeaderShipBoardVC.swift */,
 				5D7CBF412ACFC98700DB1F08 /* PatientActivityVC.swift */,
 				5D7CBF432ACFC9E500DB1F08 /* TodayPatientProgessVC.swift */,
@@ -1007,6 +1013,7 @@
 				5DC90A4F2ADD9E87003C84F9 /* LeaderShipBoardVC.swift in Sources */,
 				5DDB74AA2B07527400819E74 /* APIHandler.swift in Sources */,
 				6EB5C55B2B83C35C00828B41 /* StepsModel.swift in Sources */,
+				B73D90AE2BC9483E00A58B0F /* WeeklyProgressVC.swift in Sources */,
 				5DD342482AF61C29006E0375 /* SectionTitleCell.swift in Sources */,
 				5DDB74AE2B07540300819E74 /* ServiceAPI.swift in Sources */,
 				5DD342332AF60284006E0375 /* MealPlanCell.swift in Sources */,
@@ -1047,6 +1054,7 @@
 				5DF048BA2ADD871400949B45 /* WeightMeasureCell.swift in Sources */,
 				5DDA9C792ACC6DC900BBB473 /* QnsTableCell.swift in Sources */,
 				5D258D5D2AF8D888008AE97F /* PaitentTrackMomentVC.swift in Sources */,
+				B73D90B62BC9486600A58B0F /* WeeklyProgressTableCell.swift in Sources */,
 				B7A52BB72BC917C30050D62E /* add_doctorVC.swift in Sources */,
 				B780F2222B3C1506001FF941 /* StartHomeVC.swift in Sources */,
 				5DD5CE142AD002C900524ACA /* UserDefault.swift in Sources */,
