@@ -81,6 +81,13 @@ extension PatientActivityVC: UITableViewDelegate, UITableViewDataSource {
                 catVC.username4 = self.name1
                 self.navigationController?.pushViewController(catVC, animated: true)
             }
+            cell.assessmentButton?.addAction(for: .tap) {
+                
+                let catVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "WeeklyProgressVC") as! WeeklyProgressVC
+                catVC.name = self.name1
+                self.navigationController?.pushViewController(catVC, animated: true)
+                
+            }
             return cell
         }
         else if (indexPath.section == 2){

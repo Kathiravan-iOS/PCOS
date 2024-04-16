@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aos-gP-rbH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aos-gP-rbH">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1612,7 +1612,7 @@ Successfully !</string>
                                         <rect key="frame" x="21" y="32" width="168.5" height="254"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="DcR-P8-Hn1">
-                                                <rect key="frame" x="0.0" y="0.0" width="168.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="168.5" height="27"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1633,7 +1633,7 @@ Successfully !</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="h7w-Uf-OdH">
-                                                <rect key="frame" x="0.0" y="132" width="168.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="111.5" width="168.5" height="27"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3712,7 +3712,7 @@ By following the guidelines outlined in this comprehensive guide, users can harn
         <!--Weekly ProgressVC-->
         <scene sceneID="UuQ-Sh-Jho">
             <objects>
-                <viewController id="iMK-5f-dff" customClass="WeeklyProgressVC" customModule="Pcos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeeklyProgressVC" id="iMK-5f-dff" customClass="WeeklyProgressVC" customModule="Pcos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AZV-fE-bpn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3765,6 +3765,9 @@ By following the guidelines outlined in this comprehensive guide, users can harn
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="viewData:" destination="iMK-5f-dff" eventType="touchUpInside" id="a77-PQ-ylI"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDc-kK-eDS">
                                         <rect key="frame" x="10" y="115" width="355" height="522"/>
@@ -3894,6 +3897,14 @@ By following the guidelines outlined in this comprehensive guide, users can harn
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="caloriesLabel" destination="xo4-n4-5o7" id="vv8-nx-4fg"/>
+                                                            <outlet property="dateLabel" destination="bLP-xf-3Yw" id="bL8-1s-bFR"/>
+                                                            <outlet property="dayLabel" destination="fUw-lx-dUT" id="xhi-JX-tIs"/>
+                                                            <outlet property="exerciseLabel" destination="cO8-k3-mzI" id="6mL-f6-7qe"/>
+                                                            <outlet property="feedbackLabel" destination="nG2-lL-Fql" id="LHS-kx-bZK"/>
+                                                            <outlet property="stepsLabel" destination="vyb-ev-hVp" id="1mY-Hr-6RL"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -3942,6 +3953,8 @@ By following the guidelines outlined in this comprehensive guide, users can harn
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="from" destination="EKS-9P-zyc" id="atG-Pt-slz"/>
+                        <outlet property="to_date" destination="0Vj-pQ-kvG" id="bEA-4m-Pd0"/>
                         <outlet property="weeklyTableView" destination="pTY-Rh-oEU" id="eAU-gy-068"/>
                     </connections>
                 </viewController>
@@ -5125,7 +5138,7 @@ By following the guidelines outlined in this comprehensive guide, users can harn
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

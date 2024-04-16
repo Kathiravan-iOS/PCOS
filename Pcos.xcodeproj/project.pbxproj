@@ -120,6 +120,7 @@
 		B7A8CEE92BB528A600C9E051 /* TextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8CEE82BB528A600C9E051 /* TextFieldHelper.swift */; };
 		B7A8CEEB2BB533AF00C9E051 /* click-124467.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7A8CEEA2BB533AF00C9E051 /* click-124467.mp3 */; };
 		B7ACE08B2B286FE300C1F6B7 /* patientprofileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ACE08A2B286FE300C1F6B7 /* patientprofileModel.swift */; };
+		B7BAA1082BCCE6970044303E /* WeeklyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAA1072BCCE6970044303E /* WeeklyModel.swift */; };
 		B7BB35CE2B86FF9600CAAE7B /* view_reportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BB35CD2B86FF9600CAAE7B /* view_reportVC.swift */; };
 		B7C841772B7C89D4005C5CFD /* MedicalrepothomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C841762B7C89D4005C5CFD /* MedicalrepothomeViewController.swift */; };
 		B7DB96132B2AF5DF006230F9 /* weightgoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB96122B2AF5DF006230F9 /* weightgoalModel.swift */; };
@@ -310,6 +311,7 @@
 		B7A8CEE82BB528A600C9E051 /* TextFieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHelper.swift; sourceTree = "<group>"; };
 		B7A8CEEA2BB533AF00C9E051 /* click-124467.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "click-124467.mp3"; sourceTree = "<group>"; };
 		B7ACE08A2B286FE300C1F6B7 /* patientprofileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patientprofileModel.swift; sourceTree = "<group>"; };
+		B7BAA1072BCCE6970044303E /* WeeklyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyModel.swift; sourceTree = "<group>"; };
 		B7BB35CD2B86FF9600CAAE7B /* view_reportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view_reportVC.swift; sourceTree = "<group>"; };
 		B7C11FE42B88565000425C9C /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../../../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		B7C841762B7C89D4005C5CFD /* MedicalrepothomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalrepothomeViewController.swift; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 				B77FC61E2B296BB7008C5E40 /* SignupModel.swift */,
 				B73228E62B70AA8F008D37BC /* EditProfileModel.swift */,
 				B73228E82B70B697008D37BC /* PatientScoreViewModel.swift */,
+				B7BAA1072BCCE6970044303E /* WeeklyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1035,6 +1038,7 @@
 				5DD3424B2AF61FF2006E0375 /* PatientPlanVC.swift in Sources */,
 				B76F95592B0CBC2F004B132A /* profileModel.swift in Sources */,
 				5DE4D1622ADED1E800FB3A32 /* UIActions.swift in Sources */,
+				B7BAA1082BCCE6970044303E /* WeeklyModel.swift in Sources */,
 				5D7CBF3C2ACFC88600DB1F08 /* DoctorHomeVC.swift in Sources */,
 				5DCD782B2AF8937100F3BA41 /* WeightGoalListVC.swift in Sources */,
 				5D2EC0F62AC90A3100284374 /* AppDelegate.swift in Sources */,

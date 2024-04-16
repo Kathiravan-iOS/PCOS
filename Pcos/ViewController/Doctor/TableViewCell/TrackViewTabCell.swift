@@ -19,7 +19,7 @@ class TrackViewTabCell: UITableViewCell {
     }
     private func updateButtonTextBasedOnUserRole() {
         if UserDefaultsManager.shared.getUserName() == "Doctor" {
-                assessmentButton?.setTitle("Analysed Patient Category", for: .normal)
+                assessmentButton?.setTitle("Patient Weekly record", for: .normal)
             } else {
                 assessmentButton?.setTitle("Assessment", for: .normal)
             }
