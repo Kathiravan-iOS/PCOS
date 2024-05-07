@@ -128,6 +128,7 @@ extension PaitentTrackMomentVC: UITableViewDelegate, UITableViewDataSource {
         }
         else if (indexPath.section == 2){
             let weightCell = activityTable.dequeueReusableCell(withIdentifier: "WeightMeasureCell") as! WeightMeasureCell
+            weightCell.name = name2
             return weightCell
         }
         else if (indexPath.section == 3){

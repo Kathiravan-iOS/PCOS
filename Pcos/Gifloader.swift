@@ -12,7 +12,7 @@ class Gifloader: UIViewController {
     @IBOutlet weak var gif: UIImageView!
     
     override func viewDidLoad() {
-        gif.image = UIImage.animatedGIF(named: "Gif1")
+        gif.image = UIImage.animatedGIF(named: "1223")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             let story = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SuccessFullVC") as! SuccessFullVC

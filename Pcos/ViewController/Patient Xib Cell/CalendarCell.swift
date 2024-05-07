@@ -9,6 +9,7 @@ class CalendarCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         addTapGesture()
+        calenderimage.image = UIImage.animatedGIF(named: "Calender")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

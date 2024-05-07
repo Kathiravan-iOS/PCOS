@@ -105,7 +105,6 @@
 		B77851A12B3427A3003F53D3 /* QnsAnsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77851A02B3427A3003F53D3 /* QnsAnsModel.swift */; };
 		B77A2B2B2B1AF6C400CFDEA3 /* forgotPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77A2B2A2B1AF6C400CFDEA3 /* forgotPasswordModel.swift */; };
 		B77BA80F2BC3B321001C51BE /* Gifloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BA80E2BC3B321001C51BE /* Gifloader.swift */; };
-		B77BA8192BC3B647001C51BE /* Gif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = B77BA8182BC3B647001C51BE /* Gif1.gif */; };
 		B77BA81C2BC3B9D4001C51BE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BA81B2BC3B9D4001C51BE /* UIImage+Extension.swift */; };
 		B77FC61D2B296876008C5E40 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77FC61C2B296876008C5E40 /* SignupVC.swift */; };
 		B77FC61F2B296BB7008C5E40 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77FC61E2B296BB7008C5E40 /* SignupModel.swift */; };
@@ -113,6 +112,8 @@
 		B780F2202B3BF9EB001FF941 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780F21F2B3BF9EB001FF941 /* Animation.swift */; };
 		B780F2222B3C1506001FF941 /* StartHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780F2212B3C1506001FF941 /* StartHomeVC.swift */; };
 		B780F2242B3C3649001FF941 /* todayprogressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780F2232B3C3648001FF941 /* todayprogressModel.swift */; };
+		B7841E1C2BD9FFAB00D7C1DE /* 1223.gif in Resources */ = {isa = PBXBuildFile; fileRef = B7841E152BD9FFAB00D7C1DE /* 1223.gif */; };
+		B7841E242BDA052900D7C1DE /* Calender.gif in Resources */ = {isa = PBXBuildFile; fileRef = B7841E232BDA052900D7C1DE /* Calender.gif */; };
 		B795063A2BA2AEC500A65ED4 /* workoutplan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79506392BA2AEC500A65ED4 /* workoutplan.swift */; };
 		B7982C482B2C39EE0085C750 /* PaitientListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7982C472B2C39EE0085C750 /* PaitientListModel.swift */; };
 		B7A52BB72BC917C30050D62E /* add_doctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A52BB62BC917C30050D62E /* add_doctorVC.swift */; };
@@ -296,7 +297,6 @@
 		B77851A02B3427A3003F53D3 /* QnsAnsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnsAnsModel.swift; sourceTree = "<group>"; };
 		B77A2B2A2B1AF6C400CFDEA3 /* forgotPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordModel.swift; sourceTree = "<group>"; };
 		B77BA80E2BC3B321001C51BE /* Gifloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gifloader.swift; sourceTree = "<group>"; };
-		B77BA8182BC3B647001C51BE /* Gif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Gif1.gif; sourceTree = "<group>"; };
 		B77BA81B2BC3B9D4001C51BE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		B77FC61C2B296876008C5E40 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		B77FC61E2B296BB7008C5E40 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
@@ -304,6 +304,8 @@
 		B780F21F2B3BF9EB001FF941 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		B780F2212B3C1506001FF941 /* StartHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartHomeVC.swift; sourceTree = "<group>"; };
 		B780F2232B3C3648001FF941 /* todayprogressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayprogressModel.swift; sourceTree = "<group>"; };
+		B7841E152BD9FFAB00D7C1DE /* 1223.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1223.gif; sourceTree = "<group>"; };
+		B7841E232BDA052900D7C1DE /* Calender.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Calender.gif; sourceTree = "<group>"; };
 		B79506392BA2AEC500A65ED4 /* workoutplan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutplan.swift; sourceTree = "<group>"; };
 		B7982C472B2C39EE0085C750 /* PaitientListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaitientListModel.swift; sourceTree = "<group>"; };
 		B7A52BB62BC917C30050D62E /* add_doctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = add_doctorVC.swift; sourceTree = "<group>"; };
@@ -415,7 +417,8 @@
 				5D2EC1002AC90A3200284374 /* LaunchScreen.storyboard */,
 				B77FC6202B29B0AC008C5E40 /* nightisland.mp3 */,
 				5D2EC0FE2AC90A3200284374 /* Assets.xcassets */,
-				B77BA8182BC3B647001C51BE /* Gif1.gif */,
+				B7841E232BDA052900D7C1DE /* Calender.gif */,
+				B7841E152BD9FFAB00D7C1DE /* 1223.gif */,
 				5D2EC1032AC90A3200284374 /* Info.plist */,
 				5D3B306E2AFC80B600892DC9 /* SideMenu.swift */,
 				B77BA81B2BC3B9D4001C51BE /* UIImage+Extension.swift */,
@@ -850,6 +853,7 @@
 				5DD2C4702AD5B81500823F24 /* ProgressBar.xib in Resources */,
 				5D2EC1312AC90E0F00284374 /* Inter-Black.ttf in Resources */,
 				5D2EC1302AC90E0F00284374 /* Inter-ExtraLight.ttf in Resources */,
+				B7841E1C2BD9FFAB00D7C1DE /* 1223.gif in Resources */,
 				6EB5C5592B83BFB500828B41 /* StepsCell.xib in Resources */,
 				5DF048B72ADD836100949B45 /* LeaderBoardCell.xib in Resources */,
 				5D2EC1322AC90E0F00284374 /* Inter-ExtraBold.ttf in Resources */,
@@ -867,8 +871,8 @@
 				5D2EC0FD2AC90A3100284374 /* Main.storyboard in Resources */,
 				B7A8CEEB2BB533AF00C9E051 /* click-124467.mp3 in Resources */,
 				5D2EC1372AC90E0F00284374 /* Inter-Regular.ttf in Resources */,
+				B7841E242BDA052900D7C1DE /* Calender.gif in Resources */,
 				5D2EC1342AC90E0F00284374 /* Inter-Medium.ttf in Resources */,
-				B77BA8192BC3B647001C51BE /* Gif1.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
