@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4589F368-0955-4D2E-BCE1-1A03EB6B54D9"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "270FB84E-92DF-4228-A69A-A7D9F6417CE2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pcos/ViewController/LoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "GetLoginAPI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "270FB84E-92DF-4228-A69A-A7D9F6417CE2 - 8399e13200bc621e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pcos.LoginVC.GetLoginAPI() -&gt; ()"
+                  moduleName = "Pcos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikbabu/Documents/Pcos/Pcos/ViewController/LoginVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1076">
+               </Location>
+               <Location
+                  uuid = "270FB84E-92DF-4228-A69A-A7D9F6417CE2 - 97652ac65591755b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Pcos.LoginModel, Swift.Error&gt;) -&gt; () in Pcos.LoginVC.GetLoginAPI() -&gt; ()"
+                  moduleName = "Pcos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikbabu/Documents/Pcos/Pcos/ViewController/LoginVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "416">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05076A76-437A-4D7D-92B8-AC64AB6432E2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pcos/APIHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "postAPIValues(type:apiUrl:method:formData:onCompletion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "05076A76-437A-4D7D-92B8-AC64AB6432E2 - 19e5fb88e4b16c1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pcos.APIHandler.postAPIValues&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, apiUrl: Swift.String, method: Swift.String, formData: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, onCompletion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Pcos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikbabu/Documents/Pcos/Pcos/APIHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1848">
+               </Location>
+               <Location
+                  uuid = "05076A76-437A-4D7D-92B8-AC64AB6432E2 - 2601fa67486f6cc6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pcos.APIHandler.postAPIValues&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, apiUrl: Swift.String, method: Swift.String, formData: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, onCompletion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Pcos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karthikbabu/Documents/Pcos/Pcos/APIHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "360">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13D38C59-36D5-4F84-B0CA-4FABA70FED74"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pcos/APIHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "postAPIValues(type:apiUrl:method:formData:onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
